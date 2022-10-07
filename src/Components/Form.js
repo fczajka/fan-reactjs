@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import Results from "./Results";
 
 function Form() {
     const [food, setFood] = useState([]);
@@ -20,7 +21,7 @@ function Form() {
     console.log(food);
 
     return (
-        <div className="w-full flex justify-center pt-16">
+        <div className="w-72 h-full flex flex-col pt-16">
             <form
                 onSubmit={(e) => {
                     e.preventDefault();
@@ -43,6 +44,7 @@ function Form() {
                     CHECK
                 </button>
             </form>
+            <Results foods={food} />
         </div>
     );
 }
