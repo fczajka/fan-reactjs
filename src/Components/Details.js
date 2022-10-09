@@ -45,16 +45,18 @@ function Details() {
 
     return (
         <div className="w-full flex flex-col items-center font-lato h-mobile bg-green-50 lg:h-desktop">
-            <h2 className="font-bold pt-16 pb-4 text-xl">{data.description}</h2>
+            <h2 className="font-bold pt-8 pb-4 text-lg lg:text-xl lg:pt-16">
+                {data.description}
+            </h2>
             <table>
-                <thead className="text-lg">
+                <thead className="text-md lg:text-lg">
                     <tr className="bg-green-600 text-green-50">
                         <th className="p-2 text-left">Name</th>
                         <th className="p-2 text-right">Amount per 100g</th>
                         <th className="p-2 text-right">Unit</th>
                     </tr>
                 </thead>
-                <tbody className="text-md">
+                <tbody className="text-sm lg:text-md">
                     {foodInfo.map((food) => (
                         <tr
                             className={food.grey ? "bg-gray-200" : ""}
