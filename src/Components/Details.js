@@ -39,7 +39,7 @@ function Details() {
             grey: true,
         },
         {
-            name: "Energy",
+            name: "Fiber",
             value: data.foodNutrients[9].value.toFixed(2),
             unit: "g",
             grey: false,
@@ -47,11 +47,11 @@ function Details() {
     ];
 
     return (
-        <div className="w-full flex flex-col items-center font-lato h-mobile bg-green-50 lg:h-desktop">
+        <>
             <h2 className="font-bold pt-8 pb-4 text-lg lg:text-xl lg:pt-16">
                 {data.description}
             </h2>
-            <table className="w-72 lg:w-96">
+            <table className="w-full">
                 <thead className="text-md lg:text-lg">
                     <tr className="bg-green-600 text-green-50">
                         <th className="p-2 text-left">Name</th>
@@ -78,7 +78,7 @@ function Details() {
                     ))}
                 </tbody>
             </table>
-            <div className="w-72 flex mt-4 text-green-50 text-sm lg:text-md lg:w-96">
+            <div className="w-full flex mt-4 text-green-50 text-sm lg:text-md">
                 <button className="basis-3/4 flex justify-center items-center mr-2 p-2 lg:p-4 bg-purple-600 transition-all hover:bg-purple-700">
                     Add to calculator{<BsCalculator />}
                 </button>
@@ -89,7 +89,7 @@ function Details() {
                     Go back{<RiArrowGoBackFill />}
                 </Link>
             </div>
-        </div>
+        </>
     );
 }
 

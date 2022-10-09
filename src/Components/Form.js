@@ -18,8 +18,6 @@ function Form() {
         setFood(cleanedData.foods);
     }
 
-    console.log(food);
-
     return (
         <div className="w-72 h-full flex flex-col pt-8 lg:pt-16 lg:w-96">
             <form
