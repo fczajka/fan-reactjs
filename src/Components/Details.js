@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import { CHANGE_FOOD } from "../reducers/food";
+import store from "../store";
 import { BsCalculator } from "react-icons/bs";
 import { RiArrowGoBackFill } from "react-icons/ri";
 
@@ -79,7 +81,10 @@ function Details() {
                 </tbody>
             </table>
             <div className="w-full flex mt-4 text-green-50 text-sm lg:text-md">
-                <button className="basis-3/4 flex justify-center items-center mr-2 p-2 lg:p-4 bg-purple-600 transition-all hover:bg-purple-700">
+                <button
+                    onClick={() => store.dispatch(CHANGE_FOOD(foodInfo))}
+                    className="basis-3/4 flex justify-center items-center mr-2 p-2 lg:p-4 bg-purple-600 transition-all hover:bg-purple-700"
+                >
                     Add to calculator{<BsCalculator />}
                 </button>
                 <Link
