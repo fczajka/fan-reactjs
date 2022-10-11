@@ -10,6 +10,7 @@ function Details() {
     const data = location.state;
 
     const foodInfo = [
+        { name: "Name", value: data.description },
         {
             name: "Energy",
             value: data.foodNutrients[3].value,
