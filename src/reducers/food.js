@@ -1,6 +1,7 @@
-import { createSlice, current } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
+    id: 0,
     name: "Sum",
     nutrients: [
         { name: "Name", value: "Name" },
@@ -49,28 +50,28 @@ export const food = createSlice({
     initialState,
     reducers: {
         ADD_FOOD: (state, action) => {
-            state.name = "Sum";
-            state.nutrients[0].value = action.payload[0].value;
-            state.nutrients[1].value += Number(action.payload[1].value);
-            state.nutrients[2].value += Number(action.payload[2].value);
-            state.nutrients[3].value += Number(action.payload[3].value);
-            state.nutrients[4].value += Number(action.payload[4].value);
-            state.nutrients[5].value += Number(action.payload[5].value);
-            state.nutrients[6].value += Number(action.payload[6].value);
+            state.nutrients[0].value = action.payload.food[0].value;
+            state.nutrients[1].value += Number(action.payload.food[1].value);
+            state.nutrients[2].value += Number(action.payload.food[2].value);
+            state.nutrients[3].value += Number(action.payload.food[3].value);
+            state.nutrients[4].value += Number(action.payload.food[4].value);
+            state.nutrients[5].value += Number(action.payload.food[5].value);
+            state.nutrients[6].value += Number(action.payload.food[6].value);
+            state.id++;
             state.foods.push(action.payload);
         },
         DELETE_FOOD: (state, action) => {
-            state.name = "Sum";
-            console.log(current(state.foods));
-            state.nutrients[0].value = action.payload[0].value;
-            state.nutrients[1].value -= Number(action.payload[1].value);
-            state.nutrients[2].value -= Number(action.payload[2].value);
-            state.nutrients[3].value -= Number(action.payload[3].value);
-            state.nutrients[4].value -= Number(action.payload[4].value);
-            state.nutrients[5].value -= Number(action.payload[5].value);
-            state.nutrients[6].value -= Number(action.payload[6].value);
-            state.foods.splice(state.foods.indexOf(action.payload));
-            console.log(current(state.foods));
+            state.nutrients[0].value = action.payload.food[0].value;
+            state.nutrients[1].value -= Number(action.payload.food[1].value);
+            state.nutrients[2].value -= Number(action.payload.food[2].value);
+            state.nutrients[3].value -= Number(action.payload.food[3].value);
+            state.nutrients[4].value -= Number(action.payload.food[4].value);
+            state.nutrients[5].value -= Number(action.payload.food[5].value);
+            state.nutrients[6].value -= Number(action.payload.food[6].value);
+            state.foods.splice(
+                state.foods.findIndex((food) => food.id === action.payload.id),
+                1
+            );
         },
     },
 });

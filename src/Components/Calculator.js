@@ -39,8 +39,8 @@ function Calculator() {
                                     className="text-sm px-2 py-0.5 lg:text-base"
                                 >
                                     {nutrient.unit === "kcal"
-                                        ? nutrient.value
-                                        : nutrient.value.toFixed(2)}
+                                        ? Math.abs(nutrient.value)
+                                        : Math.abs(nutrient.value).toFixed(2)}
                                 </th>
                             ) : (
                                 ""
@@ -49,8 +49,8 @@ function Calculator() {
                     </tr>
                 </thead>
                 <tbody className="w-full flex flex-col h-calc-mobile overflow-y-auto lg:h-calc-desktop">
-                    {data.sum.foods.map((food) =>
-                        food.map((nutrients) =>
+                    {data.sum.foods.map((foodInfo) =>
+                        foodInfo.food.map((nutrients) =>
                             !nutrients.unit ? (
                                 <tr key={nutrients.name} className="flex">
                                     <td className="text-sm text-right basis-full px-2 py-0.5 lg:text-base">
@@ -72,7 +72,7 @@ function Calculator() {
                                             <button
                                                 onClick={() =>
                                                     store.dispatch(
-                                                        DELETE_FOOD(food)
+                                                        DELETE_FOOD(foodInfo)
                                                     )
                                                 }
                                                 className="flex items-center"

@@ -4,50 +4,55 @@ import { ADD_FOOD } from "../reducers/food";
 import store from "../store";
 import { BsCalculator } from "react-icons/bs";
 import { RiArrowGoBackFill } from "react-icons/ri";
+import { useSelector } from "react-redux";
 
 function Details() {
     const location = useLocation();
     const data = location.state;
+    const storeData = useSelector((state) => state);
 
-    const foodInfo = [
-        { name: "Name", value: data.description },
-        {
-            name: "Energy",
-            value: data.foodNutrients[3].value,
-            unit: "kcal",
-            grey: true,
-        },
-        {
-            name: "Carbohydrate",
-            value: data.foodNutrients[2].value.toFixed(2),
-            unit: "g",
-            grey: false,
-        },
-        {
-            name: "of which sugars",
-            value: data.foodNutrients[8].value.toFixed(2),
-            unit: "g",
-            grey: true,
-        },
-        {
-            name: "Protein",
-            value: data.foodNutrients[0].value.toFixed(2),
-            unit: "g",
-            grey: false,
-        },
-        {
-            name: "Fat",
-            value: data.foodNutrients[1].value.toFixed(2),
-            unit: "g",
-            grey: true,
-        },
-        {
-            name: "Fiber",
-            value: data.foodNutrients[9].value.toFixed(2),
-            unit: "g",
-            grey: false,
-        },
-    ];
+    const foodInfo = {
+        id: storeData.sum.id,
+        food: [
+            { name: "Name", value: data.description },
+            {
+                name: "Energy",
+                value: data.foodNutrients[3].value,
+                unit: "kcal",
+                grey: true,
+            },
+            {
+                name: "Carbohydrate",
+                value: data.foodNutrients[2].value.toFixed(2),
+                unit: "g",
+                grey: false,
+            },
+            {
+                name: "of which sugars",
+                value: data.foodNutrients[8].value.toFixed(2),
+                unit: "g",
+                grey: true,
+            },
+            {
+                name: "Protein",
+                value: data.foodNutrients[0].value.toFixed(2),
+                unit: "g",
+                grey: false,
+            },
+            {
+                name: "Fat",
+                value: data.foodNutrients[1].value.toFixed(2),
+                unit: "g",
+                grey: true,
+            },
+            {
+                name: "Fiber",
+                value: data.foodNutrients[9].value.toFixed(2),
+                unit: "g",
+                grey: false,
+            },
+        ],
+    };
 
     return (
         <>
@@ -63,7 +68,7 @@ function Details() {
                     </tr>
                 </thead>
                 <tbody className="text-sm lg:text-md">
-                    {foodInfo.map((food) => (
+                    {foodInfo.food.map((food) => (
                         <tr
                             className={food.grey ? "bg-gray-200" : ""}
                             key={food.name}
