@@ -1,4 +1,9 @@
+import React from "react";
+import { TiDelete } from "react-icons/ti";
 import { useSelector } from "react-redux";
+import { DELETE_FOOD } from "../reducers/food";
+import store from "../store";
+
 function Calculator() {
     const data = useSelector((state) => state);
 
@@ -45,19 +50,45 @@ function Calculator() {
                 </thead>
                 <tbody className="w-full flex flex-col h-calc-mobile overflow-y-auto lg:h-calc-desktop">
                     {data.sum.foods.map((food) =>
-                        food.map((nutrients, index) =>
-                            nutrients.unit ? (
-                                <tr key={index} className="flex">
+                        food.map((nutrients) =>
+                            !nutrients.unit ? (
+                                <tr key={nutrients.name} className="flex">
+                                    <td className="text-sm text-right basis-full px-2 py-0.5 lg:text-base">
+                                        {nutrients.value}
+                                    </td>
+                                </tr>
+                            ) : nutrients.name === "Fiber" ? (
+                                <React.Fragment key={nutrients.name}>
+                                    <tr className="flex">
+                                        <td className="text-sm text-left basis-3/5 px-2 py-0.5 lg:text-base">
+                                            {nutrients.name}
+                                        </td>
+                                        <td className="text-sm text-right basis-2/5 px-2 py-0.5 lg:text-base">
+                                            {nutrients.value}
+                                        </td>
+                                    </tr>
+                                    <tr className="flex justify-center">
+                                        <td>
+                                            <button
+                                                onClick={() =>
+                                                    store.dispatch(
+                                                        DELETE_FOOD(food)
+                                                    )
+                                                }
+                                                className="flex items-center"
+                                            >
+                                                Delete food
+                                                <TiDelete />
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </React.Fragment>
+                            ) : (
+                                <tr key={nutrients.name} className="flex">
                                     <td className="text-sm text-left basis-3/5 px-2 py-0.5 lg:text-base">
                                         {nutrients.name}
                                     </td>
                                     <td className="text-sm text-right basis-2/5 px-2 py-0.5 lg:text-base">
-                                        {nutrients.value}
-                                    </td>
-                                </tr>
-                            ) : (
-                                <tr key={index} className="flex">
-                                    <td className="text-sm text-right basis-full px-2 py-0.5 lg:text-base">
                                         {nutrients.value}
                                     </td>
                                 </tr>

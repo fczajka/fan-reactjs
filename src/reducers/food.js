@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, current } from "@reduxjs/toolkit";
 
 const initialState = {
     name: "Sum",
@@ -48,7 +48,7 @@ export const food = createSlice({
     name: "Sum",
     initialState,
     reducers: {
-        CHANGE_FOOD: (state, action) => {
+        ADD_FOOD: (state, action) => {
             state.name = "Sum";
             state.nutrients[0].value = action.payload[0].value;
             state.nutrients[1].value += Number(action.payload[1].value);
@@ -59,8 +59,21 @@ export const food = createSlice({
             state.nutrients[6].value += Number(action.payload[6].value);
             state.foods.push(action.payload);
         },
+        DELETE_FOOD: (state, action) => {
+            state.name = "Sum";
+            console.log(current(state.foods));
+            state.nutrients[0].value = action.payload[0].value;
+            state.nutrients[1].value -= Number(action.payload[1].value);
+            state.nutrients[2].value -= Number(action.payload[2].value);
+            state.nutrients[3].value -= Number(action.payload[3].value);
+            state.nutrients[4].value -= Number(action.payload[4].value);
+            state.nutrients[5].value -= Number(action.payload[5].value);
+            state.nutrients[6].value -= Number(action.payload[6].value);
+            state.foods.splice(state.foods.indexOf(action.payload));
+            console.log(current(state.foods));
+        },
     },
 });
 
-export const { CHANGE_FOOD } = food.actions;
+export const { ADD_FOOD, DELETE_FOOD } = food.actions;
 export default food.reducer;
