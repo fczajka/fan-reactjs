@@ -9,7 +9,7 @@ function Calculator({ open }) {
 
     return (
         <div
-            className={`fixed w-64 top-0 left-0 z-20 h-screen bg-green-50 lg:w-80 ${
+            className={`fixed w-60 top-0 left-0 z-20 h-screen bg-green-50 lg:w-80 ${
                 open ? "block" : "hidden"
             }`}
         >
