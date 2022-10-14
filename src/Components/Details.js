@@ -68,22 +68,26 @@ function Details() {
                     </tr>
                 </thead>
                 <tbody className="text-sm lg:text-md">
-                    {foodInfo.food.map((food) => (
-                        <tr
-                            className={food.grey ? "bg-gray-200" : ""}
-                            key={food.name}
-                        >
-                            <th className="font-normal p-2 text-left">
-                                {food.name}
-                            </th>
-                            <th className="font-normal p-2 text-right">
-                                {food.value}
-                            </th>
-                            <th className="font-normal p-2 text-right">
-                                {food.unit}
-                            </th>
-                        </tr>
-                    ))}
+                    {foodInfo.food.map((food) =>
+                        food.name === "Name" ? (
+                            ""
+                        ) : (
+                            <tr
+                                className={food.grey ? "bg-gray-200" : ""}
+                                key={food.name}
+                            >
+                                <th className="font-normal p-2 text-left">
+                                    {food.name}
+                                </th>
+                                <th className="font-normal p-2 text-right">
+                                    {food.value}
+                                </th>
+                                <th className="font-normal p-2 text-right">
+                                    {food.unit}
+                                </th>
+                            </tr>
+                        )
+                    )}
                 </tbody>
             </table>
             <div className="w-full flex mt-4 text-green-50 text-sm lg:text-md">
