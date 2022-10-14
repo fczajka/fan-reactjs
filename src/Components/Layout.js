@@ -1,6 +1,6 @@
 import Header from "./Header";
 import Footer from "./Footer";
-import Calculator from "./Calculator";
+import WrapperCalculator from "./WrapperCalculator";
 
 function Layout({ children }) {
     return (
@@ -11,7 +11,7 @@ function Layout({ children }) {
                     {children}
                 </div>
             </div>
-            <Calculator />
+            <WrapperCalculator />
             <Footer />
         </div>
     );

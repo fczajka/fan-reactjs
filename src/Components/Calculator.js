@@ -4,11 +4,15 @@ import { useSelector } from "react-redux";
 import { DELETE_FOOD } from "../reducers/food";
 import store from "../store";
 
-function Calculator() {
+function Calculator({ open }) {
     const data = useSelector((state) => state);
 
     return (
-        <div className="fixed left-0 top-0 w-64 h-screen bg-green-50">
+        <div
+            className={`fixed w-64 top-0 left-0 z-20 h-screen bg-green-50 lg:w-80 ${
+                open ? "block" : "hidden"
+            }`}
+        >
             <table className="w-full overflow-hidden">
                 <thead className="flex">
                     <tr className="flex basis-3/5 flex-col items-start">
