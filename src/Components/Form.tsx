@@ -1,21 +1,23 @@
-import { useState, useRef } from "react";
+import * as React from "react";
+import { useState } from "react";
+import { InitialFoodResponse, FoodsResponse } from "./Types";
 import Results from "./Results";
 
 function Form() {
-    const [food, setFood] = useState([]);
+    const [inputValue, setInputValue] = useState("");
+    const [foods, setFoods] = useState([] as FoodsResponse);
 
-    const input = useRef();
-
-    const API_KEY = process.env.REACT_APP_API_KEY;
+    const API_KEY = process.env.REACT_APP_API_KEY as string;
     const API_URL = "https://api.nal.usda.gov";
 
     async function requestFood() {
         const data = await fetch(
-            `${API_URL}/fdc/v1/foods/search?query=${input.current.value}&dataType=Survey%20%28FNDDS%29&pageSize=10&pageNumber=1&sortBy=dataType.keyword&api_key=${API_KEY}`
+            `${API_URL}/fdc/v1/foods/search?query=${inputValue}&dataType=Survey%20%28FNDDS%29&pageSize=10&pageNumber=1&sortBy=dataType.keyword&api_key=${API_KEY}`
         );
-        const cleanedData = await data.json();
+        const cleanedData = (await data.json()) as InitialFoodResponse;
+        const foodsFromAPI = cleanedData.foods;
 
-        setFood(cleanedData.foods);
+        setFoods(foodsFromAPI);
     }
 
     return (
@@ -23,16 +25,16 @@ function Form() {
             <form
                 onSubmit={(e) => {
                     e.preventDefault();
-                    requestFood();
+                    void requestFood();
                 }}
             >
                 <label className="flex flex-col text-purple-900" htmlFor="food">
                     Food name:
                     <input
-                        ref={input}
                         className="w-full bg-purple-200 rounded-lg p-1 px-4"
                         type="text"
                         id="food"
+                        onChange={(e) => setInputValue(e.target.value)}
                     />
                 </label>
                 <button
@@ -42,7 +44,7 @@ function Form() {
                     CHECK
                 </button>
             </form>
-            <Results foods={food} />
+            <Results foods={foods} />
         </div>
     );
 }

@@ -1,3 +1,4 @@
+import * as React from "react";
 import { useState } from "react";
 import { FaRegTimesCircle } from "react-icons/fa";
 import Calculator from "./Calculator";

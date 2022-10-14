@@ -1,4 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { FoodInfo, InitialState } from "../Components/Types";
 
 const initialState = {
     id: 0,
@@ -43,13 +44,14 @@ const initialState = {
         },
     ],
     foods: [],
-};
+} as InitialState;
 
 export const food = createSlice({
     name: "Sum",
     initialState,
     reducers: {
-        ADD_FOOD: (state, action) => {
+        ADD_FOOD: (state, action: PayloadAction<FoodInfo>) => {
+            console.log(action.payload);
             state.nutrients[0].value = action.payload.food[0].value;
             state.nutrients[1].value += Number(action.payload.food[1].value);
             state.nutrients[2].value += Number(action.payload.food[2].value);
@@ -60,7 +62,7 @@ export const food = createSlice({
             state.id++;
             state.foods.push(action.payload);
         },
-        DELETE_FOOD: (state, action) => {
+        DELETE_FOOD: (state, action: PayloadAction<FoodInfo>) => {
             state.nutrients[0].value = action.payload.food[0].value;
             state.nutrients[1].value -= Number(action.payload.food[1].value);
             state.nutrients[2].value -= Number(action.payload.food[2].value);

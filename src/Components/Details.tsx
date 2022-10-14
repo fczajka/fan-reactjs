@@ -1,15 +1,17 @@
+import * as React from "react";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { ADD_FOOD } from "../reducers/food";
-import store from "../store";
+import store, { RootState } from "../store";
 import { BsCalculator } from "react-icons/bs";
 import { RiArrowGoBackFill } from "react-icons/ri";
 import { useSelector } from "react-redux";
+import { FoodInfo, FoodResponse } from "./Types";
 
 function Details() {
     const location = useLocation();
-    const data = location.state;
-    const storeData = useSelector((state) => state);
+    const data = location.state as FoodResponse;
+    const storeData = useSelector((state) => state as RootState);
 
     const foodInfo = {
         id: storeData.sum.id,
@@ -52,7 +54,7 @@ function Details() {
                 grey: false,
             },
         ],
-    };
+    } as FoodInfo;
 
     return (
         <>

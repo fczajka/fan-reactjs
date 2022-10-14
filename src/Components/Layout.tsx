@@ -1,8 +1,13 @@
+import * as React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import WrapperCalculator from "./WrapperCalculator";
 
-function Layout({ children }) {
+type Props = {
+    children: JSX.Element;
+};
+
+function Layout({ children }: Props) {
     return (
         <div className="w-full flex flex-col items-center">
             <Header />

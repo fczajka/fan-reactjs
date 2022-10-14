@@ -1,6 +1,12 @@
+import React from "react";
 import { Link } from "react-router-dom";
+import { FoodResponse } from "./Types";
 
-function Result({ food }) {
+type Props = {
+    food: FoodResponse;
+};
+
+function Result({ food }: Props) {
     return (
         <li className="w-full bg-purple-700 text-purple-50 rounded-lg hover:bg-purple-800">
             <Link

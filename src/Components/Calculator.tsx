@@ -1,11 +1,15 @@
-import React from "react";
+import * as React from "react";
 import { TiDelete } from "react-icons/ti";
 import { useSelector } from "react-redux";
 import { DELETE_FOOD } from "../reducers/food";
-import store from "../store";
+import store, { RootState } from "../store";
 
-function Calculator({ open }) {
-    const data = useSelector((state) => state);
+type Props = {
+    open: boolean;
+};
+
+function Calculator({ open }: Props) {
+    const data = useSelector((state) => state as RootState);
 
     return (
         <div
