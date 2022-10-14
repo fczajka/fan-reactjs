@@ -43,8 +43,12 @@ function Calculator({ open }) {
                                     className="text-sm px-2 py-0.5 lg:text-base"
                                 >
                                     {nutrient.unit === "kcal"
-                                        ? Math.abs(nutrient.value)
-                                        : Math.abs(nutrient.value).toFixed(2)}
+                                        ? `${Math.abs(nutrient.value)} ${
+                                              nutrient.unit
+                                          }`
+                                        : `${Math.abs(nutrient.value).toFixed(
+                                              2
+                                          )} ${nutrient.unit}`}
                                 </th>
                             ) : (
                                 ""
@@ -68,7 +72,7 @@ function Calculator({ open }) {
                                             {nutrients.name}
                                         </td>
                                         <td className="text-sm text-right basis-2/5 px-2 py-0.5 lg:text-base">
-                                            {nutrients.value}
+                                            {`${nutrients.value} ${nutrients.unit}`}
                                         </td>
                                     </tr>
                                     <tr className="flex justify-center">
@@ -93,7 +97,7 @@ function Calculator({ open }) {
                                         {nutrients.name}
                                     </td>
                                     <td className="text-sm text-right basis-2/5 px-2 py-0.5 lg:text-base">
-                                        {nutrients.value}
+                                        {`${nutrients.value} ${nutrients.unit}`}
                                     </td>
                                 </tr>
                             )
