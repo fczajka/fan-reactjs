@@ -8,9 +8,9 @@ function WrapperCalculator() {
     return (
         <div className="w-full">
             <div
-                className={`fixed top-0 right-0 w-calc-mobile h-screen text-right z-20 bg-gray-900 lg:w-calc-desktop ${
-                    isOpen ? "block" : "hidden"
-                } ${isOpen ? "opacity-70" : "opacity-0"}`}
+                className={`fixed top-0 left-0 w-screen h-screen text-right z-20 transition-all ease-out duration-700 delay-300 bg-gray-900 opacity-70 ${
+                    isOpen ? "left-0" : "-left-full"
+                }`}
             >
                 <button
                     className="mt-8 mr-4 text-3xl text-green-50 sm:mr-12 sm:text-4xl lg:mr-16"
@@ -19,9 +19,9 @@ function WrapperCalculator() {
                     <FaRegTimesCircle />
                 </button>
             </div>
-            <Calculator open={isOpen} />
+            <Calculator isOpen={isOpen} />
             <button
-                className="fixed right-8 bottom-24 px-4 py-2 rounded-lg text-green-50 font-lato bg-green-800 z-10"
+                className="absolute right-8 bottom-24 px-4 py-2 rounded-lg text-green-50 border-b-8 border-solid border-green-900 font-lato bg-green-600 transition-all z-10 hover:border-b-0 hover:mt-2"
                 onClick={() => setIsOpen(!isOpen)}
             >
                 Open calculator

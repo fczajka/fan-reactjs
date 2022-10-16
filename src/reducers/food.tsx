@@ -51,7 +51,6 @@ export const food = createSlice({
     initialState,
     reducers: {
         ADD_FOOD: (state, action: PayloadAction<FoodInfo>) => {
-            console.log(action.payload);
             state.nutrients[0].value = action.payload.food[0].value;
             state.nutrients[1].value += Number(action.payload.food[1].value);
             state.nutrients[2].value += Number(action.payload.food[2].value);

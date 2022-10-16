@@ -5,16 +5,16 @@ import { DELETE_FOOD } from "../reducers/food";
 import store, { RootState } from "../store";
 
 type Props = {
-    open: boolean;
+    isOpen: boolean;
 };
 
-function Calculator({ open }: Props) {
+function Calculator({ isOpen }: Props) {
     const data = useSelector((state) => state as RootState);
 
     return (
         <div
-            className={`fixed w-60 top-0 left-0 z-20 h-screen bg-green-50 lg:w-80 ${
-                open ? "block" : "hidden"
+            className={`fixed w-60 top-0 -left-60 z-20 h-screen transition-all ease-out duration-300 delay-100 bg-green-50 lg:w-80 border-r-2 border-green-900 ${
+                isOpen ? "-left-0" : "-left-80"
             }`}
         >
             <table className="w-full overflow-hidden">
@@ -65,7 +65,7 @@ function Calculator({ open }: Props) {
                         foodInfo.food.map((nutrients) =>
                             !nutrients.unit ? (
                                 <tr key={nutrients.name} className="flex">
-                                    <td className="text-sm text-right basis-full px-2 py-0.5 lg:text-base">
+                                    <td className="text-sm text-right basis-full px-2 py-2 bg-green-200 lg:text-base">
                                         {nutrients.value}
                                     </td>
                                 </tr>
@@ -79,15 +79,15 @@ function Calculator({ open }: Props) {
                                             {`${nutrients.value} ${nutrients.unit}`}
                                         </td>
                                     </tr>
-                                    <tr className="flex justify-center">
-                                        <td>
+                                    <tr className="flex justify-center py-2">
+                                        <td className="basis-full flex">
                                             <button
                                                 onClick={() =>
                                                     store.dispatch(
                                                         DELETE_FOOD(foodInfo)
                                                     )
                                                 }
-                                                className="flex items-center"
+                                                className="flex items-center justify-center basis-full"
                                             >
                                                 Delete food
                                                 <TiDelete />

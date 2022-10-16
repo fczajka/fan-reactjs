@@ -61,12 +61,18 @@ function Details() {
             <h2 className="font-bold pt-8 pb-4 text-lg lg:text-xl lg:pt-16">
                 {data.description}
             </h2>
-            <table className="w-full">
+            <table className="w-full border-separate border-spacing-0">
                 <thead className="text-md lg:text-lg">
                     <tr className="bg-green-600 text-green-50">
-                        <th className="p-2 text-left">Name</th>
-                        <th className="p-2 text-right">Amount per 100g</th>
-                        <th className="p-2 text-right">Unit</th>
+                        <th className="p-2 text-left font-normal rounded-tl-lg">
+                            Name
+                        </th>
+                        <th className="p-2 text-right font-normal">
+                            Amount per 100g
+                        </th>
+                        <th className="p-2 text-right font-normal rounded-tr-lg">
+                            Unit
+                        </th>
                     </tr>
                 </thead>
                 <tbody className="text-sm lg:text-md">
@@ -95,13 +101,13 @@ function Details() {
             <div className="w-full flex mt-4 text-green-50 text-sm lg:text-md">
                 <button
                     onClick={() => store.dispatch(ADD_FOOD(foodInfo))}
-                    className="basis-3/4 flex justify-center items-center mr-2 p-2 lg:p-4 bg-purple-600 transition-all hover:bg-purple-700"
+                    className="basis-3/4 h-16 flex justify-center items-center border-b-8 border-solid border-purple-900 rounded-bl-lg mr-2 bg-purple-600 transition-all hover:border-b-0 hover:h-14 hover:mt-2"
                 >
                     Add to calculator{<BsCalculator />}
                 </button>
                 <Link
                     to="/"
-                    className="basis-1/4 flex flex-col items-center ml-2 p-2 lg:p-4 bg-green-600 transition-all hover:bg-green-700"
+                    className="basis-1/4 h-16 flex flex-col items-center justify-center border-b-8 border-solid border-green-900 rounded-br-lg ml-2 bg-green-600 transition-all hover:border-b-0 hover:h-14 hover:mt-2"
                 >
                     Go back{<RiArrowGoBackFill />}
                 </Link>

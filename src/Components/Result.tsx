@@ -8,7 +8,7 @@ type Props = {
 
 function Result({ food }: Props) {
     return (
-        <li className="w-full bg-purple-700 text-purple-50 rounded-lg hover:bg-purple-800">
+        <li className="w-full bg-purple-700 text-purple-50 rounded-lg transition-all duration-300 hover:bg-purple-800">
             <Link
                 to="/details"
                 state={food}
