@@ -13,8 +13,8 @@ function Layout({ children }: Props) {
     return (
         <div className="w-full flex flex-col items-center">
             <Header isOpen={isOpen} setIsOpen={setIsOpen} />
-            <div className="max-w-1920 w-full h-full flex items-center justify-center bg-green-50">
-                <div className="w-72 flex flex-col items-center justify-start font-lato h-mobile lg:w-96 lg:h-desktop">
+            <div className="max-w-1920 w-full h-mobile flex items-start justify-center bg-green-50 lg:h-desktop">
+                <div className="w-72 flex flex-col items-center justify-start font-lato lg:w-96">
                     {children}
                 </div>
             </div>

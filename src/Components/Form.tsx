@@ -45,7 +45,7 @@ function Form() {
     }, [showNotification]);
 
     return (
-        <div className="w-72 h-full flex flex-col items-center pt-8 lg:pt-16 lg:w-96">
+        <div className="w-72 h-full flex flex-col items-center pt-4 lg:pt-8 lg:w-96">
             <form
                 className="w-full"
                 onSubmit={(e) => {

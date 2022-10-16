@@ -95,7 +95,7 @@ function Details() {
 
     return (
         <>
-            <h2 className="font-bold pt-8 pb-4 text-lg lg:text-xl lg:pt-16">
+            <h2 className="font-bold pt-4 pb-4 text-lg lg:text-xl lg:pt-8">
                 {data.description}
             </h2>
             <table className="w-full border-separate border-spacing-0">
@@ -152,7 +152,7 @@ function Details() {
                     onChange={(e) => setInputValue(Number(e.target.value))}
                 />
             </div>
-            <div className="w-full flex mt-4 text-green-50 text-sm lg:text-base">
+            <div className="w-full flex mt-4 text-green-50 text-sm mb-16 lg:text-base">
                 <button
                     onClick={() => {
                         store.dispatch(ADD_FOOD(foodInfo));
