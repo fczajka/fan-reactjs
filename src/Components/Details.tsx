@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { ADD_FOOD } from "../reducers/food";
@@ -7,11 +8,25 @@ import { BsCalculator } from "react-icons/bs";
 import { RiArrowGoBackFill } from "react-icons/ri";
 import { useSelector } from "react-redux";
 import { FoodInfo, FoodResponse } from "./Types";
+import Notification from "./Notification";
 
 function Details() {
+    const [showNotification, setShowNotification] = useState(false);
     const location = useLocation();
     const data = location.state as FoodResponse;
     const storeData = useSelector((state) => state as RootState);
+    const [foodCounter, setFoodCounter] = useState(storeData.sum.foods.length);
+
+    useEffect(() => {
+        if (showNotification && foodCounter < storeData.sum.foods.length) {
+            const timer = setTimeout(
+                () => setShowNotification(!showNotification),
+                3000
+            );
+            return () => clearTimeout(timer);
+        }
+        setFoodCounter(storeData.sum.foods.length);
+    }, [showNotification, foodCounter, storeData.sum.foods.length]);
 
     const foodInfo = {
         id: storeData.sum.id,
@@ -100,7 +115,10 @@ function Details() {
             </table>
             <div className="w-full flex mt-4 text-green-50 text-sm lg:text-md">
                 <button
-                    onClick={() => store.dispatch(ADD_FOOD(foodInfo))}
+                    onClick={() => {
+                        store.dispatch(ADD_FOOD(foodInfo));
+                        setShowNotification(!showNotification);
+                    }}
                     className="basis-3/4 h-16 flex justify-center items-center border-b-8 border-solid border-purple-900 rounded-bl-lg mr-2 bg-purple-600 transition-all hover:border-b-0 hover:h-14 hover:mt-2"
                 >
                     Add to calculator{<BsCalculator />}
@@ -112,6 +130,10 @@ function Details() {
                     Go back{<RiArrowGoBackFill />}
                 </Link>
             </div>
+            <Notification
+                isVisible={showNotification}
+                text={"Food has been added to the calculator"}
+            />
         </>
     );
 }
