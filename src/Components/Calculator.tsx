@@ -47,9 +47,9 @@ function Calculator({ isOpen }: Props) {
                                     className="text-sm px-2 py-0.5 lg:text-base"
                                 >
                                     {nutrient.unit === "kcal"
-                                        ? `${Math.abs(nutrient.value)} ${
-                                              nutrient.unit
-                                          }`
+                                        ? `${Math.abs(
+                                              Math.round(nutrient.value)
+                                          )} ${nutrient.unit}`
                                         : `${Math.abs(nutrient.value).toFixed(
                                               2
                                           )} ${nutrient.unit}`}
@@ -69,7 +69,7 @@ function Calculator({ isOpen }: Props) {
                                         {nutrients.value}
                                     </td>
                                 </tr>
-                            ) : nutrients.name === "Fiber" ? (
+                            ) : nutrients.name === "Grams" ? (
                                 <React.Fragment key={nutrients.name}>
                                     <tr className="flex">
                                         <td className="text-sm text-left basis-3/5 px-2 py-0.5 lg:text-base">
