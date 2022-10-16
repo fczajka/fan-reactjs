@@ -5,7 +5,7 @@ module.exports = {
     theme: {
         extend: {
             width: {
-                "calc-mobile": "calc(100vw - 15rem)",
+                "calc-mobile": "calc(100vw - 16rem)",
                 "calc-desktop": "calc(100vw - 20rem)",
             },
             height: {
