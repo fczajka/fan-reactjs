@@ -24,6 +24,7 @@ function Footer({ isOpen, setIsOpen }: Props) {
                 <button
                     className="px-3 py-2 rounded-lg text-green-50 border-b-8 border-solid border-green-900 font-lato bg-green-600 transition-all z-10 hover:border-b-0 hover:mt-2"
                     onClick={() => setIsOpen(!isOpen)}
+                    aria-label="Open calculator"
                 >
                     <FaHamburger />
                 </button>

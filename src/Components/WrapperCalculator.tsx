@@ -18,6 +18,7 @@ function WrapperCalculator({ isOpen, setIsOpen }: Props) {
                 <button
                     className="mt-8 mr-4 text-3xl text-green-50 sm:mr-12 sm:text-4xl lg:mr-16"
                     onClick={() => setIsOpen(!isOpen)}
+                    aria-label="Close calculator"
                 >
                     <FaRegTimesCircle />
                 </button>

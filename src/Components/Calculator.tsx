@@ -82,12 +82,13 @@ function Calculator({ isOpen }: Props) {
                                     <tr className="flex justify-center py-2">
                                         <td className="basis-full flex">
                                             <button
-                                                onClick={() =>
+                                                onClick={() => {
                                                     store.dispatch(
                                                         DELETE_FOOD(foodInfo)
-                                                    )
-                                                }
+                                                    );
+                                                }}
                                                 className="flex items-center justify-center basis-full"
+                                                aria-label="Delete food from calculator"
                                             >
                                                 Delete food
                                                 <TiDelete />

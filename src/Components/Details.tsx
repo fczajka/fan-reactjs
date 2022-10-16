@@ -159,6 +159,7 @@ function Details() {
                         setShowNotification(!showNotification);
                     }}
                     className="basis-3/4 h-16 flex justify-center items-center border-b-8 border-solid border-purple-900 rounded-bl-lg mr-2 bg-purple-600 transition-all hover:border-b-0 hover:h-14 hover:mt-2"
+                    aria-label={`Add ${data.description} to calculator`}
                 >
                     Add to calculator{<BsCalculator />}
                 </button>

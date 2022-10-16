@@ -65,6 +65,7 @@ function Form() {
                 <button
                     className="w-full text-purple-50 bg-purple-700 border-b-8 border-solid border-purple-900 rounded-lg p-2 mt-4 transition-all hover:border-0 hover:mt-6"
                     type="submit"
+                    aria-label="Search food"
                 >
                     CHECK
                 </button>

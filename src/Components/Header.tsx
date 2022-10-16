@@ -12,6 +12,7 @@ function Header({ isOpen, setIsOpen }: Props) {
             <button
                 className="hidden top-5 right-16 py-2 px-4 bg-green-700 text-green-50 rounded-lg border-b-8 border-solid border-green-900 transition-all duration-300 lg:block lg:absolute hover:border-b-0 hover:mt-2 "
                 onClick={() => setIsOpen(!isOpen)}
+                aria-label="Open calculator"
             >
                 Open Calcualtor
             </button>
