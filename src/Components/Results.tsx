@@ -8,7 +8,7 @@ type Props = {
 
 function Results({ foods }: Props) {
     return (
-        <ul className="h-full overflow-y-auto mt-2 mb-20 lg:mb-4">
+        <ul className="h-full w-full overflow-y-auto mt-2 mb-20 lg:mb-4">
             {foods.map((food) => (
                 <Result key={food.fdcId} food={food} />
             ))}
