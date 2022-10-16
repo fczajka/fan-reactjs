@@ -10,8 +10,13 @@ function Footer({ isOpen, setIsOpen }: Props) {
         <div className="w-full fixed bottom-0 flex justify-center items-center h-20 bg-green-800 lg:h-20">
             <p className="basis-5/6 text-green-50 text-xs text-center font-lato px-4 lg:text-lg xl:text-xl lg:basis-full">
                 Data provided by: U.S. Department of Agriculture, Agricultural
-                Research Service. FoodData Central, 2019.
-                <a href="fdc.nal.usda.gov" target="_blank">
+                Research Service. FoodData Central, 2019. Link:
+                <a
+                    className="ml-2 underline"
+                    href="https://fdc.nal.usda.gov/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     fdc.nal.usda.gov
                 </a>
             </p>
