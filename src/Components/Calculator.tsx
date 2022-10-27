@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useEffect, useRef } from "react";
 import { TiDelete } from "react-icons/ti";
 import { useSelector } from "react-redux";
 import { DELETE_FOOD } from "../reducers/food";
@@ -10,6 +11,22 @@ type Props = {
 
 function Calculator({ isOpen }: Props) {
     const data = useSelector((state) => state as RootState);
+
+    const vh = useRef(window.innerHeight * 0.01);
+
+    useEffect(() => {
+        function handleResize() {
+            vh.current = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty(
+                "--vh",
+                `${vh.current}px`
+            );
+        }
+
+        window.addEventListener("resize", handleResize);
+        handleResize();
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
 
     return (
         <div
@@ -60,7 +77,7 @@ function Calculator({ isOpen }: Props) {
                         )}
                     </tr>
                 </thead>
-                <tbody className="w-full flex flex-col h-calc-mobile overflow-y-auto lg:h-calc-desktop">
+                <tbody className="w-full h-calc-mobile flex flex-col overflow-y-auto lg:calc-desktop">
                     {data.sum.foods.map((foodInfo) =>
                         foodInfo.food.map((nutrients) =>
                             !nutrients.unit ? (

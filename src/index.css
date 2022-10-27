@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --calc-height-mobile: calc(var(--vh, 1vh) * 100 - 196px);
+    --calc-height-desktop: calc(var(--vh, 1vh) * 100 - 228px);
+}
+
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
