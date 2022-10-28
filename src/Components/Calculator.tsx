@@ -77,7 +77,7 @@ function Calculator({ isOpen }: Props) {
                         )}
                     </tr>
                 </thead>
-                <tbody className="w-full h-calc-mobile flex flex-col overflow-y-auto lg:calc-desktop">
+                <tbody className="w-full h-calc-mobile flex flex-col overflow-y-auto lg:h-calc-desktop">
                     {data.sum.foods.map((foodInfo) =>
                         foodInfo.food.map((nutrients) =>
                             !nutrients.unit ? (
