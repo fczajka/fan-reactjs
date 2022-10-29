@@ -7,7 +7,7 @@ type Props = {
 
 function Footer({ isOpen, setIsOpen }: Props) {
     return (
-        <div className="w-full fixed bottom-0 flex justify-center items-center h-20 bg-green-800 lg:h-20">
+        <div className="w-full fixed bottom-0 flex justify-center items-center h-16 bg-green-800 lg:h-20">
             <p className="basis-5/6 text-green-50 text-xs text-center font-lato px-4 lg:text-lg xl:text-xl lg:basis-full">
                 Data provided by: U.S. Department of Agriculture, Agricultural
                 Research Service. FoodData Central, 2019. Link:

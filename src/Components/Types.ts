@@ -88,7 +88,6 @@ export interface FoodInfo {
         name: string;
         value: number;
         unit?: string;
-        grey?: boolean;
     }[];
 }
 
@@ -99,7 +98,6 @@ export interface InitialState {
         name: string;
         value: number;
         unit?: string;
-        grey?: boolean;
     }[];
     foods: FoodInfo[];
 }

@@ -96,18 +96,19 @@ function Calculator({ isOpen }: Props) {
                                             {`${nutrients.value} ${nutrients.unit}`}
                                         </td>
                                     </tr>
-                                    <tr className="flex justify-center py-2">
-                                        <td className="basis-full flex">
+                                    <tr className="flex justify-center">
+                                        <td className="basis-full flex p-0">
                                             <button
                                                 onClick={() => {
                                                     store.dispatch(
                                                         DELETE_FOOD(foodInfo)
                                                     );
+                                                    console.log(foodInfo);
                                                 }}
-                                                className="flex items-center justify-center basis-full"
+                                                className="flex text-sm items-center py-2 justify-center basis-full trasition-all duration-300 lg:text-base hover:bg-red-200"
                                                 aria-label="Delete food from calculator"
                                             >
-                                                Delete food
+                                                Delete {foodInfo.food[0].value}
                                                 <TiDelete />
                                             </button>
                                         </td>

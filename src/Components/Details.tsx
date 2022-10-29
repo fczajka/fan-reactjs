@@ -37,7 +37,6 @@ function Details() {
                 name: "Energy",
                 value: (data.foodNutrients[3].value * inputValue) / 100,
                 unit: "kcal",
-                grey: true,
             },
             {
                 name: "Carbohydrate",
@@ -46,7 +45,6 @@ function Details() {
                     100
                 ).toFixed(2),
                 unit: "g",
-                grey: false,
             },
             {
                 name: "of which sugars",
@@ -55,7 +53,6 @@ function Details() {
                     100
                 ).toFixed(2),
                 unit: "g",
-                grey: true,
             },
             {
                 name: "Protein",
@@ -64,7 +61,6 @@ function Details() {
                     100
                 ).toFixed(2),
                 unit: "g",
-                grey: false,
             },
             {
                 name: "Fat",
@@ -73,7 +69,6 @@ function Details() {
                     100
                 ).toFixed(2),
                 unit: "g",
-                grey: true,
             },
             {
                 name: "Fiber",
@@ -82,20 +77,18 @@ function Details() {
                     100
                 ).toFixed(2),
                 unit: "g",
-                grey: false,
             },
             {
                 name: "Grams",
                 value: inputValue.toFixed(2),
                 unit: "g",
-                grey: true,
             },
         ],
     } as FoodInfo;
 
     return (
-        <>
-            <h2 className="font-bold pt-4 pb-4 text-lg lg:text-xl lg:pt-8">
+        <div className="basis-72 lg:basis-96">
+            <h2 className="font-bold pt-4 pb-4 text-center text-lg lg:text-xl lg:pt-8">
                 {data.description}
             </h2>
             <table className="w-full border-separate border-spacing-0">
@@ -119,10 +112,7 @@ function Details() {
                         ) : food.name === "Grams" ? (
                             ""
                         ) : (
-                            <tr
-                                className={food.grey ? "bg-gray-200" : ""}
-                                key={food.name}
-                            >
+                            <tr className="odd:bg-gray-200" key={food.name}>
                                 <th className="font-normal p-2 text-left">
                                     {food.name}
                                 </th>
@@ -174,7 +164,7 @@ function Details() {
                 isVisible={showNotification}
                 text={`${data.description} has been added to the calculator`}
             />
-        </>
+        </div>
     );
 }
 
