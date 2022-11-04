@@ -1,38 +1,42 @@
 import * as React from "react";
 import { useState, useEffect } from "react";
-import { InitialFoodResponse, FoodsResponse } from "./Types";
+import { FoodsResponse } from "./Types";
 import Results from "./Results";
 import Notification from "./Notification";
+import useFoodList from "../useFoodList";
 
 function App() {
     const [inputValue, setInputValue] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
     const [showNotification, setShowNotification] = useState(false);
+    const [isClicked, setIsCliced] = useState(false);
     const [foods, setFoods] = useState([] as FoodsResponse);
+    const [food, status] = useFoodList(inputValue);
 
-    const API_KEY = process.env.REACT_APP_API_KEY as string;
-    const API_URL = "https://api.nal.usda.gov";
-
-    async function requestFood() {
-        if (inputValue.length < 3) {
-            setErrorMessage("Enter at least 3 characters");
-            setShowNotification(true);
-            return;
-        }
-        const data = await fetch(
-            `${API_URL}/fdc/v1/foods/search?query=${inputValue}&dataType=Survey%20%28FNDDS%29&pageSize=10&pageNumber=1&sortBy=dataType.keyword&api_key=${API_KEY}`
-        );
-        const cleanedData = (await data.json()) as InitialFoodResponse;
-        const foodsFromAPI = cleanedData.foods;
-
-        if (foodsFromAPI.length === 0) {
-            setErrorMessage("No food found");
-            setShowNotification(true);
-            return;
-        }
-
-        setFoods(foodsFromAPI);
+    function requestFood() {
+        setIsCliced(true);
     }
+
+    useEffect(() => {
+        if (isClicked) {
+            if (inputValue.length < 3) {
+                setErrorMessage("Enter at least 3 characters");
+                setShowNotification(true);
+                setIsCliced(false);
+                return;
+            }
+            if (status === "loaded") {
+                setFoods(food as FoodsResponse);
+                if (food.length === 0 && inputValue.length !== 0) {
+                    setErrorMessage("No food found");
+                    setShowNotification(true);
+                    setIsCliced(false);
+                    return;
+                }
+                setIsCliced(false);
+            }
+        }
+    }, [status, isClicked, food, inputValue]);
 
     useEffect(() => {
         if (showNotification) {
@@ -49,7 +53,7 @@ function App() {
             <form
                 onSubmit={(e) => {
                     e.preventDefault();
-                    void requestFood();
+                    requestFood();
                 }}
             >
                 <label className="flex flex-col text-purple-900" htmlFor="food">
