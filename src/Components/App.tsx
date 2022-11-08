@@ -11,13 +11,16 @@ function App() {
     const [showNotification, setShowNotification] = useState(false);
     const [isClicked, setIsCliced] = useState(false);
     const [foods, setFoods] = useState([] as FoodsResponse);
-    const [food, status] = useFoodList(inputValue);
+    const [APIData] = useFoodList(inputValue);
 
     function requestFood() {
         setIsCliced(true);
     }
 
     useEffect(() => {
+        if (APIData.counter != 0) {
+            return;
+        }
         if (isClicked) {
             if (inputValue.length < 3) {
                 setErrorMessage("Enter at least 3 characters");
@@ -25,9 +28,9 @@ function App() {
                 setIsCliced(false);
                 return;
             }
-            if (status === "loaded") {
-                setFoods(food as FoodsResponse);
-                if (food.length === 0 && inputValue.length !== 0) {
+            if (APIData.status === "loaded") {
+                setFoods(APIData.food);
+                if (APIData.food.length === 0 && inputValue.length !== 0) {
                     setErrorMessage("No food found");
                     setShowNotification(true);
                     setIsCliced(false);
@@ -36,7 +39,7 @@ function App() {
                 setIsCliced(false);
             }
         }
-    }, [status, isClicked, food, inputValue]);
+    }, [APIData, isClicked, inputValue]);
 
     useEffect(() => {
         if (showNotification) {
