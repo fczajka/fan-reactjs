@@ -22,20 +22,14 @@ function App() {
             return;
         }
         if (isClicked) {
-            if (inputValue.length < 3) {
-                setErrorMessage("Enter at least 3 characters");
+            if (APIData.status === "error") {
+                setErrorMessage(APIData.errorMessage);
                 setShowNotification(true);
                 setIsCliced(false);
                 return;
             }
             if (APIData.status === "loaded") {
                 setFoods(APIData.food);
-                if (APIData.food.length === 0 && inputValue.length !== 0) {
-                    setErrorMessage("No food found");
-                    setShowNotification(true);
-                    setIsCliced(false);
-                    return;
-                }
                 setIsCliced(false);
             }
         }
