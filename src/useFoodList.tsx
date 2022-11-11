@@ -54,6 +54,13 @@ export default function useFoodList(food: string) {
                 `${API_URL}/fdc/v1/foods/search?query=${food}&dataType=Survey%20%28FNDDS%29&pageSize=10&pageNumber=1&sortBy=dataType.keyword&api_key=${API_KEY}`
             );
 
+            if (!data.ok) {
+                setStatus("error");
+                setErrorMessage("Something went wrong");
+                counter.current--;
+                return;
+            }
+
             const cleanedData = (await data.json()) as InitialFoodResponse;
             const foodsFromAPI = cleanedData.foods;
 
