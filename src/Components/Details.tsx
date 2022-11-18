@@ -17,6 +17,23 @@ function Details() {
     const data = location.state as FoodResponse;
     const storeData = useSelector((state) => state as RootState);
     const [foodCounter, setFoodCounter] = useState(storeData.sum.foods.length);
+    const [notificationMessage, setNotificationMessage] = useState("");
+
+    function setGrams(inputValue: number) {
+        if (inputValue > 5000) {
+            setInputValue(5000);
+            setNotificationMessage("Cannot set grams over 5000");
+            setShowNotification(!showNotification);
+            return;
+        }
+        if (inputValue < 0.1) {
+            setInputValue(0.1);
+            setNotificationMessage("Cannot set grams below 0.1");
+            setShowNotification(!showNotification);
+            return;
+        }
+        setInputValue(inputValue);
+    }
 
     useEffect(() => {
         if (showNotification && foodCounter < storeData.sum.foods.length) {
@@ -27,6 +44,13 @@ function Details() {
             return () => clearTimeout(timer);
         }
         setFoodCounter(storeData.sum.foods.length);
+        if (showNotification) {
+            const timer = setTimeout(
+                () => setShowNotification(!showNotification),
+                3000
+            );
+            return () => clearTimeout(timer);
+        }
     }, [showNotification, foodCounter, storeData.sum.foods.length]);
 
     const foodInfo = {
@@ -139,13 +163,16 @@ function Details() {
                     id="grams"
                     type="number"
                     value={inputValue}
-                    onChange={(e) => setInputValue(Number(e.target.value))}
+                    onChange={(e) => setGrams(Number(e.target.value))}
                 />
             </div>
             <div className="w-full flex mt-4 text-green-50 text-sm mb-16 lg:text-base">
                 <button
                     onClick={() => {
                         store.dispatch(ADD_FOOD(foodInfo));
+                        setNotificationMessage(
+                            `${data.description} has been added to the calculator`
+                        );
                         setShowNotification(!showNotification);
                     }}
                     className="basis-3/4 h-16 flex justify-center items-center border-b-8 border-solid border-purple-900 rounded-bl-lg mr-2 bg-purple-600 transition-all hover:border-b-0 hover:h-14 hover:mt-2"
@@ -162,7 +189,7 @@ function Details() {
             </div>
             <Notification
                 isVisible={showNotification}
-                text={`${data.description} has been added to the calculator`}
+                text={notificationMessage}
             />
         </div>
     );

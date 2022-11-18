@@ -98,7 +98,6 @@ function Calculator({ isOpen }: Props) {
                                                 store.dispatch(
                                                     DELETE_FOOD(foodInfo)
                                                 );
-                                                console.log(foodInfo);
                                             }}
                                             className="flex text-sm items-center py-2 justify-center basis-full trasition-all duration-300 lg:text-base hover:bg-red-200"
                                             aria-label="Delete food from calculator"
