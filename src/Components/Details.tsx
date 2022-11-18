@@ -16,7 +16,6 @@ function Details() {
     const location = useLocation();
     const data = location.state as FoodResponse;
     const storeData = useSelector((state) => state as RootState);
-    const [foodCounter, setFoodCounter] = useState(storeData.sum.foods.length);
     const [notificationMessage, setNotificationMessage] = useState("");
 
     function setGrams(inputValue: number) {
@@ -36,22 +35,15 @@ function Details() {
     }
 
     useEffect(() => {
-        if (showNotification && foodCounter < storeData.sum.foods.length) {
-            const timer = setTimeout(
-                () => setShowNotification(!showNotification),
-                3000
-            );
-            return () => clearTimeout(timer);
-        }
-        setFoodCounter(storeData.sum.foods.length);
         if (showNotification) {
+            console.log("here2x");
             const timer = setTimeout(
                 () => setShowNotification(!showNotification),
                 3000
             );
             return () => clearTimeout(timer);
         }
-    }, [showNotification, foodCounter, storeData.sum.foods.length]);
+    }, [showNotification]);
 
     const foodInfo = {
         id: storeData.sum.id,
