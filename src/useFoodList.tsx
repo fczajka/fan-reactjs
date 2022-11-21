@@ -3,12 +3,6 @@ import { FoodsResponse, InitialFoodResponse } from "./Components/Types";
 
 type Status = "unloaded" | "loading" | "loaded" | "error";
 
-type Cache = {
-    [index: string]: FoodsResponse;
-};
-
-const localCache: Cache = {};
-
 export default function useFoodList(food: string) {
     const [foodList, setFoodList] = useState([] as FoodsResponse);
     const [status, setStatus] = useState("unloaded" as Status);
@@ -32,14 +26,20 @@ export default function useFoodList(food: string) {
             setStatus("error");
             setErrorMessage("Enter at least 3 characters");
             setFoodList([]);
-        } else if (localCache[food]) {
-            if (localCache[food].length === 0) {
-                setFoodList(localCache[food]);
+            return;
+        }
+
+        const foodFromStorage = localStorage.getItem(food);
+
+        if (foodFromStorage) {
+            if ((JSON.parse(foodFromStorage) as FoodsResponse).length == 0) {
+                console.log("here2");
+                setFoodList([]);
                 setStatus("error");
                 setErrorMessage("No food found");
                 return;
             }
-            setFoodList(localCache[food]);
+            setFoodList(JSON.parse(foodFromStorage) as FoodsResponse);
             setStatus("loaded");
         } else {
             void requestFoodList();
@@ -64,9 +64,8 @@ export default function useFoodList(food: string) {
             const cleanedData = (await data.json()) as InitialFoodResponse;
             const foodsFromAPI = cleanedData.foods;
 
-            localCache[food] = foodsFromAPI;
-            setFoodList(localCache[food]);
-
+            localStorage.setItem(food, JSON.stringify(foodsFromAPI));
+            setFoodList(foodsFromAPI);
             if (foodsFromAPI.length === 0) {
                 setStatus("error");
                 setErrorMessage("No food found");
