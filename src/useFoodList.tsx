@@ -33,7 +33,6 @@ export default function useFoodList(food: string) {
 
         if (foodFromStorage) {
             if ((JSON.parse(foodFromStorage) as FoodsResponse).length == 0) {
-                console.log("here2");
                 setFoodList([]);
                 setStatus("error");
                 setErrorMessage("No food found");
