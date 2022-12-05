@@ -22,6 +22,8 @@ function App() {
             return;
         }
         if (isClicked) {
+            localStorage.setItem("lastFoodName", inputValue);
+            localStorage.setItem("lastFoodList", JSON.stringify(APIData.food));
             if (APIData.status === "error") {
                 setErrorMessage(APIData.errorMessage);
                 setShowNotification(true);
@@ -33,7 +35,7 @@ function App() {
                 setIsCliced(false);
             }
         }
-    }, [APIData, isClicked, inputValue]);
+    }, [APIData, isClicked, inputValue, foods]);
 
     useEffect(() => {
         if (showNotification) {
@@ -44,6 +46,19 @@ function App() {
             return () => clearTimeout(timer);
         }
     }, [showNotification]);
+
+    useEffect(() => {
+        const lastFoodName = localStorage.getItem("lastFoodName");
+        const lastFoodList = localStorage.getItem("lastFoodList");
+        if (lastFoodName && lastFoodList) {
+            if ((JSON.parse(lastFoodList) as FoodsResponse).length === 0) {
+                setInputValue(lastFoodName);
+                return;
+            }
+            setInputValue(lastFoodName);
+            setFoods(JSON.parse(lastFoodList) as FoodsResponse);
+        }
+    }, []);
 
     return (
         <div className="basis-72 pt-4 overflow-hidden lg:basis-96 lg:pt-8">
@@ -59,6 +74,7 @@ function App() {
                         className="bg-purple-200 rounded-lg p-1 px-4"
                         type="text"
                         id="food"
+                        value={inputValue}
                         onChange={(e) => setInputValue(e.target.value)}
                     />
                 </label>
