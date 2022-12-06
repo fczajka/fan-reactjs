@@ -51,12 +51,15 @@ function App() {
         const lastFoodName = localStorage.getItem("lastFoodName");
         const lastFoodList = localStorage.getItem("lastFoodList");
         if (lastFoodName && lastFoodList) {
-            if ((JSON.parse(lastFoodList) as FoodsResponse).length === 0) {
+            const lastFoodListCleaned = JSON.parse(
+                lastFoodList
+            ) as FoodsResponse;
+            if (lastFoodListCleaned.length === 0) {
                 setInputValue(lastFoodName);
                 return;
             }
             setInputValue(lastFoodName);
-            setFoods(JSON.parse(lastFoodList) as FoodsResponse);
+            setFoods(lastFoodListCleaned);
         }
     }, []);
 

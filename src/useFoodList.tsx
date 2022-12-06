@@ -32,13 +32,16 @@ export default function useFoodList(food: string) {
         const foodFromStorage = localStorage.getItem(food);
 
         if (foodFromStorage) {
-            if ((JSON.parse(foodFromStorage) as FoodsResponse).length == 0) {
+            const foodFromStorageCleaned = JSON.parse(
+                foodFromStorage
+            ) as FoodsResponse;
+            if (foodFromStorageCleaned.length == 0) {
                 setFoodList([]);
                 setStatus("error");
                 setErrorMessage("No food found");
                 return;
             }
-            setFoodList(JSON.parse(foodFromStorage) as FoodsResponse);
+            setFoodList(foodFromStorageCleaned);
             setStatus("loaded");
         } else {
             void requestFoodList();
