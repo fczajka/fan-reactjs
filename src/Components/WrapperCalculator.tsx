@@ -11,7 +11,7 @@ function WrapperCalculator({ isOpen, setIsOpen }: Props) {
     return (
         <div className="w-full">
             <div
-                className={`fixed top-0 w-screen h-screen text-right z-20 transition-all ease-out duration-700 delay-300 bg-gray-900 opacity-70 ${
+                className={`fixed top-0 w-full h-screen text-right z-20 transition-all ease-out duration-700 delay-300 bg-gray-900 opacity-70 ${
                     isOpen ? "left-0" : "-left-full"
                 }`}
             >
