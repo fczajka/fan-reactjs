@@ -9,7 +9,7 @@ import {
     REGISTER,
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
-import foodReducer from "./reducers/food";
+import foodReducer from "./slices/foodSlice";
 
 const persistConfig = {
     key: "root",

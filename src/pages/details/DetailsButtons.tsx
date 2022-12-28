@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
-import { ADD_FOOD } from "../../reducers/food";
+import { ADD_FOOD } from "../../slices/foodSlice";
 import store from "../../store";
 import { BsCalculator } from "react-icons/bs";
 import { RiArrowGoBackFill } from "react-icons/ri";

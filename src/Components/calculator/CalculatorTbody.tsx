@@ -1,7 +1,7 @@
 import * as React from "react";
 import store from "../../store";
 import { TiDelete } from "react-icons/ti";
-import { DELETE_FOOD } from "../../reducers/food";
+import { DELETE_FOOD } from "../../slices/foodSlice";
 import { InitialState } from "../../data/Types";
 import { PersistPartial } from "redux-persist/lib/persistReducer";
 
