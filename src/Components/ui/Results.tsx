@@ -1,6 +1,6 @@
 import * as React from "react";
 import Result from "./Result";
-import { FoodsResponse } from "./Types";
+import { FoodsResponse } from "../../data/Types";
 
 type Props = {
     foods: FoodsResponse;

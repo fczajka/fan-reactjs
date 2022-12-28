@@ -1,5 +1,7 @@
 export type FoodsResponse = FoodResponse[];
 
+export type Status = "unloaded" | "loading" | "loaded" | "error";
+
 export interface InitialFoodResponse {
     aggregations: {
         dataType: {

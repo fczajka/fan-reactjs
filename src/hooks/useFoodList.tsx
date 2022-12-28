@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from "react";
-import { FoodsResponse, InitialFoodResponse } from "./Components/Types";
-
-type Status = "unloaded" | "loading" | "loaded" | "error";
+import { FoodsResponse, InitialFoodResponse, Status } from "../data/Types";
+import { validateInput } from "../helpers/helpers";
 
 export default function useFoodList(food: string) {
     const [foodList, setFoodList] = useState([] as FoodsResponse);
@@ -12,12 +11,8 @@ export default function useFoodList(food: string) {
     const API_KEY = process.env.REACT_APP_API_KEY as string;
     const API_URL = "https://api.nal.usda.gov";
 
-    function onlyLettersAndSpaces(food: string) {
-        return /^[A-Za-z\s]*$/.test(food);
-    }
-
     useEffect(() => {
-        if (!onlyLettersAndSpaces(food)) {
+        if (!validateInput(food)) {
             setStatus("error");
             setErrorMessage("Only letters and spaces are allowed");
             return;
@@ -64,6 +59,7 @@ export default function useFoodList(food: string) {
             }
 
             const cleanedData = (await data.json()) as InitialFoodResponse;
+            console.log(cleanedData);
             const foodsFromAPI = cleanedData.foods;
 
             localStorage.setItem(food, JSON.stringify(foodsFromAPI));

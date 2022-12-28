@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FoodResponse } from "./Types";
+import { FoodResponse } from "../../data/Types";
 
 type Props = {
     food: FoodResponse;

@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { FoodInfo, InitialState } from "../Components/Types";
+import { FoodInfo, InitialState } from "../data/Types";
 
 const initialState = {
     id: 0,
