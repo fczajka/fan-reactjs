@@ -12,7 +12,11 @@ export function makeFoodInfoObject(
             { name: "Name", value: data.description },
             {
                 name: "Energy",
-                value: (data.foodNutrients[3].value * inputValue) / 100,
+                value: Number(
+                    ((data.foodNutrients[3].value * inputValue) / 100).toFixed(
+                        0
+                    )
+                ),
                 unit: "kcal",
             },
             {

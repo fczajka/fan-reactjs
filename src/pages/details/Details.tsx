@@ -8,6 +8,7 @@ import Notification from "../../Components/Notification";
 import { makeFoodInfoObject } from "../../helpers/helpers";
 import DetailsTable from "./Table";
 import DetailsButtons from "./Buttons";
+import GramsControls from "./GramsControls";
 
 function Details() {
     const [showNotification, setShowNotification] = useState(false);
@@ -24,9 +25,9 @@ function Details() {
             setShowNotification(!showNotification);
             return;
         }
-        if (inputValue < 0.1) {
-            setInputValue(0.1);
-            setNotificationMessage("Cannot set grams below 0.1");
+        if (inputValue < 0) {
+            setInputValue(0);
+            setNotificationMessage("Cannot set grams below 0");
             setShowNotification(!showNotification);
             return;
         }
@@ -59,6 +60,7 @@ function Details() {
                 foodInfo={foodInfo}
                 setGrams={setGrams}
             />
+            <GramsControls inputValue={inputValue} setGrams={setGrams} />
             <DetailsButtons
                 foodInfo={foodInfo}
                 setNotificationMessage={setNotificationMessage}
