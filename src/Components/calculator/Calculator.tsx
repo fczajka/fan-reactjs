@@ -2,8 +2,8 @@ import * as React from "react";
 import { useEffect, useRef } from "react";
 import { RootState } from "../../store";
 import { useSelector } from "react-redux";
-import CalculatorThead from "./CalculatorThead";
-import CalculatorTbody from "./CalculatorTbody";
+import CalculatorThead from "./TableHead";
+import CalculatorTbody from "./TableBody";
 
 type Props = {
     isOpen: boolean;

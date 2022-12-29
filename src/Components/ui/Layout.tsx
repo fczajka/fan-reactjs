@@ -2,7 +2,7 @@ import * as React from "react";
 import { useState } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
-import WrapperCalculator from "../calculator/WrapperCalculator";
+import WrapperCalculator from "../calculator/Wrapper";
 
 type Props = {
     children: JSX.Element;

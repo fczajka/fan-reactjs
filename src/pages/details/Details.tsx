@@ -6,8 +6,8 @@ import { useSelector } from "react-redux";
 import { FoodInfo, FoodResponse } from "../../data/Types";
 import Notification from "../../Components/Notification";
 import { makeFoodInfoObject } from "../../helpers/helpers";
-import DetailsTable from "./DetailsTable";
-import DetailsButtons from "./DetailsButtons";
+import DetailsTable from "./Table";
+import DetailsButtons from "./Buttons";
 
 function Details() {
     const [showNotification, setShowNotification] = useState(false);
