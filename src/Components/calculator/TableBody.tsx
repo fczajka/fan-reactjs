@@ -9,14 +9,14 @@ type Props = {
     data: InitialState & PersistPartial;
 };
 
-function CalculatorTbody({ data }: Props) {
+function TableBody({ data }: Props) {
     return (
-        <tbody className="w-full h-calc-mobile flex flex-col overflow-y-auto lg:h-calc-desktop">
+        <tbody className="w-full h-calc-mobile flex flex-col overflow-y-auto overflow-x-hidden lg:h-calc-desktop">
             {data.foods.map((foodInfo) =>
                 foodInfo.food.map((nutrients) =>
                     !nutrients.unit ? (
                         <tr key={nutrients.name} className="flex">
-                            <td className="text-sm text-right basis-full px-2 py-2 bg-green-200 lg:text-base">
+                            <td className="text-sm text-right basis-full px-2 py-2 bg-blue-100 lg:text-base">
                                 {nutrients.value}
                             </td>
                         </tr>
@@ -38,7 +38,7 @@ function CalculatorTbody({ data }: Props) {
                                                 DELETE_FOOD(foodInfo)
                                             );
                                         }}
-                                        className="flex text-sm items-center py-2 justify-center basis-full trasition-all duration-300 lg:text-base hover:bg-red-200"
+                                        className="flex text-sm items-center py-2 justify-center basis-full transition-all hover:scale-110 hover:bg-rose-200 hover:shadow-md focus:bg-rose-200 focus:shadow-md lg:text-base"
                                         aria-label="Delete food from calculator"
                                     >
                                         Delete {foodInfo.food[0].value}
@@ -63,4 +63,4 @@ function CalculatorTbody({ data }: Props) {
     );
 }
 
-export default CalculatorTbody;
+export default TableBody;

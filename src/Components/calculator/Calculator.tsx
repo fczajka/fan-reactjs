@@ -1,9 +1,8 @@
-import * as React from "react";
 import { useEffect, useRef } from "react";
 import { RootState } from "../../store";
 import { useSelector } from "react-redux";
-import CalculatorThead from "./TableHead";
-import CalculatorTbody from "./TableBody";
+import TableHead from "./TableHead";
+import TableBody from "./TableBody";
 
 type Props = {
     isOpen: boolean;
@@ -29,12 +28,12 @@ function Calculator({ isOpen }: Props) {
 
     return (
         <table
-            className={`fixed w-60 top-0 z-20 h-screen overflow-hidden transition-all ease-out duration-300 delay-100 bg-green-50 border-r-2 border-green-900 lg:w-80 ${
+            className={`fixed w-60 top-0 z-20 h-screen overflow-hidden transition-all ease-out duration-300 delay-100 bg-yellow-50 lg:w-80 ${
                 isOpen ? "-left-0" : "-left-80"
             }`}
         >
-            <CalculatorThead data={data.sum} />
-            <CalculatorTbody data={data.sum} />
+            <TableHead data={data.sum} />
+            <TableBody data={data.sum} />
         </table>
     );
 }

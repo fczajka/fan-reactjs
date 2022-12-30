@@ -5,18 +5,20 @@ type Props = {
 
 function Header({ isOpen, setIsOpen }: Props) {
     return (
-        <div className="w-full flex justify-center items-center h-16 bg-green-800 lg:h-20">
-            <h1 className="text-green-50 text-2xl lg:text-3xl font-crimson-text">
-                FOOD AND NUTRIENTS
-            </h1>
-            <button
-                className="hidden top-5 right-16 py-2 px-4 bg-green-700 text-green-50 rounded-lg border-b-8 border-solid border-green-900 transition-all duration-300 lg:block lg:absolute hover:border-b-0 hover:mt-2 "
-                onClick={() => setIsOpen(!isOpen)}
-                aria-label="Open calculator"
-            >
-                Open Calcualtor
-            </button>
-        </div>
+        <header className="w-full flex justify-center bg-yellow-50">
+            <div className="basis-full h-16 max-w-1920 flex justify-center items-center lg:h-20">
+                <h1 className="font-bree-serif text-2xl lg:text-3xl">
+                    FOOD AND NUTRIENTS
+                </h1>
+                <button
+                    className="absolute right-12 font-roboto px-2 py-1 hidden flex-col items-center justify-center text-sm rounded-lg bg-blue-100 transition-all hover:scale-110 hover:bg-blue-200 hover:shadow-md focus:bg-blue-200 focus:shadow-md lg:text-base lg:flex"
+                    onClick={() => setIsOpen(!isOpen)}
+                    aria-label="Open calculator"
+                >
+                    Open Calculator
+                </button>
+            </div>
+        </header>
     );
 }
 

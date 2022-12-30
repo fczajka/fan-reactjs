@@ -1,4 +1,3 @@
-import * as React from "react";
 import { FaRegTimesCircle } from "react-icons/fa";
 import Calculator from "./Calculator";
 
@@ -7,7 +6,7 @@ type Props = {
     setIsOpen: React.Dispatch<boolean>;
 };
 
-function WrapperCalculator({ isOpen, setIsOpen }: Props) {
+function Wrapper({ isOpen, setIsOpen }: Props) {
     return (
         <div className="w-full">
             <div
@@ -28,4 +27,4 @@ function WrapperCalculator({ isOpen, setIsOpen }: Props) {
     );
 }
 
-export default WrapperCalculator;
+export default Wrapper;

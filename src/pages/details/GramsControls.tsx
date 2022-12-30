@@ -12,40 +12,31 @@ function GramsControls({ inputValue, setGrams }: Props) {
     const changableValues = [1, 5, 10, 100];
 
     return (
-        <div className="flex flex-col w-full">
-            <h3 className="text-center mt-4 text-base lg:text-lg">Grams:</h3>
+        <div className="font-roboto">
+            <h3 className="text-base text-center my-2 lg:text-lg">Grams:</h3>
             <div className="flex justify-center items-center">
                 <button
-                    className="w-12 px-4 py-2 m-2 font-bold rounded-md text-green-50 bg-green-600 transition-all hover:bg-green-700"
+                    className="w-10 py-1 bg-blue-100 rounded-lg text-xl transition-all hover:scale-110 hover:bg-blue-200 hover:shadow-md focus:bg-blue-200 focus:shadow-md lg:text-2xl"
                     onClick={() => setGrams(inputValue - changeValue)}
                 >
                     -
                 </button>
-                <div className="w-12 text-center text-sm lg:text-base">
-                    {inputValue}
-                </div>
+                <div className="w-12 text-center">{inputValue}</div>
                 <button
-                    className="w-12 px-4 py-2 m-2 font-bold rounded-md text-green-50 bg-green-600 transition-all hover:bg-green-700"
+                    className="w-10 py-1 bg-blue-100 rounded-lg text-xl transition-all hover:scale-110 hover:bg-blue-200 hover:shadow-md focus:bg-blue-200 focus:shadow-md lg:text-2xl"
                     onClick={() => setGrams(inputValue + changeValue)}
                 >
                     +
                 </button>
             </div>
-            <h3 className="text-center text-base lg:text-lg">
+            <h3 className="text-base text-center my-2 lg:text-lg">
                 Set value that changes grams:
             </h3>
-            <ul className="flex justify-around items-center">
+            <ul className="flex justify-between items-center">
                 {changableValues.map((value) => (
-                    <li
-                        key={value}
-                        className="w-1/4 text-center text-sm text-green-50"
-                    >
+                    <li key={value} className="w-12">
                         <button
-                            className={`w-4/5 px-4 py-2 m-2 rounded-md transition-all hover:bg-green-700 lg:w-2/3 ${
-                                changeValue === value
-                                    ? "bg-green-700"
-                                    : "bg-green-600"
-                            }`}
+                            className="w-full py-2 bg-blue-100 rounded-lg text-base transition-all hover:scale-110 hover:bg-blue-200 hover:shadow-md focus:bg-blue-200 focus:shadow-md lg:text-lg"
                             onClick={() =>
                                 setChangeValue(value as changeValues)
                             }

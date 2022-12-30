@@ -5,7 +5,7 @@ type Props = {
     data: InitialState & PersistPartial;
 };
 
-function CalculatorThead({ data }: Props) {
+function TableHead({ data }: Props) {
     return (
         <thead className="flex">
             <tr className="flex basis-3/5 flex-col items-start">
@@ -48,4 +48,4 @@ function CalculatorThead({ data }: Props) {
     );
 }
 
-export default CalculatorThead;
+export default TableHead;

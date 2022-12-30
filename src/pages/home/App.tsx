@@ -1,10 +1,10 @@
-import * as React from "react";
 import { useState, useEffect } from "react";
 import { FoodsResponse } from "../../data/Types";
 import Results from "../../Components/ui/Results";
-import Notification from "../../Components/Notification";
+import Notification from "../../Components/ui/Notification";
 import useFoodList from "../../hooks/useFoodList";
 import Form from "../../Components/form/Form";
+import { clearFocus } from "../../helpers/helpers";
 
 function App() {
     const [inputValue, setInputValue] = useState("");
@@ -60,8 +60,12 @@ function App() {
         }
     }, []);
 
+    useEffect(() => {
+        setTimeout(clearFocus, 1000);
+    }, [isClicked]);
+
     return (
-        <div className="basis-72 pt-4 overflow-hidden lg:basis-96 lg:pt-8">
+        <>
             <Form
                 inputValue={inputValue}
                 setInputValue={setInputValue}
@@ -70,7 +74,7 @@ function App() {
             />
             <Results foods={foods} />
             <Notification isVisible={showNotification} text={errorMessage} />
-        </div>
+        </>
     );
 }
 

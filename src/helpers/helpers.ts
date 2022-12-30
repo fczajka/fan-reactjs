@@ -72,3 +72,9 @@ export function makeFoodInfoObject(
 export function validateInput(food: string) {
     return /^[A-Za-z\s]*$/.test(food);
 }
+
+export function clearFocus() {
+    document.querySelectorAll("button").forEach((button) => {
+        button.blur();
+    });
+}

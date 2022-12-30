@@ -14,7 +14,7 @@ type Props = {
     showNotification: boolean;
 };
 
-function DetailsButtons({
+function Buttons({
     foodInfo,
     setShowNotification,
     setNotificationMessage,
@@ -22,8 +22,9 @@ function DetailsButtons({
     showNotification,
 }: Props) {
     return (
-        <div className="w-full flex mt-4 text-green-50 text-sm mb-16 lg:text-base">
+        <div className="font-roboto flex justify-between mt-4">
             <button
+                className="basis-7/12 px-2 py-1 flex items-center justify-center text-sm rounded-lg bg-rose-300 transition-all hover:scale-105 hover:bg-rose-400 hover:shadow-md focus:bg-rose-400 focus:shadow-md lg:text-base"
                 onClick={() => {
                     store.dispatch(ADD_FOOD(foodInfo));
                     setNotificationMessage(
@@ -31,19 +32,18 @@ function DetailsButtons({
                     );
                     setShowNotification(!showNotification);
                 }}
-                className="basis-3/4 h-16 flex justify-center items-center border-b-8 border-solid border-purple-900 rounded-lg mr-2 bg-purple-600 transition-all hover:border-b-0 hover:h-14 hover:mt-2"
                 aria-label={`Add ${name} to calculator`}
             >
-                Add to calculator{<BsCalculator />}
+                ADD TO CALCULATOR{<BsCalculator />}
             </button>
             <Link
                 to="/"
-                className="basis-1/4 h-16 flex flex-col items-center justify-center border-b-8 border-solid border-green-900 rounded-lg ml-2 bg-green-600 transition-all hover:border-b-0 hover:h-14 hover:mt-2"
+                className="basis-4/12 px-2 py-1 flex flex-col items-center justify-center text-sm rounded-lg bg-yellow-200 transition-all hover:scale-110 hover:bg-amber-200 hover:shadow-md focus:bg-amber-400 focus:shadow-md lg:text-base"
             >
-                Go back{<RiArrowGoBackFill />}
+                GO BACK{<RiArrowGoBackFill />}
             </Link>
         </div>
     );
 }
 
-export default DetailsButtons;
+export default Buttons;

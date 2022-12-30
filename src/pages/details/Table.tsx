@@ -6,20 +6,14 @@ type Props = {
     setGrams: (inputValue: number) => void;
 };
 
-function DetailsTable({ inputValue, foodInfo }: Props) {
+function Table({ inputValue, foodInfo }: Props) {
     return (
-        <table className="w-full border-separate border-spacing-0">
-            <thead className="text-base lg:text-lg">
-                <tr className="bg-green-600 text-green-50">
-                    <th className="p-2 text-left font-normal rounded-tl-lg">
-                        Name
-                    </th>
-                    <th className="p-2 text-right font-normal">
-                        Amount per {inputValue}g
-                    </th>
-                    <th className="p-2 text-right font-normal rounded-tr-lg">
-                        Unit
-                    </th>
+        <table className="w-full font-roboto">
+            <thead className="text-base bg-blue-100 lg:text-lg">
+                <tr>
+                    <th className="text-left p-2 rounded-tl-lg">Name</th>
+                    <th className="text-right p-2">Amount per {inputValue}g</th>
+                    <th className="text-right p-2 rounded-tr-lg">Unit</th>
                 </tr>
             </thead>
             <tbody className="text-sm lg:text-base">
@@ -29,20 +23,20 @@ function DetailsTable({ inputValue, foodInfo }: Props) {
                     ) : food.name === "Grams" ? (
                         ""
                     ) : food.name === "Fiber" ? (
-                        <tr key={food.name} className="even:bg-gray-200">
-                            <td className="p-2 text-left rounded-bl-lg">
+                        <tr key={food.name} className="even:bg-blue-100">
+                            <td className="text-left p-2 rounded-bl-lg">
                                 {food.name}
                             </td>
-                            <td className="p-2 text-right">{food.value}</td>
-                            <td className="p-2 text-right rounded-br-lg">
+                            <td className="text-right p-2">{food.value}</td>
+                            <td className="text-right p-2 rounded-br-lg">
                                 {food.unit}
                             </td>
                         </tr>
                     ) : (
-                        <tr key={food.name} className="even:bg-gray-200">
-                            <td className="p-2 text-left">{food.name}</td>
-                            <td className="p-2 text-right">{food.value}</td>
-                            <td className="p-2 text-right">{food.unit}</td>
+                        <tr key={food.name} className="even:bg-blue-100">
+                            <td className="text-left p-2">{food.name}</td>
+                            <td className="text-right p-2">{food.value}</td>
+                            <td className="text-right p-2">{food.unit}</td>
                         </tr>
                     )
                 )}
@@ -51,4 +45,4 @@ function DetailsTable({ inputValue, foodInfo }: Props) {
     );
 }
 
-export default DetailsTable;
+export default Table;

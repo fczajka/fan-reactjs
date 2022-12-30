@@ -4,10 +4,10 @@ import { useLocation } from "react-router-dom";
 import { RootState } from "../../store";
 import { useSelector } from "react-redux";
 import { FoodInfo, FoodResponse } from "../../data/Types";
-import Notification from "../../Components/Notification";
+import Notification from "../../Components/ui/Notification";
 import { makeFoodInfoObject } from "../../helpers/helpers";
-import DetailsTable from "./Table";
-import DetailsButtons from "./Buttons";
+import Table from "./Table";
+import Buttons from "./Buttons";
 import GramsControls from "./GramsControls";
 
 function Details() {
@@ -51,17 +51,17 @@ function Details() {
     ) as FoodInfo;
 
     return (
-        <div className="basis-72 lg:basis-96">
-            <h2 className="font-bold pt-4 pb-4 text-center text-lg lg:text-xl lg:pt-8">
+        <>
+            <h2 className="text-center font-bree-serif text-xl py-4 lg:text-2xl">
                 {data.description}
             </h2>
-            <DetailsTable
+            <Table
                 inputValue={inputValue}
                 foodInfo={foodInfo}
                 setGrams={setGrams}
             />
             <GramsControls inputValue={inputValue} setGrams={setGrams} />
-            <DetailsButtons
+            <Buttons
                 foodInfo={foodInfo}
                 setNotificationMessage={setNotificationMessage}
                 setShowNotification={setShowNotification}
@@ -72,7 +72,7 @@ function Details() {
                 isVisible={showNotification}
                 text={notificationMessage}
             />
-        </div>
+        </>
     );
 }
 

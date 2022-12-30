@@ -8,6 +8,12 @@ module.exports = {
                 "calc-mobile": "calc(100vw - 16rem)",
                 "calc-desktop": "calc(100vw - 20rem)",
             },
+            backgroundImage: {
+                yellow: "url('./assets/images/yellowStripes.png')",
+            },
+            maxWidth: {
+                1920: "1920px",
+            },
             minHeight: {
                 mobile: "calc(100vh - 8rem)",
                 desktop: "calc(100vh - 10rem)",
@@ -17,8 +23,8 @@ module.exports = {
                 "calc-desktop": "var(--calc-height-desktop)",
             },
             fontFamily: {
-                "crimson-text": ["Crimson Text", "serif"],
-                lato: ["Lato", "sans-serif"],
+                "bree-serif": ["Bree Serif", "serif"],
+                roboto: ["roboto", "sans-serif"],
             },
         },
     },

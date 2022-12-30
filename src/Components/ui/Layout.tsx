@@ -11,13 +11,13 @@ type Props = {
 function Layout({ children }: Props) {
     const [isOpen, setIsOpen] = useState(false);
     return (
-        <div className="w-full">
+        <div className="w-full flex flex-col items-center bg-yellow bg-center bg-cover">
             <Header isOpen={isOpen} setIsOpen={setIsOpen} />
-            <div className="max-w-1920 min-h-mobile lg:min-h-desktop bg-green-50">
-                <div className="flex justify-center font-lato">{children}</div>
+            <div className="w-72 min-h-mobile lg:w-96 lg:min-h-desktop">
+                {children}
             </div>
-            <WrapperCalculator isOpen={isOpen} setIsOpen={setIsOpen} />
             <Footer isOpen={isOpen} setIsOpen={setIsOpen} />
+            <WrapperCalculator isOpen={isOpen} setIsOpen={setIsOpen} />
         </div>
     );
 }

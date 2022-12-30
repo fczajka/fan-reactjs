@@ -7,8 +7,8 @@ type Props = {
 
 function Footer({ isOpen, setIsOpen }: Props) {
     return (
-        <div className="w-full fixed bottom-0 flex justify-center items-center h-16 bg-green-800 lg:h-20">
-            <p className="basis-5/6 text-green-50 text-xs text-center font-lato px-4 lg:text-lg xl:text-xl lg:basis-full">
+        <footer className="w-full fixed bottom-0 flex justify-center items-center h-16 bg-yellow-50 lg:h-20">
+            <p className="basis-5/6 text-xs text-center font-roboto px-4 lg:text-lg xl:text-xl lg:basis-full">
                 Data provided by: U.S. Department of Agriculture, Agricultural
                 Research Service. FoodData Central, 2019. Link:
                 <a
@@ -22,14 +22,14 @@ function Footer({ isOpen, setIsOpen }: Props) {
             </p>
             <div className="basis-1/6 text-center lg:basis-0 lg:absolute lg:right-16 lg:hidden">
                 <button
-                    className="px-3 py-2 rounded-lg text-green-50 border-b-8 border-solid border-green-900 font-lato bg-green-600 transition-all z-10 hover:border-b-0 hover:mt-2"
+                    className="p-3 z-10 bg-rose-300 rounded-lg text-base transition-all hover:scale-105 hover:bg-rose-400 hover:shadow-md focus:bg-rose-400 focus:shadow-md"
                     onClick={() => setIsOpen(!isOpen)}
                     aria-label="Open calculator"
                 >
                     <FaHamburger />
                 </button>
             </div>
-        </div>
+        </footer>
     );
 }
 

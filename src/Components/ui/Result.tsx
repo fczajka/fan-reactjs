@@ -8,11 +8,11 @@ type Props = {
 
 function Result({ food }: Props) {
     return (
-        <li className="w-full bg-purple-700 text-purple-50 rounded-lg transition-all duration-300 hover:bg-purple-800">
+        <li className="w-full my-2 bg-blue-100 rounded-lg text-base lg:text-lg">
             <Link
+                className="w-full block px-4 py-2 rounded-lg transition-all hover:scale-105 hover:bg-blue-200 hover:shadow-md focus:bg-blue-200 focus:shadow-md"
                 to="/details"
                 state={food}
-                className="block w-full rounded-lg my-2 p-4 cursor-pointer"
             >
                 {food.description}
             </Link>
