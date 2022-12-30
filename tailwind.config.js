@@ -15,8 +15,8 @@ module.exports = {
                 1920: "1920px",
             },
             minHeight: {
-                mobile: "calc(100vh - 8rem)",
-                desktop: "calc(100vh - 10rem)",
+                mobile: "calc(100vh - 4rem)",
+                desktop: "calc(100vh - 5rem)",
             },
             height: {
                 "calc-mobile": "var(--calc-height-mobile)",
