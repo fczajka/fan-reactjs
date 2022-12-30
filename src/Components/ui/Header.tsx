@@ -10,7 +10,7 @@ function Header({ isOpen, setIsOpen }: Props) {
     const [windowWidth] = useState(window.innerWidth);
 
     return (
-        <nav className="fixed bottom-0 w-full flex justify-center bg-yellow-50 lg:static">
+        <nav className="fixed bottom-0 w-full flex justify-center bg-yellow-50 z-10 lg:static">
             <div className="relative basis-full h-16 max-w-1920 flex justify-around items-center lg:justify-center lg:h-20 lg:static">
                 <h1 className="font-bree-serif text-2xl lg:text-3xl">
                     FOOD AND NUTRIENTS
