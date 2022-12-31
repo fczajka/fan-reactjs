@@ -1,7 +1,7 @@
 import { useEffect, useRef, MutableRefObject, ReactElement } from "react";
 import { createPortal } from "react-dom";
 
-function Modal({ children }: { children: ReactElement }) {
+function Logic({ children }: { children: ReactElement }) {
     const elRef: MutableRefObject<HTMLDivElement | null> = useRef(null);
     if (!elRef.current) {
         elRef.current = document.createElement("div");
@@ -23,4 +23,4 @@ function Modal({ children }: { children: ReactElement }) {
     return createPortal(<>{children}</>, elRef.current);
 }
 
-export default Modal;
+export default Logic;
