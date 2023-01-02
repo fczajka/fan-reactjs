@@ -5,8 +5,9 @@ import Notification from "../../Components/ui/Notification";
 import useFoodList from "../../hooks/useFoodList";
 import Form from "../../Components/form/Form";
 import { clearFocus } from "../../helpers/helpers";
+import Transition from "../../Components/ui/Transition";
 
-function App() {
+function Home() {
     const [inputValue, setInputValue] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
     const [showNotification, setShowNotification] = useState(false);
@@ -65,7 +66,7 @@ function App() {
     }, [isClicked]);
 
     return (
-        <>
+        <Transition>
             <Form
                 inputValue={inputValue}
                 setInputValue={setInputValue}
@@ -74,8 +75,8 @@ function App() {
             />
             <Results foods={foods} />
             <Notification isVisible={showNotification} text={errorMessage} />
-        </>
+        </Transition>
     );
 }
 
-export default App;
+export default Home;

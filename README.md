@@ -67,7 +67,6 @@ Completed, but still supported.
 ## Room for improvement
 
 -   Use toastify
--   Add transitions
 -   Add code splitting and SSR
 -   Refactor code
 

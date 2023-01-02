@@ -34,7 +34,7 @@ function Layout({ children }: Props) {
                     <Modal showModal={showModal} setShowModal={setShowModal} />
                 </Logic>
             ) : (
-                ""
+                <></>
             )}
             <div className="w-72 mt-4 min-h-mobile lg:w-96 lg:min-h-desktop">
                 {children}

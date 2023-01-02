@@ -9,6 +9,7 @@ import { makeFoodInfoObject } from "../../helpers/helpers";
 import Table from "./Table";
 import Buttons from "./Buttons";
 import GramsControls from "./GramsControls";
+import Transition from "../../Components/ui/Transition";
 
 function Details() {
     const [showNotification, setShowNotification] = useState(false);
@@ -51,8 +52,8 @@ function Details() {
     ) as FoodInfo;
 
     return (
-        <>
-            <h2 className="text-center font-bree-serif text-xl py-4 lg:text-2xl">
+        <Transition>
+            <h2 className="text-center font-bree-serif text-xl pb-4 lg:text-2xl">
                 {data.description}
             </h2>
             <Table
@@ -72,7 +73,7 @@ function Details() {
                 isVisible={showNotification}
                 text={notificationMessage}
             />
-        </>
+        </Transition>
     );
 }
 

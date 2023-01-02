@@ -36,7 +36,7 @@ function Form({ inputValue, setInputValue, setIsClicked, setFoods }: Props) {
             >
                 Food name:
                 <input
-                    className="bg-blue-100 rounded-lg px-4 py-1 text-base font-roboto transition-all hover:scale-105 hover:bg-blue-200 hover:shadow-md focus:bg-blue-200 focus:shadow-md lg:text-lg"
+                    className="bg-blue-100 rounded-lg px-4 py-1 text-base font-roboto transition-all hover:scale-105 hover:bg-blue-200 hover:shadow-md focus:bg-blue-200 focus:scale-105 focus:shadow-md lg:text-lg"
                     type="text"
                     id="food"
                     value={inputValue}
