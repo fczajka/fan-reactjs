@@ -36,7 +36,7 @@ function Layout({ children }: Props) {
             ) : (
                 <></>
             )}
-            <div className="w-72 mt-4 min-h-mobile lg:w-96 lg:min-h-desktop">
+            <div className="w-72 mt-4 min-h-screen lg:w-96 lg:min-h-desktop">
                 {children}
             </div>
             <WrapperCalculator isOpen={isOpen} setIsOpen={setIsOpen} />

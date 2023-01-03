@@ -15,7 +15,6 @@ module.exports = {
                 1920: "1920px",
             },
             minHeight: {
-                mobile: "calc(100vh - 5rem)",
                 desktop: "calc(100vh - 6rem)",
             },
             height: {
