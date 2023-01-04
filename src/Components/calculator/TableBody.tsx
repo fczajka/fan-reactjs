@@ -4,6 +4,7 @@ import { TiDelete } from "react-icons/ti";
 import { DELETE_FOOD } from "../../slices/foodSlice";
 import { InitialState } from "../../data/Types";
 import { PersistPartial } from "redux-persist/lib/persistReducer";
+import { clearFocus } from "../../helpers/helpers";
 
 type Props = {
     data: InitialState & PersistPartial;
@@ -37,6 +38,7 @@ function TableBody({ data }: Props) {
                                             store.dispatch(
                                                 DELETE_FOOD(foodInfo)
                                             );
+                                            clearFocus();
                                         }}
                                         className="flex text-sm items-center py-2 justify-center basis-full transition-all hover:scale-110 hover:bg-rose-200 hover:shadow-md focus:bg-rose-200 focus:shadow-md lg:text-base"
                                         aria-label="Delete food from calculator"
