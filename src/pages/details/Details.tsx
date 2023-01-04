@@ -56,11 +56,7 @@ function Details() {
             <h2 className="text-center font-bree-serif text-xl pb-4 lg:text-2xl">
                 {data.description}
             </h2>
-            <Table
-                inputValue={inputValue}
-                foodInfo={foodInfo}
-                setGrams={setGrams}
-            />
+            <Table inputValue={inputValue} foodInfo={foodInfo} />
             <GramsControls inputValue={inputValue} setGrams={setGrams} />
             <Buttons
                 foodInfo={foodInfo}

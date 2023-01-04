@@ -8,7 +8,7 @@ type Props = {
 
 function Modal({ showModal, setShowModal }: Props) {
     return (
-        <div className="absolute overflow-y-hidden w-full h-full flex justify-center items-center bg-neutral-900 bg-opacity-70 z-30">
+        <div className="fixed w-full h-full flex justify-center items-center bg-neutral-900 bg-opacity-70 z-30">
             <div className="relative flex bg-yellow-50 p-4 rounded-lg max-w-xs lg:max-w-lg">
                 <p className="basis-5/6">
                     Data provided by: U.S. Department of Agriculture,

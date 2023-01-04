@@ -3,7 +3,6 @@ import { FoodInfo } from "../../data/Types";
 type Props = {
     inputValue: number;
     foodInfo: FoodInfo;
-    setGrams: (inputValue: number) => void;
 };
 
 function Table({ inputValue, foodInfo }: Props) {
