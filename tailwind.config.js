@@ -16,6 +16,7 @@ module.exports = {
             },
             minHeight: {
                 desktop: "calc(100vh - 6rem)",
+                mobile: "calc(100vh - 1rem)",
             },
             height: {
                 "calc-mobile": "var(--calc-height-mobile)",
