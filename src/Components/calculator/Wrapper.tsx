@@ -1,5 +1,6 @@
 import { FaRegTimesCircle } from "react-icons/fa";
 import Calculator from "./Calculator";
+import Button from "../ui/Button";
 
 type Props = {
     isOpen: boolean;
@@ -14,13 +15,14 @@ function Wrapper({ isOpen, setIsOpen }: Props) {
                     isOpen ? "left-0" : "-left-full"
                 }`}
             >
-                <button
-                    className="mt-8 mr-4 text-3xl text-yellow-50 sm:mr-12 sm:text-4xl lg:mr-16"
-                    onClick={() => setIsOpen(!isOpen)}
-                    aria-label="Close calculator"
+                <Button
+                    functions={() => setIsOpen(!isOpen)}
+                    aria="Close calculator"
+                    type="button"
+                    style="mt-8 mr-4 text-3xl text-yellow-50 sm:mr-12 sm:text-4xl lg:mr-16"
                 >
                     <FaRegTimesCircle />
-                </button>
+                </Button>
             </div>
             <Calculator isOpen={isOpen} />
         </div>

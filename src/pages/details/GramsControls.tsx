@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { clearFocus } from "../../helpers/helpers";
+import Button from "../../Components/ui/Button";
 
 type changeValues = 1 | 5 | 10 | 100;
 
@@ -12,29 +13,37 @@ function GramsControls({ inputValue, setGrams }: Props) {
     const [changeValue, setChangeValue] = useState(1 as changeValues);
     const changableValues = [1, 5, 10, 100];
 
+    function decreaseGrams() {
+        setGrams(inputValue - changeValue);
+        setTimeout(clearFocus, 0);
+    }
+
+    function increaseGrams() {
+        setGrams(inputValue + changeValue);
+        setTimeout(clearFocus, 0);
+    }
+
     return (
         <div className="font-roboto">
             <h3 className="text-base text-center my-2 lg:text-lg">Grams:</h3>
             <div className="flex justify-center items-center">
-                <button
-                    className="w-10 py-1 bg-blue-100 rounded-lg text-xl transition-all hover:scale-110 focus:scale-110 hover:bg-blue-200 hover:shadow-md focus:bg-blue-200 focus:shadow-md lg:text-2xl"
-                    onClick={() => {
-                        setGrams(inputValue - changeValue);
-                        setTimeout(clearFocus, 0);
-                    }}
+                <Button
+                    functions={decreaseGrams}
+                    aria="Decrease grams"
+                    type="button"
+                    style="w-10 py-1 bg-blue-100 text-xl hover:bg-blue-200 focus:bg-blue-200 lg:text-2xl"
                 >
                     -
-                </button>
+                </Button>
                 <div className="w-12 text-center">{inputValue}</div>
-                <button
-                    className="w-10 py-1 bg-blue-100 rounded-lg text-xl transition-all hover:scale-110 focus:scale-110 hover:bg-blue-200 hover:shadow-md focus:bg-blue-200 focus:shadow-md lg:text-2xl"
-                    onClick={() => {
-                        setGrams(inputValue + changeValue);
-                        setTimeout(clearFocus, 0);
-                    }}
+                <Button
+                    functions={increaseGrams}
+                    aria="Increase grams"
+                    type="button"
+                    style="w-10 py-1 bg-blue-100 text-xl hover:bg-blue-200 focus:bg-blue-200 lg:text-2xl"
                 >
                     +
-                </button>
+                </Button>
             </div>
             <h3 className="text-base text-center my-2 lg:text-lg">
                 Set value that changes grams:

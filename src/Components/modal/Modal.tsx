@@ -1,4 +1,5 @@
 import * as React from "react";
+import Button from "../ui/Button";
 import { FaRegTimesCircle } from "react-icons/fa";
 
 type Props = {
@@ -7,6 +8,11 @@ type Props = {
 };
 
 function Modal({ showModal, setShowModal }: Props) {
+    function closeModal() {
+        setShowModal(!showModal);
+        localStorage.setItem("modal", "true");
+    }
+
     return (
         <div className="fixed w-full h-full flex justify-center items-center bg-neutral-900 bg-opacity-70 z-30">
             <div className="relative flex bg-yellow-50 p-4 rounded-lg max-w-xs lg:max-w-lg">
@@ -22,16 +28,14 @@ function Modal({ showModal, setShowModal }: Props) {
                         fdc.nal.usda.gov
                     </a>
                 </p>
-                <button
-                    className="absolute top-4 right-4 text-3xl"
-                    onClick={() => {
-                        setShowModal(!showModal);
-                        localStorage.setItem("modal", "true");
-                    }}
-                    aria-label="Close modal"
+                <Button
+                    functions={closeModal}
+                    aria="Close modal"
+                    type="button"
+                    style="absolute top-4 right-4 text-3xl"
                 >
                     <FaRegTimesCircle />
-                </button>
+                </Button>
             </div>
         </div>
     );

@@ -1,5 +1,6 @@
 import { FoodsResponse } from "../../data/Types";
 import { clearFocus } from "../../helpers/helpers";
+import Button from "../ui/Button";
 
 type Props = {
     inputValue: string;
@@ -44,20 +45,24 @@ function Form({ inputValue, setInputValue, setIsClicked, setFoods }: Props) {
                 />
             </label>
             <div className="w-full flex justify-between mt-4 font-roboto">
-                <button
-                    className="basis-7/12 px-4 py-2 bg-rose-300 rounded-lg text-sm transition-all hover:scale-105 hover:bg-rose-400 hover:shadow-md focus:bg-rose-400 focus:scale-105 focus:shadow-md lg:text-base"
+                <Button
+                    functions={() => {
+                        return;
+                    }}
+                    aria="Search food"
                     type="submit"
-                    aria-label="Search food"
+                    style="basis-7/12 px-4 py-2 bg-rose-300 text-sm hover:bg-rose-400 focus:bg-rose-400 lg:text-base"
                 >
                     CHECK
-                </button>
-                <button
-                    className="basis-4/12 px-4 py-2 bg-yellow-200 rounded-lg text-sm transition-all hover:scale-110 hover:bg-amber-200 hover:shadow-md focus:bg-amber-200 focus:scale-110 focus:shadow-md lg:text-base"
+                </Button>
+                <Button
+                    functions={clearInput}
+                    aria="Clear form"
                     type="reset"
-                    onClick={clearInput}
+                    style="basis-4/12 px-4 py-2 bg-yellow-200 text-sm hover:bg-amber-200 focus:bg-amber-200 lg:text-base"
                 >
                     CLEAR
-                </button>
+                </Button>
             </div>
         </form>
     );
