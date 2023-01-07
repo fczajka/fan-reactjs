@@ -46,7 +46,7 @@ function Form({ inputValue, setInputValue, setIsClicked, setFoods }: Props) {
             </label>
             <div className="w-full flex justify-between mt-4 font-roboto">
                 <Button
-                    functions={() => {
+                    callback={() => {
                         return;
                     }}
                     aria="Search food"
@@ -56,7 +56,7 @@ function Form({ inputValue, setInputValue, setIsClicked, setFoods }: Props) {
                     CHECK
                 </Button>
                 <Button
-                    functions={clearInput}
+                    callback={clearInput}
                     aria="Clear form"
                     type="reset"
                     style="basis-4/12 px-4 py-2 bg-yellow-200 text-sm hover:bg-amber-200 focus:bg-amber-200 lg:text-base"

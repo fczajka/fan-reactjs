@@ -1,7 +1,7 @@
-import { RootState } from "../store";
+import { RootState } from "../store/store";
 import { FoodResponse } from "../data/Types";
 
-export function makeFoodInfoObject(
+export function foodInfoFactory(
     storeData: RootState,
     data: FoodResponse,
     inputValue: number

@@ -9,7 +9,7 @@ import {
     REGISTER,
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
-import foodReducer from "./slices/foodSlice";
+import foodReducer from "./slices/food";
 
 const persistConfig = {
     key: "root",
@@ -37,5 +37,6 @@ const store = configureStore({
 });
 
 export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
 
 export default store;

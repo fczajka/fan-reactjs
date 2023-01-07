@@ -1,8 +1,7 @@
 import { InitialState } from "../../data/Types";
-import { PersistPartial } from "redux-persist/lib/persistReducer";
 
 type Props = {
-    data: InitialState & PersistPartial;
+    data: InitialState;
 };
 
 function TableHead({ data }: Props) {

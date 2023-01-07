@@ -1,18 +1,18 @@
-import { ReactElement } from "react";
+import { ButtonChildren } from "../../data/Types";
 
 type Props = {
-    children: (string | ReactElement)[] | string | JSX.Element;
-    functions: () => void;
+    children: ButtonChildren;
+    callback: () => void;
     aria: string;
     type: "button" | "submit" | "reset" | undefined;
     style: string;
 };
 
-function Button({ children, functions, aria, type, style }: Props) {
+function Button({ children, callback, aria, type, style }: Props) {
     return (
         <button
-            className={`${style} font-roboto rounded-lg transition-all hover:scale-110 hover:shadow-md focus:shadow-md`}
-            onClick={() => functions()}
+            className={`${style} font-roboto rounded-lg transition-all hover:scale-110 hover:shadow-md focus:scale-110 focus:shadow-md`}
+            onClick={() => callback()}
             aria-label={aria}
             type={type ? type : undefined}
         >

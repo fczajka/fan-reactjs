@@ -16,7 +16,7 @@ function Wrapper({ isOpen, setIsOpen }: Props) {
                 }`}
             >
                 <Button
-                    functions={() => setIsOpen(!isOpen)}
+                    callback={() => setIsOpen(!isOpen)}
                     aria="Close calculator"
                     type="button"
                     style="mt-8 mr-4 text-3xl text-yellow-50 sm:mr-12 sm:text-4xl lg:mr-16"

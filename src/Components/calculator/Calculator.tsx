@@ -1,15 +1,15 @@
 import { useEffect, useRef } from "react";
-import { RootState } from "../../store";
-import { useSelector } from "react-redux";
+import { useAppSelector } from "../../store/hooks/hooks";
 import TableHead from "./TableHead";
 import TableBody from "./TableBody";
+import { InitialState } from "../../data/Types";
 
 type Props = {
     isOpen: boolean;
 };
 
 function Calculator({ isOpen }: Props) {
-    const data = useSelector((state) => state as RootState);
+    const data = useAppSelector((state) => state.sum as InitialState);
     const vh = useRef(window.innerHeight * 0.01);
 
     useEffect(() => {
@@ -32,8 +32,8 @@ function Calculator({ isOpen }: Props) {
                 isOpen ? "-left-0" : "-left-80"
             }`}
         >
-            <TableHead data={data.sum} />
-            <TableBody data={data.sum} />
+            <TableHead data={data} />
+            <TableBody data={data} />
         </table>
     );
 }

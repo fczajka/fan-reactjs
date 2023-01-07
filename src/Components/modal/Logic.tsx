@@ -1,8 +1,9 @@
-import { useEffect, useRef, MutableRefObject, ReactElement } from "react";
+import { useEffect, useRef, ReactElement } from "react";
 import { createPortal } from "react-dom";
+import { MutableRef } from "../../data/Types";
 
 function Logic({ children }: { children: ReactElement }) {
-    const elRef: MutableRefObject<HTMLDivElement | null> = useRef(null);
+    const elRef: MutableRef = useRef(null);
     if (!elRef.current) {
         elRef.current = document.createElement("div");
     }

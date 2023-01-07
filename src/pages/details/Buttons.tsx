@@ -1,16 +1,20 @@
 import { Link } from "react-router-dom";
-import { ADD_FOOD } from "../../slices/foodSlice";
-import store from "../../store";
+import { ADD_FOOD } from "../../store/slices/food";
+import { useAppDispatch } from "../../store/hooks/hooks";
 import { BsCalculator } from "react-icons/bs";
 import { RiArrowGoBackFill } from "react-icons/ri";
-import { FoodInfo } from "../../data/Types";
+import {
+    FoodInfo,
+    SetStateActionBoolean,
+    SetStateActionString,
+} from "../../data/Types";
 import { clearFocus } from "../../helpers/helpers";
 import Button from "../../Components/ui/Button";
 
 type Props = {
     foodInfo: FoodInfo;
-    setNotificationMessage: (value: React.SetStateAction<string>) => void;
-    setShowNotification: (value: React.SetStateAction<boolean>) => void;
+    setNotificationMessage: SetStateActionString;
+    setShowNotification: SetStateActionBoolean;
     name: string;
     showNotification: boolean;
 };
@@ -22,8 +26,10 @@ function Buttons({
     name,
     showNotification,
 }: Props) {
+    const dispatch = useAppDispatch();
+
     function addToCalculator() {
-        store.dispatch(ADD_FOOD(foodInfo));
+        dispatch(ADD_FOOD(foodInfo));
         setNotificationMessage(`${name} has been added to the calculator`);
         setShowNotification(!showNotification);
         setTimeout(clearFocus, 0);
@@ -32,7 +38,7 @@ function Buttons({
     return (
         <div className="font-roboto flex justify-between mt-4">
             <Button
-                functions={addToCalculator}
+                callback={addToCalculator}
                 aria={`Add ${name} to calculator`}
                 type="button"
                 style="basis-7/12 px-2 py-1 flex items-center justify-center text-sm bg-rose-300 hover:bg-rose-400 focus:bg-rose-400 lg:text-base"

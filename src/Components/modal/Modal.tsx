@@ -1,10 +1,11 @@
 import * as React from "react";
 import Button from "../ui/Button";
 import { FaRegTimesCircle } from "react-icons/fa";
+import { SetStateActionBoolean } from "../../data/Types";
 
 type Props = {
     showModal: boolean;
-    setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
+    setShowModal: SetStateActionBoolean;
 };
 
 function Modal({ showModal, setShowModal }: Props) {
@@ -29,7 +30,7 @@ function Modal({ showModal, setShowModal }: Props) {
                     </a>
                 </p>
                 <Button
-                    functions={closeModal}
+                    callback={closeModal}
                     aria="Close modal"
                     type="button"
                     style="absolute top-4 right-4 text-3xl"

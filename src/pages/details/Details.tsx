@@ -1,11 +1,11 @@
 import * as React from "react";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { RootState } from "../../store";
+import { RootState } from "../../store/store";
 import { useSelector } from "react-redux";
 import { FoodInfo, FoodResponse } from "../../data/Types";
 import Notification from "../../Components/ui/Notification";
-import { makeFoodInfoObject } from "../../helpers/helpers";
+import { foodInfoFactory } from "../../helpers/helpers";
 import Table from "./Table";
 import Buttons from "./Buttons";
 import GramsControls from "./GramsControls";
@@ -45,11 +45,7 @@ function Details() {
         }
     }, [showNotification]);
 
-    const foodInfo = makeFoodInfoObject(
-        storeData,
-        data,
-        inputValue
-    ) as FoodInfo;
+    const foodInfo = foodInfoFactory(storeData, data, inputValue) as FoodInfo;
 
     return (
         <Transition>

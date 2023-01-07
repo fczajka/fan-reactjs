@@ -28,7 +28,7 @@ function GramsControls({ inputValue, setGrams }: Props) {
             <h3 className="text-base text-center my-2 lg:text-lg">Grams:</h3>
             <div className="flex justify-center items-center">
                 <Button
-                    functions={decreaseGrams}
+                    callback={decreaseGrams}
                     aria="Decrease grams"
                     type="button"
                     style="w-10 py-1 bg-blue-100 text-xl hover:bg-blue-200 focus:bg-blue-200 lg:text-2xl"
@@ -37,7 +37,7 @@ function GramsControls({ inputValue, setGrams }: Props) {
                 </Button>
                 <div className="w-12 text-center">{inputValue}</div>
                 <Button
-                    functions={increaseGrams}
+                    callback={increaseGrams}
                     aria="Increase grams"
                     type="button"
                     style="w-10 py-1 bg-blue-100 text-xl hover:bg-blue-200 focus:bg-blue-200 lg:text-2xl"

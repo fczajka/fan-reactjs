@@ -17,7 +17,7 @@ function Header({ isOpen, setIsOpen }: Props) {
                     FOOD AND NUTRIENTS
                 </h1>
                 <Button
-                    functions={() => setIsOpen(!isOpen)}
+                    callback={() => setIsOpen(!isOpen)}
                     aria="Open calculator"
                     type="button"
                     style="p-3 text-sm flex-col items-center justify-center bg-rose-300 hover:bg-rose-400 focus:bg-rose-400 lg:flex lg:text-base lg:absolute lg:right-12 lg:px-2 lg:py-1 lg:bg-blue-100 lg:focus:bg-blue-200 lg:hover:bg-blue-200"

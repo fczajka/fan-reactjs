@@ -1,16 +1,16 @@
 import * as React from "react";
-import store from "../../store";
+import { useAppDispatch } from "../../store/hooks/hooks";
 import { TiDelete } from "react-icons/ti";
-import { DELETE_FOOD } from "../../slices/foodSlice";
+import { DELETE_FOOD } from "../../store/slices/food";
 import { InitialState } from "../../data/Types";
-import { PersistPartial } from "redux-persist/lib/persistReducer";
 import { clearFocus } from "../../helpers/helpers";
 
 type Props = {
-    data: InitialState & PersistPartial;
+    data: InitialState;
 };
 
 function TableBody({ data }: Props) {
+    const dispatch = useAppDispatch();
     return (
         <tbody className="w-full h-calc-mobile flex flex-col overflow-y-auto overflow-x-hidden lg:h-calc-desktop">
             {data.foods.map((foodInfo) =>
@@ -35,9 +35,7 @@ function TableBody({ data }: Props) {
                                 <td className="basis-full flex p-0">
                                     <button
                                         onClick={() => {
-                                            store.dispatch(
-                                                DELETE_FOOD(foodInfo)
-                                            );
+                                            dispatch(DELETE_FOOD(foodInfo));
                                             clearFocus();
                                         }}
                                         className="flex text-sm items-center py-2 justify-center basis-full transition-all hover:scale-110 hover:bg-rose-200 hover:shadow-md focus:bg-rose-200 focus:shadow-md lg:text-base"
