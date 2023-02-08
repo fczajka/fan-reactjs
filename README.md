@@ -17,7 +17,7 @@
 
 ## Demo
 
-> Working live demo is [_here_](https://fan-reactjs.vercel.app/).
+> Working live demo is [_here_](https://www.foodandnutrients.info/).
 
 ## Site
 
