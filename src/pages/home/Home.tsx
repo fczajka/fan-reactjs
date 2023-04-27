@@ -12,7 +12,7 @@ function Home() {
     const [errorMessage, setErrorMessage] = useState("");
     const [showNotification, setShowNotification] = useState(false);
     const [isClicked, setIsClicked] = useState(false);
-    const [foods, setFoods] = useState([] as FoodsResponse);
+    const [foods, setFoods] = useState<FoodsResponse>([]);
     const [APIData] = useFoodList(inputValue);
 
     useEffect(() => {

@@ -1,6 +1,6 @@
 import { InitialState } from "../../data/Types";
 
-export const initialState = {
+export const initialState: InitialState = {
     id: 0,
     name: "Sum",
     nutrients: [
@@ -42,4 +42,4 @@ export const initialState = {
         },
     ],
     foods: [],
-} as InitialState;
+};

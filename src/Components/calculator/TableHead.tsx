@@ -31,12 +31,16 @@ function TableHead({ data }: Props) {
                             className="text-sm px-2 py-0.5 lg:text-base"
                         >
                             {nutrient.unit === "kcal"
-                                ? `${Math.abs(Math.round(nutrient.value))} ${
+                                ? typeof nutrient.value === "number"
+                                    ? `${Math.abs(
+                                          Math.round(nutrient.value)
+                                      )} ${nutrient.unit}`
+                                    : ""
+                                : typeof nutrient.value === "number"
+                                ? `${Math.abs(nutrient.value).toFixed(2)} ${
                                       nutrient.unit
                                   }`
-                                : `${Math.abs(nutrient.value).toFixed(2)} ${
-                                      nutrient.unit
-                                  }`}
+                                : ""}
                         </th>
                     ) : (
                         ""

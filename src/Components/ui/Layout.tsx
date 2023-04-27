@@ -1,4 +1,3 @@
-import * as React from "react";
 import { useState, useEffect } from "react";
 import Logic from "../modal/Logic";
 import Modal from "../modal/Modal";

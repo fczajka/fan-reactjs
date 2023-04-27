@@ -9,7 +9,7 @@ type Props = {
 };
 
 function Calculator({ isOpen }: Props) {
-    const data = useAppSelector((state) => state.sum as InitialState);
+    const data: InitialState = useAppSelector((state) => state.sum);
     const vh = useRef(window.innerHeight * 0.01);
 
     useEffect(() => {

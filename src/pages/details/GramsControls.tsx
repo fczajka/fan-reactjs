@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { clearFocus } from "../../helpers/helpers";
 import Button from "../../Components/ui/Button";
-
-type changeValues = 1 | 5 | 10 | 100;
+import { ChangableValues, ChangeValues } from "../../data/Types";
 
 type Props = {
     inputValue: number;
@@ -10,8 +9,8 @@ type Props = {
 };
 
 function GramsControls({ inputValue, setGrams }: Props) {
-    const [changeValue, setChangeValue] = useState(1 as changeValues);
-    const changableValues = [1, 5, 10, 100];
+    const [changeValue, setChangeValue] = useState<ChangeValues>(1);
+    const changableValues: ChangableValues = [1, 5, 10, 100];
 
     function decreaseGrams() {
         setGrams(inputValue - changeValue);
@@ -56,7 +55,7 @@ function GramsControls({ inputValue, setGrams }: Props) {
                                 changeValue === value ? "bg-blue-200" : ""
                             }`}
                             onClick={() => {
-                                setChangeValue(value as changeValues);
+                                setChangeValue(value);
                                 setTimeout(clearFocus, 0);
                             }}
                         >

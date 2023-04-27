@@ -1,4 +1,3 @@
-import * as React from "react";
 import Result from "./Result";
 import { FoodsResponse } from "../../data/Types";
 

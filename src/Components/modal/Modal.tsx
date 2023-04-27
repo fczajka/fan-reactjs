@@ -1,4 +1,3 @@
-import * as React from "react";
 import Button from "../ui/Button";
 import { FaRegTimesCircle } from "react-icons/fa";
 import { SetStateActionBoolean } from "../../data/Types";

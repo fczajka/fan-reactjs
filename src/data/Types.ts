@@ -20,6 +20,10 @@ export type SetStateActionNumber = (
 
 export type MutableRef = MutableRefObject<HTMLDivElement | null>;
 
+export type ChangeValues = 1 | 5 | 10 | 100;
+
+export type ChangableValues = ChangeValues[];
+
 export interface InitialFoodResponse {
     aggregations: {
         dataType: {
@@ -106,7 +110,7 @@ export interface FoodInfo {
     id: number;
     food: {
         name: string;
-        value: number;
+        value: string | number;
         unit?: string;
     }[];
 }
@@ -116,7 +120,7 @@ export interface InitialState {
     name: string;
     nutrients: {
         name: string;
-        value: number;
+        value: string | number;
         unit?: string;
     }[];
     foods: FoodInfo[];

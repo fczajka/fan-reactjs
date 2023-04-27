@@ -1,9 +1,8 @@
-import * as React from "react";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { RootState } from "../../store/store";
 import { useSelector } from "react-redux";
-import { FoodInfo, FoodResponse } from "../../data/Types";
+import { FoodResponse } from "../../data/Types";
 import Notification from "../../Components/ui/Notification";
 import { foodInfoFactory } from "../../helpers/helpers";
 import Table from "./Table";
@@ -16,7 +15,8 @@ function Details() {
     const [inputValue, setInputValue] = useState(100);
     const location = useLocation();
     const data = location.state as FoodResponse;
-    const storeData = useSelector((state) => state as RootState);
+    console.log(data);
+    const storeData = useSelector((state: RootState) => state);
     const [notificationMessage, setNotificationMessage] = useState("");
 
     function setGrams(inputValue: number) {
@@ -45,7 +45,7 @@ function Details() {
         }
     }, [showNotification]);
 
-    const foodInfo = foodInfoFactory(storeData, data, inputValue) as FoodInfo;
+    const foodInfo = foodInfoFactory(storeData, data, inputValue);
 
     return (
         <Transition>

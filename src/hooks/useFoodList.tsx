@@ -3,8 +3,8 @@ import { FoodsResponse, InitialFoodResponse, Status } from "../data/Types";
 import { validateInput } from "../helpers/helpers";
 
 export default function useFoodList(food: string) {
-    const [foodList, setFoodList] = useState([] as FoodsResponse);
-    const [status, setStatus] = useState("unloaded" as Status);
+    const [foodList, setFoodList] = useState<FoodsResponse>([]);
+    const [status, setStatus] = useState<Status>("unloaded");
     const [errorMessage, setErrorMessage] = useState("");
     const counter = useRef(0);
 

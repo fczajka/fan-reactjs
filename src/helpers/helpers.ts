@@ -1,12 +1,12 @@
 import { RootState } from "../store/store";
-import { FoodResponse } from "../data/Types";
+import { FoodInfo, FoodResponse } from "../data/Types";
 
 export function foodInfoFactory(
     storeData: RootState,
     data: FoodResponse,
     inputValue: number
 ) {
-    const foodInfo = {
+    const foodInfo: FoodInfo = {
         id: storeData.sum.id,
         food: [
             { name: "Name", value: data.description },
