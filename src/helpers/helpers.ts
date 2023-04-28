@@ -1,5 +1,5 @@
 import { RootState } from "../store/store";
-import { FoodInfo, FoodResponse } from "../data/Types";
+import { FoodInfo, FoodResponse, FoodsResponse } from "../data/Types";
 
 export function foodInfoFactory(
     storeData: RootState,
@@ -71,4 +71,11 @@ export function foodInfoFactory(
 
 export function validateInput(food: string) {
     return /^[A-Za-z\s]*$/.test(food);
+}
+
+export function isLengthZero(foods: FoodsResponse) {
+    if (foods.length === 0) {
+        return true;
+    }
+    return false;
 }

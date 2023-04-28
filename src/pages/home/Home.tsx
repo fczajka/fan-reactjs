@@ -44,19 +44,23 @@ function Home() {
         }
     }, [showNotification]);
 
+    async function handleLastFood(lastFoodName: string, lastFoodList: string) {
+        const lastFoodListCleaned = (await JSON.parse(
+            lastFoodList
+        )) as FoodsResponse;
+        if (lastFoodListCleaned.length === 0) {
+            setInputValue(lastFoodName);
+            return;
+        }
+        setInputValue(lastFoodName);
+        setFoods(lastFoodListCleaned);
+    }
+
     useEffect(() => {
         const lastFoodName = localStorage.getItem("lastFoodName");
         const lastFoodList = localStorage.getItem("lastFoodList");
         if (lastFoodName && lastFoodList) {
-            const lastFoodListCleaned = JSON.parse(
-                lastFoodList
-            ) as FoodsResponse;
-            if (lastFoodListCleaned.length === 0) {
-                setInputValue(lastFoodName);
-                return;
-            }
-            setInputValue(lastFoodName);
-            setFoods(lastFoodListCleaned);
+            void handleLastFood(lastFoodName, lastFoodList);
         }
     }, []);
 
