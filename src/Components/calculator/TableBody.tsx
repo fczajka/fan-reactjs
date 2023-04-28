@@ -2,7 +2,6 @@ import * as React from "react";
 import { useAppDispatch } from "../../store/hooks/hooks";
 import { TiDelete } from "react-icons/ti";
 import { DELETE_FOOD } from "../../store/slices/food";
-import { clearFocus } from "../../helpers/helpers";
 import { TableBodyProps } from "../../data/Types";
 
 function TableBody({ data }: TableBodyProps) {
@@ -32,7 +31,6 @@ function TableBody({ data }: TableBodyProps) {
                                     <button
                                         onClick={() => {
                                             dispatch(DELETE_FOOD(foodInfo));
-                                            clearFocus();
                                         }}
                                         className="flex text-sm items-center py-2 justify-center basis-full transition-all hover:scale-110 hover:bg-rose-200 hover:shadow-md focus:bg-rose-200 focus:shadow-md lg:text-base"
                                         aria-label="Delete food from calculator"

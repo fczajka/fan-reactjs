@@ -4,7 +4,6 @@ import { useAppDispatch } from "../../store/hooks/hooks";
 import { BsCalculator } from "react-icons/bs";
 import { RiArrowGoBackFill } from "react-icons/ri";
 import { ButtonsProps } from "../../data/Types";
-import { clearFocus } from "../../helpers/helpers";
 import Button from "../../Components/ui/Button";
 
 function Buttons({
@@ -20,7 +19,6 @@ function Buttons({
         dispatch(ADD_FOOD(foodInfo));
         setNotificationMessage(`${name} has been added to the calculator`);
         setShowNotification(!showNotification);
-        setTimeout(clearFocus, 0);
     }
 
     return (

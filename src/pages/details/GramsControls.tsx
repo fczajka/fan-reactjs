@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { clearFocus } from "../../helpers/helpers";
 import Button from "../../Components/ui/Button";
 import {
     ChangableValues,
@@ -13,12 +12,10 @@ function GramsControls({ inputValue, setGrams }: GramsControlsProps) {
 
     function decreaseGrams() {
         setGrams(inputValue - changeValue);
-        setTimeout(clearFocus, 0);
     }
 
     function increaseGrams() {
         setGrams(inputValue + changeValue);
-        setTimeout(clearFocus, 0);
     }
 
     return (
@@ -55,7 +52,6 @@ function GramsControls({ inputValue, setGrams }: GramsControlsProps) {
                             }`}
                             onClick={() => {
                                 setChangeValue(value);
-                                setTimeout(clearFocus, 0);
                             }}
                         >
                             {value}

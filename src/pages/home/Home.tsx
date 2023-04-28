@@ -4,7 +4,6 @@ import Results from "../../Components/ui/Results";
 import Notification from "../../Components/ui/Notification";
 import useFoodList from "../../hooks/useFoodList";
 import Form from "../../Components/form/Form";
-import { clearFocus } from "../../helpers/helpers";
 import Transition from "../../Components/ui/Transition";
 
 function Home() {
@@ -60,10 +59,6 @@ function Home() {
             setFoods(lastFoodListCleaned);
         }
     }, []);
-
-    useEffect(() => {
-        setTimeout(clearFocus, 1000);
-    }, [isClicked]);
 
     return (
         <Transition>

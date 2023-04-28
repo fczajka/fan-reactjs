@@ -1,5 +1,4 @@
 import { FormProps } from "../../data/Types";
-import { clearFocus } from "../../helpers/helpers";
 import Button from "../ui/Button";
 
 function Form({
@@ -10,7 +9,6 @@ function Form({
 }: FormProps) {
     function requestFood() {
         setIsClicked(true);
-        setTimeout(clearFocus, 0);
     }
 
     function clearInput() {
@@ -18,7 +16,6 @@ function Form({
         setInputValue("");
         localStorage.setItem("lastFoodName", "");
         localStorage.setItem("lastFoodList", "");
-        setTimeout(clearFocus, 0);
     }
 
     return (
