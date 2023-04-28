@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { TransitionProps } from "../../data/Types";
+import { JSXChildren } from "../../data/Types";
 
 const animations = {
     initial: { opacity: 0 },
@@ -7,7 +7,7 @@ const animations = {
     exit: { opacity: 0 },
 };
 
-function Transition({ children }: TransitionProps) {
+function Transition({ children }: JSXChildren) {
     return (
         <motion.div
             variants={animations}

@@ -1,40 +1,16 @@
-import { useState, useEffect } from "react";
-import Logic from "../modal/Logic";
-import Modal from "../modal/Modal";
+import { useState } from "react";
 import Header from "./Header";
 import WrapperCalculator from "../calculator/Wrapper";
+import WrapperModal from "../modal/WrapperModal";
+import { JSXChild } from "../../data/Types";
 
-type Props = {
-    children: JSX.Element;
-};
-
-function Layout({ children }: Props) {
+function Layout({ children }: JSXChild) {
     const [isOpen, setIsOpen] = useState(false);
-    const [showModal, setShowModal] = useState(true);
-
-    const isModalClosed = localStorage.getItem("modal");
-
-    useEffect(() => {
-        if (isModalClosed) {
-            const isModalClosedCleaned = JSON.parse(isModalClosed) as boolean;
-            if (isModalClosedCleaned === true) {
-                setShowModal(false);
-            }
-        } else {
-            return;
-        }
-    }, [isModalClosed]);
 
     return (
         <div className="w-full flex flex-col items-center bg-yellow bg-center bg-cover">
             <Header isOpen={isOpen} setIsOpen={setIsOpen} />
-            {showModal ? (
-                <Logic>
-                    <Modal showModal={showModal} setShowModal={setShowModal} />
-                </Logic>
-            ) : (
-                <></>
-            )}
+            <WrapperModal />
             <div className="w-72 mt-4 min-h-mobile lg:w-96 lg:min-h-desktop">
                 {children}
             </div>

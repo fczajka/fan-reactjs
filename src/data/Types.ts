@@ -188,6 +188,9 @@ export interface ButtonsProps {
     showNotification: boolean;
 }
 
-export interface TransitionProps {
+export interface JSXChild {
+    children: JSX.Element;
+}
+export interface JSXChildren {
     children: JSX.Element[];
 }

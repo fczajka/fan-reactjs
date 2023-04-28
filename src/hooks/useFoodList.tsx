@@ -59,7 +59,6 @@ export default function useFoodList(food: string) {
             }
 
             const cleanedData = (await data.json()) as InitialFoodResponse;
-            console.log(cleanedData);
             const foodsFromAPI = cleanedData.foods;
 
             localStorage.setItem(food, JSON.stringify(foodsFromAPI));
