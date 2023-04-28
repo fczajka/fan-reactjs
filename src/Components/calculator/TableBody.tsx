@@ -2,14 +2,10 @@ import * as React from "react";
 import { useAppDispatch } from "../../store/hooks/hooks";
 import { TiDelete } from "react-icons/ti";
 import { DELETE_FOOD } from "../../store/slices/food";
-import { InitialState } from "../../data/Types";
 import { clearFocus } from "../../helpers/helpers";
+import { TableBodyProps } from "../../data/Types";
 
-type Props = {
-    data: InitialState;
-};
-
-function TableBody({ data }: Props) {
+function TableBody({ data }: TableBodyProps) {
     const dispatch = useAppDispatch();
     return (
         <tbody className="w-full h-calc-mobile flex flex-col overflow-y-auto overflow-x-hidden lg:h-calc-desktop">

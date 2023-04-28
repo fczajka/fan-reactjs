@@ -2,13 +2,9 @@ import { useEffect, useRef } from "react";
 import { useAppSelector } from "../../store/hooks/hooks";
 import TableHead from "./TableHead";
 import TableBody from "./TableBody";
-import { InitialState } from "../../data/Types";
+import { InitialState, IsOpen } from "../../data/Types";
 
-type Props = {
-    isOpen: boolean;
-};
-
-function Calculator({ isOpen }: Props) {
+function Calculator({ isOpen }: IsOpen) {
     const data: InitialState = useAppSelector((state) => state.sum);
     const vh = useRef(window.innerHeight * 0.01);
 

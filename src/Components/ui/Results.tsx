@@ -1,11 +1,7 @@
 import Result from "./Result";
-import { FoodsResponse } from "../../data/Types";
+import { ResultsProps } from "../../data/Types";
 
-type Props = {
-    foods: FoodsResponse;
-};
-
-function Results({ foods }: Props) {
+function Results({ foods }: ResultsProps) {
     return (
         <ul className="w-full font-roboto my-4">
             {foods.map((food) => (

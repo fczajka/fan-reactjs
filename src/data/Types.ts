@@ -125,3 +125,69 @@ export interface InitialState {
     }[];
     foods: FoodInfo[];
 }
+
+export interface TableBodyProps {
+    data: InitialState;
+}
+
+export interface TableProps {
+    inputValue: number;
+    foodInfo: FoodInfo;
+}
+
+export interface NotificationProps {
+    isVisible: boolean;
+    text: string;
+}
+
+export interface FormProps {
+    inputValue: string;
+    setInputValue: React.Dispatch<React.SetStateAction<string>>;
+    setIsClicked: React.Dispatch<React.SetStateAction<boolean>>;
+    setFoods: React.Dispatch<React.SetStateAction<FoodsResponse>>;
+}
+
+export interface IsOpen {
+    isOpen: boolean;
+}
+
+export interface IsOpenWithSetter extends IsOpen {
+    setIsOpen: SetStateActionBoolean;
+}
+
+export interface ModalProps {
+    showModal: boolean;
+    setShowModal: SetStateActionBoolean;
+}
+
+export interface GramsControlsProps {
+    inputValue: number;
+    setGrams: (inputValue: number) => void;
+}
+
+export interface ResultProps {
+    food: FoodResponse;
+}
+export interface ResultsProps {
+    foods: FoodsResponse;
+}
+
+export interface ButtonProps {
+    children: ButtonChildren;
+    callback: () => void;
+    aria: string;
+    type: "button" | "submit" | "reset" | undefined;
+    style: string;
+}
+
+export interface ButtonsProps {
+    foodInfo: FoodInfo;
+    setNotificationMessage: SetStateActionString;
+    setShowNotification: SetStateActionBoolean;
+    name: string;
+    showNotification: boolean;
+}
+
+export interface TransitionProps {
+    children: JSX.Element[];
+}

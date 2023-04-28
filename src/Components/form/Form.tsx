@@ -1,15 +1,13 @@
-import { FoodsResponse } from "../../data/Types";
+import { FormProps } from "../../data/Types";
 import { clearFocus } from "../../helpers/helpers";
 import Button from "../ui/Button";
 
-type Props = {
-    inputValue: string;
-    setInputValue: React.Dispatch<React.SetStateAction<string>>;
-    setIsClicked: React.Dispatch<React.SetStateAction<boolean>>;
-    setFoods: React.Dispatch<React.SetStateAction<FoodsResponse>>;
-};
-
-function Form({ inputValue, setInputValue, setIsClicked, setFoods }: Props) {
+function Form({
+    inputValue,
+    setInputValue,
+    setIsClicked,
+    setFoods,
+}: FormProps) {
     function requestFood() {
         setIsClicked(true);
         setTimeout(clearFocus, 0);

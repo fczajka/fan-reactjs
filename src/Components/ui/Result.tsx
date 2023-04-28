@@ -1,12 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FoodResponse } from "../../data/Types";
+import { ResultProps } from "../../data/Types";
 
-type Props = {
-    food: FoodResponse;
-};
-
-function Result({ food }: Props) {
+function Result({ food }: ResultProps) {
     return (
         <li className="w-full my-2 bg-blue-100 rounded-lg text-base lg:text-lg">
             <Link

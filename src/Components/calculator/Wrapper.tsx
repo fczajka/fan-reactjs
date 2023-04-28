@@ -1,13 +1,9 @@
 import { FaRegTimesCircle } from "react-icons/fa";
 import Calculator from "./Calculator";
 import Button from "../ui/Button";
+import { IsOpenWithSetter } from "../../data/Types";
 
-type Props = {
-    isOpen: boolean;
-    setIsOpen: React.Dispatch<boolean>;
-};
-
-function Wrapper({ isOpen, setIsOpen }: Props) {
+function Wrapper({ isOpen, setIsOpen }: IsOpenWithSetter) {
     return (
         <div className="w-full">
             <div

@@ -1,13 +1,9 @@
 import Button from "../ui/Button";
 import { FaHamburger } from "react-icons/fa";
 import { useState } from "react";
+import { IsOpenWithSetter } from "../../data/Types";
 
-type Props = {
-    isOpen: boolean;
-    setIsOpen: React.Dispatch<boolean>;
-};
-
-function Header({ isOpen, setIsOpen }: Props) {
+function Header({ isOpen, setIsOpen }: IsOpenWithSetter) {
     const [windowWidth] = useState(window.innerWidth);
 
     return (

@@ -1,8 +1,5 @@
 import { motion } from "framer-motion";
-
-type Props = {
-    children: JSX.Element[];
-};
+import { TransitionProps } from "../../data/Types";
 
 const animations = {
     initial: { opacity: 0 },
@@ -10,7 +7,7 @@ const animations = {
     exit: { opacity: 0 },
 };
 
-function Transition({ children }: Props) {
+function Transition({ children }: TransitionProps) {
     return (
         <motion.div
             variants={animations}

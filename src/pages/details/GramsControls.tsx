@@ -1,14 +1,13 @@
 import { useState } from "react";
 import { clearFocus } from "../../helpers/helpers";
 import Button from "../../Components/ui/Button";
-import { ChangableValues, ChangeValues } from "../../data/Types";
+import {
+    ChangableValues,
+    ChangeValues,
+    GramsControlsProps,
+} from "../../data/Types";
 
-type Props = {
-    inputValue: number;
-    setGrams: (inputValue: number) => void;
-};
-
-function GramsControls({ inputValue, setGrams }: Props) {
+function GramsControls({ inputValue, setGrams }: GramsControlsProps) {
     const [changeValue, setChangeValue] = useState<ChangeValues>(1);
     const changableValues: ChangableValues = [1, 5, 10, 100];
 

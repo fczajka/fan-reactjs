@@ -1,11 +1,6 @@
-import { FoodInfo } from "../../data/Types";
+import { TableProps } from "../../data/Types";
 
-type Props = {
-    inputValue: number;
-    foodInfo: FoodInfo;
-};
-
-function Table({ inputValue, foodInfo }: Props) {
+function Table({ inputValue, foodInfo }: TableProps) {
     return (
         <table className="w-full font-roboto">
             <thead className="text-base bg-blue-100 lg:text-lg">

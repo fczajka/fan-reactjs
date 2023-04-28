@@ -1,13 +1,8 @@
 import Button from "../ui/Button";
 import { FaRegTimesCircle } from "react-icons/fa";
-import { SetStateActionBoolean } from "../../data/Types";
+import { ModalProps } from "../../data/Types";
 
-type Props = {
-    showModal: boolean;
-    setShowModal: SetStateActionBoolean;
-};
-
-function Modal({ showModal, setShowModal }: Props) {
+function Modal({ showModal, setShowModal }: ModalProps) {
     function closeModal() {
         setShowModal(!showModal);
         localStorage.setItem("modal", "true");

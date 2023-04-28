@@ -1,9 +1,6 @@
-type Props = {
-    isVisible: boolean;
-    text: string;
-};
+import { NotificationProps } from "../../data/Types";
 
-function Notification({ isVisible, text }: Props) {
+function Notification({ isVisible, text }: NotificationProps) {
     return (
         <div
             className={`fixed left-1/2 -translate-x-1/2 text-center bg-blue-200 text-sm max-w px-4 py-2 rounded-lg transition-all duration-500 z-0 lg:text-base ${

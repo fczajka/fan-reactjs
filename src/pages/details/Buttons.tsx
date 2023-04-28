@@ -3,21 +3,9 @@ import { ADD_FOOD } from "../../store/slices/food";
 import { useAppDispatch } from "../../store/hooks/hooks";
 import { BsCalculator } from "react-icons/bs";
 import { RiArrowGoBackFill } from "react-icons/ri";
-import {
-    FoodInfo,
-    SetStateActionBoolean,
-    SetStateActionString,
-} from "../../data/Types";
+import { ButtonsProps } from "../../data/Types";
 import { clearFocus } from "../../helpers/helpers";
 import Button from "../../Components/ui/Button";
-
-type Props = {
-    foodInfo: FoodInfo;
-    setNotificationMessage: SetStateActionString;
-    setShowNotification: SetStateActionBoolean;
-    name: string;
-    showNotification: boolean;
-};
 
 function Buttons({
     foodInfo,
@@ -25,7 +13,7 @@ function Buttons({
     setNotificationMessage,
     name,
     showNotification,
-}: Props) {
+}: ButtonsProps) {
     const dispatch = useAppDispatch();
 
     function addToCalculator() {

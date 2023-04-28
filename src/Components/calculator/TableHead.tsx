@@ -1,10 +1,6 @@
-import { InitialState } from "../../data/Types";
+import { TableBodyProps } from "../../data/Types";
 
-type Props = {
-    data: InitialState;
-};
-
-function TableHead({ data }: Props) {
+function TableHead({ data }: TableBodyProps) {
     return (
         <thead className="flex">
             <tr className="flex basis-3/5 flex-col items-start">
