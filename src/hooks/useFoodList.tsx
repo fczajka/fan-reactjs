@@ -1,15 +1,13 @@
 import { useState, useEffect, useRef } from "react";
 import { FoodsResponse, InitialFoodResponse, Status } from "../data/Types";
 import { validateInput } from "../helpers/helpers";
+import { API_KEY, API_URL } from "../data/constants";
 
 export default function useFoodList(food: string) {
     const [foodList, setFoodList] = useState<FoodsResponse>([]);
     const [status, setStatus] = useState<Status>("unloaded");
     const [errorMessage, setErrorMessage] = useState("");
     const counter = useRef(0);
-
-    const API_KEY = process.env.REACT_APP_API_KEY as string;
-    const API_URL = "https://api.nal.usda.gov";
 
     useEffect(() => {
         if (!validateInput(food)) {
@@ -73,7 +71,7 @@ export default function useFoodList(food: string) {
             setStatus("loaded");
             counter.current--;
         }
-    }, [food, API_KEY, counter]);
+    }, [food, counter]);
     return [
         {
             food: foodList,
