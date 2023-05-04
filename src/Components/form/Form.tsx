@@ -1,3 +1,4 @@
+import { useCallback } from "react";
 import { FormProps } from "../../data/Types";
 import Button from "../ui/Button";
 
@@ -7,16 +8,16 @@ function Form({
     setIsClicked,
     setFoods,
 }: FormProps) {
-    function requestFood() {
+    const requestFood = useCallback(() => {
         setIsClicked(true);
-    }
+    }, [setIsClicked]);
 
-    function clearInput() {
+    const clearInput = useCallback(() => {
         setFoods([]);
         setInputValue("");
         localStorage.setItem("lastFoodName", "");
         localStorage.setItem("lastFoodList", "");
-    }
+    }, [setFoods, setInputValue]);
 
     return (
         <form
