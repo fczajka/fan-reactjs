@@ -3,7 +3,7 @@ import Logic from "./Logic";
 import Modal from "./Modal";
 
 function WrapperModal() {
-    const [showModal, setShowModal] = useState(true);
+    const [showModal, setShowModal] = useState<boolean>(true);
 
     const isModalClosed = localStorage.getItem("modal");
 

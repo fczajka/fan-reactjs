@@ -5,7 +5,7 @@ import WrapperModal from "../modal/WrapperModal";
 import { JSXChild } from "../../data/Types";
 
 function Layout({ children }: JSXChild) {
-    const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState<boolean>(false);
 
     return (
         <div className="w-full h-screen font-primary text-slate-900 flex flex-col items-center bg-secondary-50">

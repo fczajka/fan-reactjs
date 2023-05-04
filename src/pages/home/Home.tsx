@@ -7,10 +7,10 @@ import Form from "../../Components/form/Form";
 import Transition from "../../Components/ui/Transition";
 
 function Home() {
-    const [inputValue, setInputValue] = useState("");
-    const [errorMessage, setErrorMessage] = useState("");
-    const [showNotification, setShowNotification] = useState(false);
-    const [isClicked, setIsClicked] = useState(false);
+    const [inputValue, setInputValue] = useState<string>("");
+    const [errorMessage, setErrorMessage] = useState<string>("");
+    const [showNotification, setShowNotification] = useState<boolean>(false);
+    const [isClicked, setIsClicked] = useState<boolean>(false);
     const [foods, setFoods] = useState<FoodsResponse>([]);
     const [APIData] = useFoodList(inputValue);
 

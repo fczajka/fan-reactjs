@@ -11,13 +11,13 @@ import GramsControls from "./GramsControls";
 import Transition from "../../Components/ui/Transition";
 
 function Details() {
-    const [showNotification, setShowNotification] = useState(false);
-    const [inputValue, setInputValue] = useState(100);
+    const [showNotification, setShowNotification] = useState<boolean>(false);
+    const [inputValue, setInputValue] = useState<number>(100);
     const location = useLocation();
     const data = location.state as FoodResponse;
     console.log(data);
     const storeData = useSelector((state: RootState) => state);
-    const [notificationMessage, setNotificationMessage] = useState("");
+    const [notificationMessage, setNotificationMessage] = useState<string>("");
 
     function setGrams(inputValue: number) {
         if (inputValue > 5000) {

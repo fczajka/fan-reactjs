@@ -4,7 +4,7 @@ import { useState } from "react";
 import { IsOpenWithSetter } from "../../data/Types";
 
 function Header({ isOpen, setIsOpen }: IsOpenWithSetter) {
-    const [windowWidth] = useState(window.innerWidth);
+    const [windowWidth] = useState<number>(window.innerWidth);
 
     return (
         <nav className="fixed bottom-0 w-full flex justify-center bg-secondary-50 shadow-custom z-10 lg:shadow-none lg:static">
