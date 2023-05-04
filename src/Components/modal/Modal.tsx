@@ -10,7 +10,7 @@ function Modal({ showModal, setShowModal }: ModalProps) {
 
     return (
         <div className="fixed w-full h-full flex justify-center items-center bg-neutral-900 bg-opacity-70 z-30">
-            <div className="relative flex bg-yellow-50 p-4 rounded-lg max-w-xs lg:max-w-lg">
+            <div className="relative flex bg-secondary-50 px-8 py-4 rounded-primary max-w-xs lg:max-w-lg">
                 <p className="basis-5/6">
                     Data provided by: U.S. Department of Agriculture,
                     Agricultural Research Service. FoodData Central, 2019. Link:
@@ -27,7 +27,7 @@ function Modal({ showModal, setShowModal }: ModalProps) {
                     callback={closeModal}
                     aria="Close modal"
                     type="button"
-                    style="absolute top-4 right-4 text-3xl"
+                    style="absolute top-4 right-4 text-3xl hover:bg-tertiary-300"
                 >
                     <FaRegTimesCircle />
                 </Button>

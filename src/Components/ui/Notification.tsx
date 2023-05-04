@@ -3,8 +3,8 @@ import { NotificationProps } from "../../data/Types";
 function Notification({ isVisible, text }: NotificationProps) {
     return (
         <div
-            className={`fixed left-1/2 -translate-x-1/2 text-center bg-blue-200 text-sm max-w px-4 py-2 rounded-lg transition-all duration-500 z-0 lg:text-base ${
-                isVisible ? "bottom-24" : "-bottom-12"
+            className={`fixed left-1/2 -translate-x-1/2 text-center bg-primary-200 text-sm max-w px-4 py-2 rounded-primary transition-all duration-500 lg:text-base ${
+                isVisible ? "bottom-20" : "-bottom-16"
             }`}
         >
             {text}

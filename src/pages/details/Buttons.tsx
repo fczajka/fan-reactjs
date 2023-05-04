@@ -22,21 +22,22 @@ function Buttons({
     }
 
     return (
-        <div className="font-roboto flex justify-between mt-4">
+        <div className="flex justify-between mt-4">
             <Button
                 callback={addToCalculator}
                 aria={`Add ${name} to calculator`}
                 type="button"
-                style="basis-7/12 px-2 py-1 flex items-center justify-center text-sm bg-rose-300 hover:bg-rose-400 focus:bg-rose-400 lg:text-base"
+                style="basis-7/12 py-1 flex items-center justify-center text-sm bg-tertiary-200 hover:bg-tertiary-300 hover:shadow-custom hover:-translate-y-0.5 focus:bg-tertiary-300 sm:text-base lg:p-button"
             >
-                ADD TO CALCULATOR
+                <span className="mx-1">ADD TO CALCULATOR</span>
                 <BsCalculator />
             </Button>
             <Link
                 to="/"
-                className="basis-4/12 px-2 py-1 flex flex-col items-center justify-center text-sm rounded-lg bg-yellow-200 transition-all  hover:scale-110 hover:bg-amber-200 hover:shadow-md focus:scale-110 focus:bg-amber-200 focus:shadow-md lg:text-base"
+                className="basis-4/12 py-1 flex flex-col items-center justify-center text-sm rounded-primary bg-secondary-200 transition-all hover:bg-secondary-300 hover:shadow-custom hover:-translate-y-0.5 focus:bg-secondary-300 sm:text-base lg:p-button"
             >
-                GO BACK{<RiArrowGoBackFill />}
+                <span className="mx-1">GO BACK</span>
+                {<RiArrowGoBackFill />}
             </Link>
         </div>
     );

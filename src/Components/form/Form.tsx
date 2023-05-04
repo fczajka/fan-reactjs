@@ -28,25 +28,25 @@ function Form({
         >
             <label
                 htmlFor="food"
-                className="flex flex-col text-lg font-bree-serif lg:text-xl"
+                className="flex flex-col text-lg font-secondary sm:text-xl lg:text-2xl"
             >
                 Food name:
                 <input
-                    className="bg-blue-100 rounded-lg px-4 py-1 text-base font-roboto transition-all hover:scale-105 hover:bg-blue-200 hover:shadow-md focus:bg-blue-200 focus:scale-105 focus:shadow-md lg:text-lg"
+                    className="bg-primary-200 font-primary rounded-primary p-primary mt-2 text-sm transition-all hover:bg-primary-300 hover:shadow-custom hover:-translate-y-0.5 focus:bg-primary-300 sm:text-base lg:text-lg"
                     type="text"
                     id="food"
                     value={inputValue}
                     onChange={(e) => setInputValue(e.target.value)}
                 />
             </label>
-            <div className="w-full flex justify-between mt-4 font-roboto">
+            <div className="w-full flex justify-between mt-4">
                 <Button
                     callback={() => {
                         return;
                     }}
                     aria="Search food"
                     type="submit"
-                    style="basis-7/12 px-4 py-2 bg-rose-300 text-sm hover:bg-rose-400 focus:bg-rose-400 lg:text-base"
+                    style="basis-7/12 p-primary bg-tertiary-200 hover:bg-tertiary-300 hover:-translate-y-0.5 focus:bg-tertiary-300"
                 >
                     CHECK
                 </Button>
@@ -54,7 +54,7 @@ function Form({
                     callback={clearInput}
                     aria="Clear form"
                     type="reset"
-                    style="basis-4/12 px-4 py-2 bg-yellow-200 text-sm hover:bg-amber-200 focus:bg-amber-200 lg:text-base"
+                    style="basis-4/12 p-primary bg-secondary-200 hover:bg-secondary-300 hover:-translate-y-0.5 focus:bg-secondary-300"
                 >
                     CLEAR
                 </Button>

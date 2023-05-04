@@ -8,12 +8,10 @@ function Layout({ children }: JSXChild) {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <div className="w-full flex flex-col items-center bg-yellow bg-center bg-cover">
+        <div className="w-full h-screen font-primary text-slate-900 flex flex-col items-center bg-secondary-50">
             <Header isOpen={isOpen} setIsOpen={setIsOpen} />
             <WrapperModal />
-            <div className="w-72 mt-4 min-h-mobile lg:w-96 lg:min-h-desktop">
-                {children}
-            </div>
+            <div className="w-full mt-4 p-4 sm:p-0 sm:w-96">{children}</div>
             <WrapperCalculator isOpen={isOpen} setIsOpen={setIsOpen} />
         </div>
     );

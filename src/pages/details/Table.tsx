@@ -2,35 +2,47 @@ import { TableProps } from "../../data/Types";
 
 function Table({ inputValue, foodInfo }: TableProps) {
     return (
-        <table className="w-full font-roboto">
-            <thead className="text-base bg-blue-100 lg:text-lg">
+        <table className="w-full">
+            <thead className="text-base bg-primary-200 sm:text-lg lg:text-xl">
                 <tr>
-                    <th className="text-left p-2 rounded-tl-lg">Name</th>
-                    <th className="text-right p-2">Amount per {inputValue}g</th>
-                    <th className="text-right p-2 rounded-tr-lg">Unit</th>
+                    <th className="text-left pl-4 py-2 rounded-tl-primary">
+                        Name
+                    </th>
+                    <th className="text-right px-4 py-2 sm:py-2">
+                        Amount per {inputValue}g
+                    </th>
+                    <th className="text-right pr-4 py-2 rounded-tr-primary">
+                        Unit
+                    </th>
                 </tr>
             </thead>
-            <tbody className="text-sm lg:text-base">
+            <tbody className="text-sm sm:text-base lg:text-lg">
                 {foodInfo.food.map((food) =>
                     food.name === "Name" ? (
                         ""
                     ) : food.name === "Grams" ? (
                         ""
                     ) : food.name === "Fiber" ? (
-                        <tr key={food.name} className="even:bg-blue-100">
-                            <td className="text-left p-2 rounded-bl-lg">
+                        <tr key={food.name} className="even:bg-primary-200">
+                            <td className="text-left pl-4 py-2 rounded-bl-primary">
                                 {food.name}
                             </td>
-                            <td className="text-right p-2">{food.value}</td>
-                            <td className="text-right p-2 rounded-br-lg">
+                            <td className="text-right px-4 py-2 sm:p-primary">
+                                {food.value}
+                            </td>
+                            <td className="text-right pr-4 py-1 rounded-br-primary">
                                 {food.unit}
                             </td>
                         </tr>
                     ) : (
-                        <tr key={food.name} className="even:bg-blue-100">
-                            <td className="text-left p-2">{food.name}</td>
-                            <td className="text-right p-2">{food.value}</td>
-                            <td className="text-right p-2">{food.unit}</td>
+                        <tr key={food.name} className="even:bg-primary-200">
+                            <td className="text-left pl-4 py-2">{food.name}</td>
+                            <td className="text-right px-4 py-2">
+                                {food.value}
+                            </td>
+                            <td className="text-right pr-4 py-2">
+                                {food.unit}
+                            </td>
                         </tr>
                     )
                 )}

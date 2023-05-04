@@ -49,7 +49,7 @@ function Details() {
 
     return (
         <Transition>
-            <h2 className="text-center font-bree-serif text-xl pb-4 lg:text-2xl">
+            <h2 className="text-center font-secondary text-lg pb-4 sm:text-xl lg:text-2xl">
                 {data.description}
             </h2>
             <Table inputValue={inputValue} foodInfo={foodInfo} />

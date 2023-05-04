@@ -19,14 +19,14 @@ function GramsControls({ inputValue, setGrams }: GramsControlsProps) {
     }
 
     return (
-        <div className="font-roboto">
+        <div>
             <h3 className="text-base text-center my-2 lg:text-lg">Grams:</h3>
             <div className="flex justify-center items-center">
                 <Button
                     callback={decreaseGrams}
                     aria="Decrease grams"
                     type="button"
-                    style="w-10 py-1 bg-blue-100 text-xl hover:bg-blue-200 focus:bg-blue-200 lg:text-2xl"
+                    style="w-10 h-10 bg-primary-200 text-xl hover:bg-primary-300 hover:-translate-y-0.5 focus:bg-primary-300 lg:w-12 lg:h-12 lg:text-2xl"
                 >
                     -
                 </Button>
@@ -35,7 +35,7 @@ function GramsControls({ inputValue, setGrams }: GramsControlsProps) {
                     callback={increaseGrams}
                     aria="Increase grams"
                     type="button"
-                    style="w-10 py-1 bg-blue-100 text-xl hover:bg-blue-200 focus:bg-blue-200 lg:text-2xl"
+                    style="w-10 h-10 bg-primary-200 text-xl hover:bg-primary-300 hover:-translate-y-0.5 focus:bg-primary-300 lg:w-12 lg:h-12 lg:text-2xl"
                 >
                     +
                 </Button>
@@ -45,10 +45,10 @@ function GramsControls({ inputValue, setGrams }: GramsControlsProps) {
             </h3>
             <ul className="flex justify-between items-center">
                 {changableValues.map((value) => (
-                    <li key={value} className="w-12">
+                    <li key={value}>
                         <button
-                            className={`w-full py-2 bg-blue-100 rounded-lg text-base transition-all hover:scale-110 focus:scale-110 hover:bg-blue-200 hover:shadow-md focus:bg-blue-200 focus:shadow-md lg:text-lg ${
-                                changeValue === value ? "bg-blue-200" : ""
+                            className={`w-10 h-10 text-sm bg-primary-200 rounded-primary transition-all hover:bg-primary-300 hover:shadow-custom hover:-translate-y-0.5 focus:bg-primary-300 sm:text-base lg:w-12 lg:h-12 lg:text-lg ${
+                                changeValue === value ? "bg-primary-300" : ""
                             }`}
                             onClick={() => {
                                 setChangeValue(value);
