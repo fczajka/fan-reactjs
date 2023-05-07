@@ -5,9 +5,9 @@ import { useSelector } from "react-redux";
 import { FoodResponse } from "../../data/Types";
 import Notification from "../../Components/ui/Notification";
 import { foodInfoFactory } from "../../helpers/helpers";
-import Table from "./Table";
-import Buttons from "./Buttons";
-import GramsControls from "./GramsControls";
+import Table from "../../Components/ui/Table";
+import Buttons from "../../Components/ui/Buttons";
+import GramsControls from "../../Components/ui/GramsControls";
 import Transition from "../../Components/ui/Transition";
 
 function Details() {
