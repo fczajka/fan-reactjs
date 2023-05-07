@@ -15,7 +15,7 @@ function Wrapper({ isOpen, setIsOpen }: IsOpenWithSetter) {
                     callback={() => setIsOpen(!isOpen)}
                     aria="Close calculator"
                     type="button"
-                    style="mt-8 mr-4 text-3xl text-amber-100 rounded-full hover:shadow-none focus:shadow-none sm:mr-12 sm:text-4xl lg:mr-16"
+                    style="mt-8 mr-4 text-3xl text-secondary-100 rounded-full hover:shadow-none focus:shadow-none sm:mr-12 sm:text-4xl lg:mr-16"
                 >
                     <FaRegTimesCircle />
                 </Button>

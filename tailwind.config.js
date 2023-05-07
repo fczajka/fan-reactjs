@@ -4,7 +4,8 @@ module.exports = {
     content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
     theme: {
         extend: {
-            backgroundColor: {
+            colors: {
+                //sky
                 "primary-50": "#f0f9ff",
                 "primary-100": "#e0f2fe",
                 "primary-200": "#bae6fd",
@@ -16,6 +17,7 @@ module.exports = {
                 "primary-800": "#075985",
                 "primary-900": "#0c4a6e",
                 "primary-950": "#082f49",
+                //amber
                 "secondary-50": "#fffbeb",
                 "secondary-100": "#fef3c7",
                 "secondary-200": "#fde68a",
@@ -27,6 +29,7 @@ module.exports = {
                 "secondary-800": "#92400e",
                 "secondary-900": "#78350f",
                 "secondary-950": "#451a03",
+                //fuchsia
                 "tertiary-50": "#fdf4ff",
                 "tertiary-100": "#fae8ff",
                 "tertiary-200": "#f5d0fe",
