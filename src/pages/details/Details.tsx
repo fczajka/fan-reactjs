@@ -15,7 +15,6 @@ function Details() {
     const [inputValue, setInputValue] = useState<number>(100);
     const location = useLocation();
     const data = location.state as FoodResponse;
-    console.log(data);
     const storeData = useSelector((state: RootState) => state);
     const [notificationMessage, setNotificationMessage] = useState<string>("");
 

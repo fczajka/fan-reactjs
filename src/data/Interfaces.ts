@@ -129,14 +129,6 @@ export interface FormProps {
     setFoods: React.Dispatch<React.SetStateAction<FoodsResponse>>;
 }
 
-export interface IsOpen {
-    isOpen: boolean;
-}
-
-export interface IsOpenWithSetter extends IsOpen {
-    setIsOpen: SetStateActionBoolean;
-}
-
 export interface ModalProps {
     showModal: boolean;
     setShowModal: SetStateActionBoolean;
