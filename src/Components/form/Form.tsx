@@ -47,7 +47,7 @@ function Form({
                     }}
                     aria="Search food"
                     type="submit"
-                    style="basis-7/12 p-primary bg-tertiary-200 hover:bg-tertiary-300 hover:-translate-y-0.5 focus:bg-tertiary-300"
+                    style="basis-7/12 text-sm p-primary bg-tertiary-200 hover:bg-tertiary-300 hover:-translate-y-0.5 focus:bg-tertiary-300 sm:text-base"
                 >
                     CHECK
                 </Button>
@@ -55,7 +55,7 @@ function Form({
                     callback={clearInput}
                     aria="Clear form"
                     type="reset"
-                    style="basis-4/12 p-primary bg-secondary-200 hover:bg-secondary-300 hover:-translate-y-0.5 focus:bg-secondary-300"
+                    style="basis-4/12 text-sm p-primary bg-secondary-200 hover:bg-secondary-300 hover:-translate-y-0.5 focus:bg-secondary-300 sm:text-base"
                 >
                     CLEAR
                 </Button>
