@@ -1,6 +1,7 @@
+import { ButtonTypes } from "../../data/Enums";
+import { ModalProps } from "../../data/Interfaces";
 import Button from "../ui/Button";
 import { FaRegTimesCircle } from "react-icons/fa";
-import { ModalProps } from "../../data/Types";
 
 function Modal({ showModal, setShowModal }: ModalProps) {
     function closeModal() {
@@ -26,7 +27,7 @@ function Modal({ showModal, setShowModal }: ModalProps) {
                 <Button
                     callback={closeModal}
                     aria="Close modal"
-                    type="button"
+                    type={ButtonTypes.button}
                     style="absolute top-4 right-4 text-3xl hover:bg-tertiary-300"
                 >
                     <FaRegTimesCircle />

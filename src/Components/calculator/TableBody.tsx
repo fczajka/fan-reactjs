@@ -2,7 +2,7 @@ import * as React from "react";
 import { useAppDispatch } from "../../store/hooks/hooks";
 import { TiDelete } from "react-icons/ti";
 import { DELETE_FOOD } from "../../store/slices/food";
-import { TableBodyProps } from "../../data/Types";
+import { TableBodyProps } from "../../data/Interfaces";
 
 function TableBody({ data }: TableBodyProps) {
     const dispatch = useAppDispatch();

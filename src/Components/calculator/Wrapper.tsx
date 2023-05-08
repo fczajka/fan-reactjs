@@ -1,7 +1,8 @@
 import { FaRegTimesCircle } from "react-icons/fa";
 import Calculator from "./Calculator";
 import Button from "../ui/Button";
-import { IsOpenWithSetter } from "../../data/Types";
+import { IsOpenWithSetter } from "../../data/Interfaces";
+import { ButtonTypes } from "../../data/Enums";
 
 function Wrapper({ isOpen, setIsOpen }: IsOpenWithSetter) {
     return (
@@ -14,7 +15,7 @@ function Wrapper({ isOpen, setIsOpen }: IsOpenWithSetter) {
                 <Button
                     callback={() => setIsOpen(!isOpen)}
                     aria="Close calculator"
-                    type="button"
+                    type={ButtonTypes.button}
                     style="mt-8 mr-4 text-3xl text-secondary-100 rounded-full hover:shadow-none focus:shadow-none sm:mr-12 sm:text-4xl lg:mr-16"
                 >
                     <FaRegTimesCircle />

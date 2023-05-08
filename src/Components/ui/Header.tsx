@@ -1,7 +1,8 @@
 import Button from "../ui/Button";
 import { FaHamburger } from "react-icons/fa";
 import { useState } from "react";
-import { IsOpenWithSetter } from "../../data/Types";
+import { IsOpenWithSetter } from "../../data/Interfaces";
+import { ButtonTypes } from "../../data/Enums";
 
 function Header({ isOpen, setIsOpen }: IsOpenWithSetter) {
     const [windowWidth] = useState<number>(window.innerWidth);
@@ -15,7 +16,7 @@ function Header({ isOpen, setIsOpen }: IsOpenWithSetter) {
                 <Button
                     callback={() => setIsOpen(!isOpen)}
                     aria="Open calculator"
-                    type="button"
+                    type={ButtonTypes.button}
                     style="p-3 text-sm bg-tertiary-200 hover:bg-tertiary-300 focus:bg-tertiary-300 hover:-translate-y-0.5 sm:text-base lg:absolute lg:right-12 lg:p-primary lg:bg-primary-200 lg:focus:bg-primary-300 lg:hover:bg-primary-300"
                 >
                     {windowWidth >= 1024 ? "Open calculator" : <FaHamburger />}

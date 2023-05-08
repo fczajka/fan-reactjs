@@ -24,9 +24,7 @@ function WrapperModal() {
                 <Logic>
                     <Modal showModal={showModal} setShowModal={setShowModal} />
                 </Logic>
-            ) : (
-                <></>
-            )}
+            ) : null}
         </>
     );
 }

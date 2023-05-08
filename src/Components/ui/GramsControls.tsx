@@ -1,10 +1,8 @@
 import { useState } from "react";
 import Button from "../../Components/ui/Button";
-import {
-    ChangableValues,
-    ChangeValues,
-    GramsControlsProps,
-} from "../../data/Types";
+import { ChangableValues, ChangeValues } from "../../data/Types";
+import { GramsControlsProps } from "../../data/Interfaces";
+import { ButtonTypes } from "../../data/Enums";
 
 function GramsControls({ inputValue, setGrams }: GramsControlsProps) {
     const [changeValue, setChangeValue] = useState<ChangeValues>(1);
@@ -25,7 +23,7 @@ function GramsControls({ inputValue, setGrams }: GramsControlsProps) {
                 <Button
                     callback={decreaseGrams}
                     aria="Decrease grams"
-                    type="button"
+                    type={ButtonTypes.submit}
                     style="w-10 h-10 bg-primary-200 text-xl hover:bg-primary-300 hover:-translate-y-0.5 focus:bg-primary-300 lg:w-12 lg:h-12 lg:text-2xl"
                 >
                     -
@@ -34,7 +32,7 @@ function GramsControls({ inputValue, setGrams }: GramsControlsProps) {
                 <Button
                     callback={increaseGrams}
                     aria="Increase grams"
-                    type="button"
+                    type={ButtonTypes.submit}
                     style="w-10 h-10 bg-primary-200 text-xl hover:bg-primary-300 hover:-translate-y-0.5 focus:bg-primary-300 lg:w-12 lg:h-12 lg:text-2xl"
                 >
                     +

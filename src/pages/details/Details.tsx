@@ -2,13 +2,13 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { RootState } from "../../store/store";
 import { useSelector } from "react-redux";
-import { FoodResponse } from "../../data/Types";
 import Notification from "../../Components/ui/Notification";
 import { foodInfoFactory } from "../../helpers/helpers";
 import Table from "../../Components/ui/Table";
 import Buttons from "../../Components/ui/Buttons";
 import GramsControls from "../../Components/ui/GramsControls";
 import Transition from "../../Components/ui/Transition";
+import { FoodInfo, FoodResponse } from "../../data/Interfaces";
 
 function Details() {
     const [showNotification, setShowNotification] = useState<boolean>(false);
@@ -45,7 +45,7 @@ function Details() {
         }
     }, [showNotification]);
 
-    const foodInfo = foodInfoFactory(storeData, data, inputValue);
+    const foodInfo: FoodInfo = foodInfoFactory(storeData, data, inputValue);
 
     return (
         <Transition>

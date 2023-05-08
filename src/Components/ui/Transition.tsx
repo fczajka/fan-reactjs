@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import { JSXChildren } from "../../data/Types";
 import { animations } from "../../data/constants";
+import { JSXChildren } from "../../data/Interfaces";
 
 function Transition({ children }: JSXChildren) {
     return (

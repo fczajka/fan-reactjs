@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ResultProps } from "../../data/Types";
+import { ResultProps } from "../../data/Interfaces";
 
 function Result({ food }: ResultProps) {
     return (

@@ -1,4 +1,4 @@
-import { TableBodyProps } from "../../data/Types";
+import { TableBodyProps } from "../../data/Interfaces";
 
 function TableHead({ data }: TableBodyProps) {
     return (
@@ -13,9 +13,7 @@ function TableHead({ data }: TableBodyProps) {
                         >
                             {nutrient.name}
                         </th>
-                    ) : (
-                        ""
-                    )
+                    ) : null
                 )}
             </tr>
             <tr className="flex basis-2/5 flex-col items-end">
@@ -31,12 +29,12 @@ function TableHead({ data }: TableBodyProps) {
                                     ? `${Math.abs(
                                           Math.round(nutrient.value)
                                       )} ${nutrient.unit}`
-                                    : ""
+                                    : null
                                 : typeof nutrient.value === "number"
                                 ? `${Math.abs(nutrient.value).toFixed(2)} ${
                                       nutrient.unit
                                   }`
-                                : ""}
+                                : null}
                         </th>
                     ) : (
                         ""

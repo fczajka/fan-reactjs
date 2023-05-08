@@ -1,5 +1,6 @@
 import { RootState } from "../store/store";
-import { FoodInfo, FoodResponse, FoodsResponse } from "../data/Types";
+import { FoodsResponse } from "../data/Types";
+import { FoodInfo, FoodResponse } from "../data/Interfaces";
 
 export function foodInfoFactory(
     storeData: RootState,

@@ -1,5 +1,5 @@
+import { ResultsProps } from "../../data/Interfaces";
 import Result from "./Result";
-import { ResultsProps } from "../../data/Types";
 
 function Results({ foods }: ResultsProps) {
     return (

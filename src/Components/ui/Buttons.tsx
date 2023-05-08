@@ -3,8 +3,9 @@ import { ADD_FOOD } from "../../store/slices/food";
 import { useAppDispatch } from "../../store/hooks/hooks";
 import { BsCalculator } from "react-icons/bs";
 import { RiArrowGoBackFill } from "react-icons/ri";
-import { ButtonsProps } from "../../data/Types";
 import Button from "../../Components/ui/Button";
+import { ButtonsProps } from "../../data/Interfaces";
+import { ButtonTypes } from "../../data/Enums";
 
 function Buttons({
     foodInfo,
@@ -26,7 +27,7 @@ function Buttons({
             <Button
                 callback={addToCalculator}
                 aria={`Add ${name} to calculator`}
-                type="button"
+                type={ButtonTypes.submit}
                 style="basis-7/12 py-1 flex items-center justify-center text-sm bg-tertiary-200 hover:bg-tertiary-300 hover:shadow-custom hover:-translate-y-0.5 focus:bg-tertiary-300 sm:text-base lg:p-button"
             >
                 <span className="mx-1">ADD TO CALCULATOR</span>

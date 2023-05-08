@@ -2,7 +2,7 @@ import { useState } from "react";
 import Header from "./Header";
 import WrapperCalculator from "../calculator/Wrapper";
 import WrapperModal from "../modal/WrapperModal";
-import { JSXChild } from "../../data/Types";
+import { JSXChild } from "../../data/Interfaces";
 
 function Layout({ children }: JSXChild) {
     const [isOpen, setIsOpen] = useState<boolean>(false);

@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import { useAppSelector } from "../../store/hooks/hooks";
 import TableHead from "./TableHead";
 import TableBody from "./TableBody";
-import { InitialState, IsOpen } from "../../data/Types";
+import { InitialState, IsOpen } from "../../data/Interfaces";
 
 function Calculator({ isOpen }: IsOpen) {
     const data: InitialState = useAppSelector((state) => state.sum);
