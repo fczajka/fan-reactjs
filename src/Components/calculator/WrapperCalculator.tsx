@@ -5,7 +5,7 @@ import { ButtonTypes } from "../../data/Enums";
 import { useCallback, useContext } from "react";
 import IsOpenContext from "../../context/IsOpenContext";
 
-function Wrapper() {
+function WrapperCalculator() {
     const [IsOpen, SetIsOpen] = useContext(IsOpenContext);
 
     const handleClick = useCallback(
@@ -34,4 +34,4 @@ function Wrapper() {
     );
 }
 
-export default Wrapper;
+export default WrapperCalculator;
