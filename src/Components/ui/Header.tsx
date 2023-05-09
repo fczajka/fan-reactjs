@@ -20,10 +20,11 @@ function Header() {
                     FOOD AND NUTRIENTS
                 </h1>
                 <Button
+                    tabIndex={IsOpen ? -1 : 0}
                     callback={handleClick}
                     aria="Open calculator"
                     type={ButtonTypes.button}
-                    style="p-3 text-sm bg-tertiary-200 hover:bg-tertiary-300 focus:bg-tertiary-300 hover:-translate-y-0.5 sm:text-base lg:absolute lg:right-12 lg:p-primary lg:bg-primary-200 lg:focus:bg-primary-300 lg:hover:bg-primary-300"
+                    myStyle="p-3 text-sm bg-tertiary-200 hover:bg-tertiary-300 focus:bg-tertiary-300 hover:-translate-y-0.5 sm:text-base lg:absolute lg:right-12 lg:p-primary lg:bg-primary-200 lg:focus:bg-primary-300 lg:hover:bg-primary-300"
                 >
                     {windowWidth >= 1024 ? "Open calculator" : <FaHamburger />}
                 </Button>

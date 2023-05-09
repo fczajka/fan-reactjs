@@ -1,12 +1,20 @@
 import { ButtonProps } from "../../data/Interfaces";
 
-function Button({ children, callback, aria, type, style }: ButtonProps) {
+function Button({
+    children,
+    callback,
+    aria,
+    type,
+    myStyle,
+    tabIndex,
+}: ButtonProps) {
     return (
         <button
-            className={`${style} rounded-primary transition-all hover:shadow-custom focus:shadow-custom`}
+            className={`${myStyle} rounded-primary transition-all hover:shadow-custom focus:shadow-custom`}
             onClick={() => callback()}
             aria-label={aria}
             type={type ? type : undefined}
+            tabIndex={tabIndex}
         >
             {children}
         </button>

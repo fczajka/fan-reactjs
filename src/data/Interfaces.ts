@@ -151,7 +151,8 @@ export interface ButtonProps {
     callback: () => void;
     aria: string;
     type: ButtonTypes;
-    style: string;
+    myStyle: string;
+    tabIndex: number;
 }
 
 export interface ButtonsProps {

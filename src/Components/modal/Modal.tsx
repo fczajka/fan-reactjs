@@ -25,10 +25,11 @@ function Modal({ showModal, setShowModal }: ModalProps) {
                     </a>
                 </p>
                 <Button
+                    tabIndex={0}
                     callback={closeModal}
                     aria="Close modal"
                     type={ButtonTypes.button}
-                    style="absolute top-4 right-4 text-3xl hover:bg-tertiary-300"
+                    myStyle="absolute top-4 right-4 text-3xl hover:bg-tertiary-300"
                 >
                     <FaRegTimesCircle />
                 </Button>

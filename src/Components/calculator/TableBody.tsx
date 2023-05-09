@@ -3,8 +3,11 @@ import { useAppDispatch } from "../../store/hooks/hooks";
 import { TiDelete } from "react-icons/ti";
 import { DELETE_FOOD } from "../../store/slices/food";
 import { TableBodyProps } from "../../data/Interfaces";
+import { useContext } from "react";
+import IsOpenContext from "../../context/IsOpenContext";
 
 function TableBody({ data }: TableBodyProps) {
+    const [IsOpen] = useContext(IsOpenContext);
     const dispatch = useAppDispatch();
     return (
         <tbody className="w-full h-calc-mobile flex flex-col overflow-y-auto overflow-x-hidden lg:h-calc-desktop">
@@ -29,6 +32,7 @@ function TableBody({ data }: TableBodyProps) {
                             <tr className="flex justify-center">
                                 <td className="basis-full flex p-0">
                                     <button
+                                        tabIndex={IsOpen ? 0 : -1}
                                         onClick={() => {
                                             dispatch(DELETE_FOOD(foodInfo));
                                         }}
