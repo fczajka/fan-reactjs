@@ -3,7 +3,12 @@ import { useLocation } from "react-router-dom";
 import { RootState } from "../../store/store";
 import { useSelector } from "react-redux";
 import Notification from "../../Components/ui/Notification";
-import { foodInfoFactory } from "../../helpers/helpers";
+import {
+    foodInfoFactory,
+    handleShowNotification,
+    handleValueOver5000,
+    handleValueUnder0,
+} from "../../helpers/helpers";
 import Table from "../../Components/ui/Table";
 import Buttons from "../../Components/ui/Buttons";
 import GramsControls from "../../Components/ui/GramsControls";
@@ -20,27 +25,19 @@ function Details() {
 
     function setGrams(inputValue: number) {
         if (inputValue > 5000) {
-            setInputValue(5000);
-            setNotificationMessage("Cannot set grams over 5000");
+            handleValueOver5000(setInputValue, setNotificationMessage);
             setShowNotification(!showNotification);
-            return;
         }
         if (inputValue < 0) {
-            setInputValue(0);
-            setNotificationMessage("Cannot set grams below 0");
+            handleValueUnder0(setInputValue, setNotificationMessage);
             setShowNotification(!showNotification);
-            return;
         }
         setInputValue(inputValue);
     }
 
     useEffect(() => {
         if (showNotification) {
-            const timer = setTimeout(
-                () => setShowNotification(!showNotification),
-                3000
-            );
-            return () => clearTimeout(timer);
+            handleShowNotification(setShowNotification, showNotification);
         }
     }, [showNotification]);
 

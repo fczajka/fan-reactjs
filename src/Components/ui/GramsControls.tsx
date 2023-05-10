@@ -10,21 +10,13 @@ function GramsControls({ inputValue, setGrams }: GramsControlsProps) {
     const [changeValue, setChangeValue] = useState<ChangeValues>(1);
     const changableValues: ChangableValues = [1, 5, 10, 100];
 
-    function decreaseGrams() {
-        setGrams(inputValue - changeValue);
-    }
-
-    function increaseGrams() {
-        setGrams(inputValue + changeValue);
-    }
-
     return (
         <div>
             <h3 className="text-base text-center my-2 lg:text-lg">Grams:</h3>
             <div className="flex justify-center items-center">
                 <Button
                     tabIndex={IsOpen ? -1 : 0}
-                    callback={decreaseGrams}
+                    callback={() => setGrams(inputValue - changeValue)}
                     aria="Decrease grams"
                     type={ButtonTypes.submit}
                     myStyle="w-10 h-10 bg-primary-200 text-xl hover:bg-primary-300 hover:-translate-y-0.5 focus:bg-primary-300 lg:w-12 lg:h-12 lg:text-2xl"
@@ -34,7 +26,7 @@ function GramsControls({ inputValue, setGrams }: GramsControlsProps) {
                 <div className="w-12 text-center">{inputValue}</div>
                 <Button
                     tabIndex={IsOpen ? -1 : 0}
-                    callback={increaseGrams}
+                    callback={() => setGrams(inputValue + changeValue)}
                     aria="Increase grams"
                     type={ButtonTypes.submit}
                     myStyle="w-10 h-10 bg-primary-200 text-xl hover:bg-primary-300 hover:-translate-y-0.5 focus:bg-primary-300 lg:w-12 lg:h-12 lg:text-2xl"

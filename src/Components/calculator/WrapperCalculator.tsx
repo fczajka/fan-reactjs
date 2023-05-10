@@ -2,13 +2,11 @@ import { FaRegTimesCircle } from "react-icons/fa";
 import Calculator from "./Calculator";
 import Button from "../ui/Button";
 import { ButtonTypes } from "../../data/Enums";
-import { useCallback, useContext } from "react";
+import { useContext } from "react";
 import IsOpenContext from "../../context/IsOpenContext";
 
 function WrapperCalculator() {
     const [IsOpen, SetIsOpen] = useContext(IsOpenContext);
-
-    const handleClick = useCallback(() => SetIsOpen(false), [SetIsOpen]);
 
     return (
         <div
@@ -18,7 +16,7 @@ function WrapperCalculator() {
         >
             <Button
                 tabIndex={IsOpen ? 0 : -1}
-                callback={handleClick}
+                callback={() => SetIsOpen(false)}
                 aria="Close calculator"
                 type={ButtonTypes.button}
                 myStyle="mt-8 mr-4 text-3xl text-secondary-100 rounded-full sm:mr-12 sm:text-4xl lg:mr-16"

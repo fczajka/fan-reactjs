@@ -1,10 +1,17 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { FoodsResponse } from "../../data/Types";
 import Results from "../../Components/ui/Results";
 import Notification from "../../Components/ui/Notification";
 import useFoodList from "../../hooks/useFoodList";
 import Form from "../../Components/form/Form";
 import Transition from "../../Components/ui/Transition";
+import {
+    handleCachedData,
+    handleError,
+    handleLoaded,
+    handleSetFoods,
+    handleShowNotification,
+} from "../../helpers/helpers";
 
 function Home() {
     const [inputValue, setInputValue] = useState<string>("");
@@ -14,52 +21,38 @@ function Home() {
     const [foods, setFoods] = useState<FoodsResponse>([]);
     const [APIData] = useFoodList(inputValue);
 
+    const handleAPIData = useCallback(() => {
+        handleSetFoods(inputValue, APIData.food);
+        if (APIData.status === "error") {
+            handleError(
+                APIData.errorMessage,
+                setErrorMessage,
+                setShowNotification,
+                setIsClicked
+            );
+        }
+        if (APIData.status === "loaded") {
+            handleLoaded(APIData.food, setIsClicked, setFoods);
+        }
+    }, [APIData.errorMessage, APIData.food, APIData.status, inputValue]);
+
     useEffect(() => {
         if (APIData.counter != 0) {
             return;
         }
         if (isClicked) {
-            localStorage.setItem("lastFoodName", inputValue);
-            localStorage.setItem("lastFoodList", JSON.stringify(APIData.food));
-            if (APIData.status === "error") {
-                setErrorMessage(APIData.errorMessage);
-                setShowNotification(true);
-                setIsClicked(false);
-                return;
-            }
-            if (APIData.status === "loaded") {
-                setFoods(APIData.food);
-                setIsClicked(false);
-            }
+            handleAPIData();
         }
-    }, [APIData, isClicked, inputValue, foods]);
+    }, [handleAPIData, APIData.counter, isClicked]);
 
     useEffect(() => {
         if (showNotification) {
-            const timer = setTimeout(
-                () => setShowNotification(!showNotification),
-                3000
-            );
-            return () => clearTimeout(timer);
+            handleShowNotification(setShowNotification, showNotification);
         }
     }, [showNotification]);
 
-    function handleLastFood(lastFoodName: string, lastFoodList: string) {
-        const lastFoodListCleaned = JSON.parse(lastFoodList) as FoodsResponse;
-        if (lastFoodListCleaned.length === 0) {
-            setInputValue(lastFoodName);
-            return;
-        }
-        setInputValue(lastFoodName);
-        setFoods(lastFoodListCleaned);
-    }
-
     useEffect(() => {
-        const lastFoodName = localStorage.getItem("lastFoodName");
-        const lastFoodList = localStorage.getItem("lastFoodList");
-        if (lastFoodName && lastFoodList) {
-            handleLastFood(lastFoodName, lastFoodList);
-        }
+        handleCachedData(setInputValue, setFoods);
     }, []);
 
     return (

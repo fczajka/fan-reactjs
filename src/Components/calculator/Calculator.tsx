@@ -4,6 +4,7 @@ import TableHead from "./TableHead";
 import TableBody from "./TableBody";
 import { InitialState } from "../../data/Interfaces";
 import IsOpenContext from "../../context/IsOpenContext";
+import { handleResize } from "../../helpers/helpers";
 
 function Calculator() {
     const data: InitialState = useAppSelector((state) => state.sum);
@@ -11,17 +12,7 @@ function Calculator() {
     const vh = useRef(window.innerHeight * 0.01);
 
     useEffect(() => {
-        function handleResize() {
-            vh.current = window.innerHeight * 0.01;
-            document.documentElement.style.setProperty(
-                "--vh",
-                `${vh.current}px`
-            );
-        }
-
-        window.addEventListener("resize", handleResize);
-        handleResize();
-        return () => window.removeEventListener("resize", handleResize);
+        handleResize(vh);
     }, []);
 
     return (

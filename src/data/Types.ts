@@ -19,8 +19,14 @@ export type SetStateActionNumber = (
     value: React.SetStateAction<number>
 ) => void;
 
+export type SetStateActionFoodsResponse = (
+    value: React.SetStateAction<FoodsResponse>
+) => void;
+
 export type MutableRef = MutableRefObject<HTMLDivElement | null>;
 
 export type ChangeValues = 1 | 5 | 10 | 100;
 
 export type ChangableValues = ChangeValues[];
+
+export type APIDataFood = FoodsResponse;

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Logic from "./Logic";
 import Modal from "./Modal";
+import { handleModal } from "../../helpers/helpers";
 
 function WrapperModal() {
     const [showModal, setShowModal] = useState<boolean>(true);
@@ -8,14 +9,7 @@ function WrapperModal() {
     const isModalClosed = localStorage.getItem("modal");
 
     useEffect(() => {
-        if (isModalClosed) {
-            const isModalClosedCleaned = JSON.parse(isModalClosed) as boolean;
-            if (isModalClosedCleaned === true) {
-                setShowModal(false);
-            }
-        } else {
-            return;
-        }
+        handleModal(isModalClosed, setShowModal);
     }, [isModalClosed]);
 
     return (

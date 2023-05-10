@@ -3,6 +3,7 @@ import Button from "../ui/Button";
 import { FormProps } from "../../data/Interfaces";
 import { ButtonTypes } from "../../data/Enums";
 import IsOpenContext from "../../context/IsOpenContext";
+import { handleClearInput } from "../../helpers/helpers";
 
 function Form({
     inputValue,
@@ -11,16 +12,10 @@ function Form({
     setFoods,
 }: FormProps) {
     const [IsOpen] = useContext(IsOpenContext);
+
     const requestFood = useCallback(() => {
         setIsClicked(true);
     }, [setIsClicked]);
-
-    const clearInput = useCallback(() => {
-        setFoods([]);
-        setInputValue("");
-        localStorage.setItem("lastFoodName", "");
-        localStorage.setItem("lastFoodList", "");
-    }, [setFoods, setInputValue]);
 
     return (
         <form
@@ -58,7 +53,7 @@ function Form({
                 </Button>
                 <Button
                     tabIndex={IsOpen ? -1 : 0}
-                    callback={clearInput}
+                    callback={() => handleClearInput(setFoods, setInputValue)}
                     aria="Clear form"
                     type={ButtonTypes.reset}
                     myStyle="basis-4/12 text-sm p-primary bg-secondary-200 hover:bg-secondary-300 hover:-translate-y-0.5 focus:bg-secondary-300 sm:text-base"
