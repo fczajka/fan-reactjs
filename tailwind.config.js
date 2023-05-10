@@ -62,6 +62,9 @@ module.exports = {
             padding: {
                 primary: "0.5rem 1rem",
             },
+            width: {
+                110: "28rem",
+            },
         },
     },
     plugins: [],

@@ -34,7 +34,7 @@ function Buttons({
                 type={ButtonTypes.submit}
                 myStyle="basis-7/12 p-primary text-sm flex items-center justify-center bg-tertiary-200 hover:bg-tertiary-300 hover:shadow-custom hover:-translate-y-0.5 focus:bg-tertiary-300 sm:text-base"
             >
-                <span className="mx-1">ADD TO CALCULATOR</span>
+                <span className="mx-1">Add to calculator</span>
                 <BsCalculator />
             </Button>
             <Link
@@ -42,7 +42,7 @@ function Buttons({
                 to="/"
                 className="basis-4/12 p-primary text-sm flex items-center justify-center rounded-primary bg-secondary-200 transition-all hover:bg-secondary-300 hover:shadow-custom hover:-translate-y-0.5 focus:bg-secondary-300 sm:text-base"
             >
-                <span className="mx-1">GO BACK</span>
+                <span className="mx-1">Go back</span>
                 {<RiArrowGoBackFill />}
             </Link>
         </div>

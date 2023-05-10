@@ -32,9 +32,10 @@ function Form({
                 Food name:
                 <input
                     tabIndex={IsOpen ? -1 : 0}
-                    className="bg-primary-200 font-primary rounded-primary p-primary mt-2 text-sm transition-all hover:bg-primary-300 hover:shadow-custom hover:-translate-y-0.5 focus:bg-primary-300 sm:text-base lg:text-lg"
+                    className="bg-primary-200 font-primary rounded-primary p-primary mt-2 text-sm transition-all placeholder:text-primary-800 hover:bg-primary-300 hover:shadow-custom hover:-translate-y-0.5 focus:bg-primary-300 sm:text-base lg:text-lg"
                     type="text"
                     id="food"
+                    placeholder="Search"
                     value={inputValue}
                     onChange={(e) => setInputValue(e.target.value)}
                 />
@@ -49,7 +50,7 @@ function Form({
                     type={ButtonTypes.submit}
                     myStyle="basis-7/12 text-sm p-primary bg-tertiary-200 hover:bg-tertiary-300 hover:-translate-y-0.5 focus:bg-tertiary-300 sm:text-base"
                 >
-                    CHECK
+                    Check
                 </Button>
                 <Button
                     tabIndex={IsOpen ? -1 : 0}
@@ -58,7 +59,7 @@ function Form({
                     type={ButtonTypes.reset}
                     myStyle="basis-4/12 text-sm p-primary bg-secondary-200 hover:bg-secondary-300 hover:-translate-y-0.5 focus:bg-secondary-300 sm:text-base"
                 >
-                    CLEAR
+                    Clear
                 </Button>
             </div>
         </form>

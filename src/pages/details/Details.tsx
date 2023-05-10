@@ -27,10 +27,12 @@ function Details() {
         if (inputValue > 5000) {
             handleValueOver5000(setInputValue, setNotificationMessage);
             setShowNotification(!showNotification);
+            return;
         }
         if (inputValue < 0) {
             handleValueUnder0(setInputValue, setNotificationMessage);
             setShowNotification(!showNotification);
+            return;
         }
         setInputValue(inputValue);
     }
