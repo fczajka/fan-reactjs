@@ -62,7 +62,7 @@ Once you complete the setup, run `npm start` to start the application. You will 
 
 ## Project Status
 
-Completed, but still supported.
+Completed.
 
 ## Room for improvement
 
