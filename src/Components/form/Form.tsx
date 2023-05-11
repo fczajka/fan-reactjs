@@ -32,7 +32,7 @@ function Form({
                 Food name:
                 <input
                     tabIndex={IsOpen ? -1 : 0}
-                    className="bg-primary-200 font-primary rounded-primary p-primary mt-2 text-sm transition-all placeholder:text-primary-800 hover:bg-primary-300 hover:shadow-custom hover:-translate-y-0.5 focus:bg-primary-300 sm:text-base lg:text-lg"
+                    className="bg-primary-200 font-primary rounded-primary p-primary mt-2 text-sm transition-all placeholder:text-primary-800 hover:bg-primary-300 hover:shadow-custom hover:-translate-y-0.5 focus:bg-primary-300 motion-reduce:transition-none sm:text-base lg:text-lg"
                     type="text"
                     id="food"
                     placeholder="Search"

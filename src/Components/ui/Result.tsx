@@ -8,7 +8,7 @@ function Result({ food }: ResultProps) {
     return (
         <li className="w-full my-2 text-sm sm:text-base lg:text-lg">
             <Link
-                className="w-full block p-primary rounded-primary transition-all bg-primary-200 hover:bg-primary-300 hover:shadow-custom hover:-translate-y-0.5 focus:bg-primary-300 focus:shadow-custom"
+                className="w-full block p-primary rounded-primary transition-all bg-primary-200 hover:bg-primary-300 hover:shadow-custom hover:-translate-y-0.5 focus:bg-primary-300 focus:shadow-custom motion-reduce:transition-none"
                 to="/details"
                 state={food}
                 tabIndex={IsOpen ? -1 : 0}

@@ -19,7 +19,7 @@ function GramsControls({ inputValue, setGrams }: GramsControlsProps) {
                     callback={() => setGrams(inputValue - changeValue)}
                     aria="Decrease grams"
                     type={ButtonTypes.submit}
-                    myStyle="w-10 h-10 bg-primary-200 text-xl hover:bg-primary-300 hover:-translate-y-0.5 focus:bg-primary-300 lg:w-12 lg:h-12 lg:text-2xl"
+                    myStyle="w-10 h-10 bg-primary-200 text-xl hover:bg-primary-300 hover:-translate-y-0.5 focus:bg-primary-300 motion-reduce:transition-none lg:w-12 lg:h-12 lg:text-2xl"
                 >
                     -
                 </Button>
@@ -29,7 +29,7 @@ function GramsControls({ inputValue, setGrams }: GramsControlsProps) {
                     callback={() => setGrams(inputValue + changeValue)}
                     aria="Increase grams"
                     type={ButtonTypes.submit}
-                    myStyle="w-10 h-10 bg-primary-200 text-xl hover:bg-primary-300 hover:-translate-y-0.5 focus:bg-primary-300 lg:w-12 lg:h-12 lg:text-2xl"
+                    myStyle="w-10 h-10 bg-primary-200 text-xl hover:bg-primary-300 hover:-translate-y-0.5 focus:bg-primary-300 motion-reduce:transition-none lg:w-12 lg:h-12 lg:text-2xl"
                 >
                     +
                 </Button>
@@ -42,7 +42,7 @@ function GramsControls({ inputValue, setGrams }: GramsControlsProps) {
                     <li key={value}>
                         <button
                             tabIndex={IsOpen ? -1 : 0}
-                            className={`w-10 h-10 text-sm bg-primary-200 rounded-primary transition-all hover:bg-primary-300 hover:shadow-custom hover:-translate-y-0.5 focus:bg-primary-300 sm:text-base lg:w-12 lg:h-12 lg:text-lg ${
+                            className={`w-10 h-10 text-sm bg-primary-200 rounded-primary transition-all hover:bg-primary-300 hover:shadow-custom hover:-translate-y-0.5 focus:bg-primary-300 motion-reduce:transition-none sm:text-base lg:w-12 lg:h-12 lg:text-lg ${
                                 changeValue === value ? "bg-primary-300" : ""
                             }`}
                             onClick={() => {

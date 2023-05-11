@@ -17,7 +17,7 @@ function Calculator() {
 
     return (
         <table
-            className={`fixed w-60 top-0 z-20 h-screen overflow-hidden transition-all ease-out duration-300 delay-100 bg-secondary-50 lg:w-80 ${
+            className={`fixed w-60 top-0 z-20 h-screen overflow-hidden transition-all ease-out duration-300 delay-100 bg-secondary-50 lg:w-80 motion-reduce:transition-none ${
                 IsOpen ? "-left-0" : "-left-80"
             }`}
         >
