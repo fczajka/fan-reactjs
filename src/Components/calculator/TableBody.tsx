@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { useAppDispatch } from "../../store/hooks/hooks";
 import { TiDelete } from "react-icons/ti";
 import { DELETE_FOOD } from "../../store/slices/food";

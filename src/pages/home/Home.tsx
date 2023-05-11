@@ -37,7 +37,7 @@ function Home() {
     }, [APIData.errorMessage, APIData.food, APIData.status, inputValue]);
 
     useEffect(() => {
-        if (APIData.counter != 0) {
+        if (APIData.counter !== 0) {
             return;
         }
         if (isClicked) {

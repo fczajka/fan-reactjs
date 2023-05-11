@@ -172,7 +172,7 @@ export function handleModal(
 ) {
     if (isModalClosed) {
         const isModalClosedCleaned = JSON.parse(isModalClosed) as boolean;
-        if (isModalClosedCleaned === true) {
+        if (isModalClosedCleaned) {
             setShowModal(false);
         }
     } else {
