@@ -1,9 +1,8 @@
-import React from "react";
 import { useAppDispatch } from "../../store/hooks/hooks";
 import { TiDelete } from "react-icons/ti";
 import { DELETE_FOOD } from "../../store/slices/food";
 import { TableBodyProps } from "../../data/Interfaces";
-import { useContext } from "react";
+import React, { useContext } from "react";
 import IsOpenContext from "../../context/IsOpenContext";
 
 function TableBody({ data }: TableBodyProps) {
