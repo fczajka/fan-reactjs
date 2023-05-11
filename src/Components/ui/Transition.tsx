@@ -1,15 +1,21 @@
-import { motion } from "framer-motion";
-import { animations } from "../../data/constants";
+import { motion, useReducedMotion } from "framer-motion";
+import { animations, animationsWithReducedMotion } from "../../data/constants";
 import { JSXChildren } from "../../data/Interfaces";
 
 function Transition({ children }: JSXChildren) {
+    const shouldReduceMotion = useReducedMotion();
+
     return (
         <motion.div
-            variants={animations}
+            variants={
+                shouldReduceMotion ? animationsWithReducedMotion : animations
+            }
             initial="initial"
             animate="animate"
             exit="exit"
-            transition={{ duration: 0.3 }}
+            transition={
+                shouldReduceMotion ? { duration: 0 } : { duration: 0.3 }
+            }
         >
             {children}
         </motion.div>
