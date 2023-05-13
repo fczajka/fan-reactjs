@@ -18,8 +18,6 @@ function Results({ foods, status, isClicked }: ResultsProps) {
         "[animation-delay:1.0s]",
     ];
 
-    console.log(shouldReduceMotion);
-
     return status === "loading" && isClicked && !shouldReduceMotion ? (
         <Loader />
     ) : (
