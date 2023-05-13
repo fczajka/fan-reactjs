@@ -63,7 +63,11 @@ function Home() {
                 setIsClicked={setIsClicked}
                 setFoods={setFoods}
             />
-            <Results foods={foods} />
+            <Results
+                foods={foods}
+                status={APIData.status}
+                isClicked={isClicked}
+            />
             <Notification isVisible={showNotification} text={errorMessage} />
         </Transition>
     );

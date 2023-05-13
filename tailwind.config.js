@@ -4,6 +4,10 @@ module.exports = {
     content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
     theme: {
         extend: {
+            animation: {
+                "fade-in": "0.4s ease-in-out 1 both fade-in",
+                rotation: "rotation 1s linear infinite",
+            },
             colors: {
                 //sky
                 "primary-50": "#f0f9ff",
@@ -55,6 +59,26 @@ module.exports = {
             height: {
                 "calc-mobile": "var(--calc-height-mobile)",
                 "calc-desktop": "var(--calc-height-desktop)",
+            },
+            keyframes: {
+                "fade-in": {
+                    "0%": {
+                        translate: "0px 10px",
+                        opacity: 0,
+                    },
+                    "100%": {
+                        translate: "0px 0px",
+                        opacity: 1,
+                    },
+                },
+                rotation: {
+                    from: {
+                        transform: "rotate(0deg)",
+                    },
+                    to: {
+                        transform: "rotate(360deg)",
+                    },
+                },
             },
             maxWidth: {
                 1920: "1920px",

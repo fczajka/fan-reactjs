@@ -4,6 +4,7 @@ import {
     FoodsResponse,
     SetStateActionBoolean,
     SetStateActionString,
+    Status,
 } from "./Types";
 
 export interface InitialFoodResponse {
@@ -141,9 +142,12 @@ export interface GramsControlsProps {
 
 export interface ResultProps {
     food: FoodResponse;
+    delay: string;
 }
 export interface ResultsProps {
     foods: FoodsResponse;
+    status: Status;
+    isClicked: boolean;
 }
 
 export interface ButtonProps {
