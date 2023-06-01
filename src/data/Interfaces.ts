@@ -4,7 +4,6 @@ import {
     FoodsResponse,
     SetStateActionBoolean,
     SetStateActionString,
-    Status,
 } from "./Types";
 
 export interface InitialFoodResponse {
@@ -146,7 +145,7 @@ export interface ResultProps {
 }
 export interface ResultsProps {
     foods: FoodsResponse;
-    status: Status;
+    counter: number;
     isClicked: boolean;
 }
 

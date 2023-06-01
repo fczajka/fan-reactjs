@@ -3,7 +3,7 @@ import { ResultsProps } from "../../data/Interfaces";
 import Loader from "./Loader";
 import Result from "./Result";
 
-function Results({ foods, status, isClicked }: ResultsProps) {
+function Results({ foods, counter, isClicked }: ResultsProps) {
     const shouldReduceMotion = useReducedMotion();
     const delays: string[] = [
         "[animation-delay:0.1s]",
@@ -18,7 +18,7 @@ function Results({ foods, status, isClicked }: ResultsProps) {
         "[animation-delay:1.0s]",
     ];
 
-    return status === "loading" && isClicked && !shouldReduceMotion ? (
+    return counter !== 0 && isClicked && !shouldReduceMotion ? (
         <Loader />
     ) : (
         <ul className="w-full my-4 mb-20 lg:nb-0">

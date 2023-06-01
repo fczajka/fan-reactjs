@@ -65,7 +65,7 @@ function Home() {
             />
             <Results
                 foods={foods}
-                status={APIData.status}
+                counter={APIData.counter}
                 isClicked={isClicked}
             />
             <Notification isVisible={showNotification} text={errorMessage} />
