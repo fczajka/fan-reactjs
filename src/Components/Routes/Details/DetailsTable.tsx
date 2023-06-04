@@ -1,4 +1,4 @@
-import { TableProps } from "../../../data/Interfaces";
+import { TableProps } from "data/Interfaces";
 
 function DetailsTable({ inputValue, foodInfo }: TableProps) {
     return (

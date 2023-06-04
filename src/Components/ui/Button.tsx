@@ -1,4 +1,4 @@
-import { ButtonProps } from "../../data/Interfaces";
+import { ButtonProps } from "data/Interfaces";
 
 function Button({
     children,

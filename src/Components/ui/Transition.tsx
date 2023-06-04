@@ -1,6 +1,6 @@
 import { motion, useReducedMotion } from "framer-motion";
-import { animations, animationsWithReducedMotion } from "../../data/constants";
-import { JSXChildren } from "../../data/Interfaces";
+import { JSXChildren } from "data/Interfaces";
+import { animations, animationsWithReducedMotion } from "data/constants";
 
 function Transition({ children }: JSXChildren) {
     const shouldReduceMotion = useReducedMotion();

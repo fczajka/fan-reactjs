@@ -1,6 +1,6 @@
+import { MutableRef } from "data/Types";
 import { useEffect, useRef, ReactElement } from "react";
 import { createPortal } from "react-dom";
-import { MutableRef } from "../../../../data/Types";
 
 function Logic({ children }: { children: ReactElement }) {
     const elRef: MutableRef = useRef(null);
