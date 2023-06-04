@@ -1,9 +1,9 @@
 import { FaRegTimesCircle } from "react-icons/fa";
 import Calculator from "./Calculator";
-import Button from "../ui/Button";
-import { ButtonTypes } from "../../data/Enums";
 import { useContext } from "react";
-import IsOpenContext from "../../context/IsOpenContext";
+import IsOpenContext from "../../../../context/IsOpenContext";
+import { ButtonTypes } from "../../../../data/Enums";
+import Button from "../../Button";
 
 function WrapperCalculator() {
     const [IsOpen, SetIsOpen] = useContext(IsOpenContext);

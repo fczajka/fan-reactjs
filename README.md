@@ -23,15 +23,15 @@
 
 ### Landing page
 
-![Landing page](./src/assets/images/landingPage.png)
+![Landing page](./public/images/landingPage.png)
 
 ### Filled input with results
 
-![Filled query](./src/assets/images/results.png)
+![Filled query](./public/images/results.png)
 
 ### Details
 
-![Details](./src/assets/images/details.png)
+![Details](./public/images/details.png)
 
 ## Technologies Used
 

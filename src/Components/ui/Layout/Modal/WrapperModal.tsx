@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Logic from "./Logic";
 import Modal from "./Modal";
-import { handleModal } from "../../helpers/helpers";
+import { handleModal } from "../../../../helpers/helpers";
 
 function WrapperModal() {
     const [showModal, setShowModal] = useState<boolean>(true);

@@ -9,11 +9,11 @@ import {
     handleValueOver5000,
     handleValueUnder0,
 } from "../../helpers/helpers";
-import Table from "../../Components/ui/Table";
-import Buttons from "../../Components/ui/Buttons";
-import GramsControls from "../../Components/ui/GramsControls";
 import Transition from "../../Components/ui/Transition";
 import { FoodInfo, FoodResponse } from "../../data/Interfaces";
+import DetailsTable from "../../Components/Routes/Details/DetailsTable";
+import GramsControls from "../../Components/Routes/Details/GramsControls";
+import Buttons from "../../Components/Routes/Details/Buttons";
 
 function Details() {
     const [showNotification, setShowNotification] = useState<boolean>(false);
@@ -50,7 +50,7 @@ function Details() {
             <h2 className="text-center font-secondary text-lg pb-4 sm:text-xl lg:text-2xl">
                 {data.description}
             </h2>
-            <Table inputValue={inputValue} foodInfo={foodInfo} />
+            <DetailsTable inputValue={inputValue} foodInfo={foodInfo} />
             <GramsControls inputValue={inputValue} setGrams={setGrams} />
             <Buttons
                 foodInfo={foodInfo}

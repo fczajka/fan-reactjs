@@ -1,6 +1,6 @@
-import { TableProps } from "../../data/Interfaces";
+import { TableProps } from "../../../data/Interfaces";
 
-function Table({ inputValue, foodInfo }: TableProps) {
+function DetailsTable({ inputValue, foodInfo }: TableProps) {
     return (
         <table className="w-full">
             <thead className="text-base bg-primary-200 sm:text-lg lg:text-xl">
@@ -51,4 +51,4 @@ function Table({ inputValue, foodInfo }: TableProps) {
     );
 }
 
-export default Table;
+export default DetailsTable;

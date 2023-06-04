@@ -1,9 +1,9 @@
-import { useAppDispatch } from "../../store/hooks/hooks";
 import { TiDelete } from "react-icons/ti";
-import { DELETE_FOOD } from "../../store/slices/food";
-import { TableBodyProps } from "../../data/Interfaces";
 import React, { useContext } from "react";
-import IsOpenContext from "../../context/IsOpenContext";
+import { TableBodyProps } from "../../../../data/Interfaces";
+import IsOpenContext from "../../../../context/IsOpenContext";
+import { useAppDispatch } from "../../../../store/hooks/hooks";
+import { DELETE_FOOD } from "../../../../store/slices/food";
 
 function TableBody({ data }: TableBodyProps) {
     const [IsOpen] = useContext(IsOpenContext);

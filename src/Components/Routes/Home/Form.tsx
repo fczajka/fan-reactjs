@@ -1,9 +1,9 @@
 import { useCallback, useContext } from "react";
-import Button from "../ui/Button";
-import { FormProps } from "../../data/Interfaces";
-import { ButtonTypes } from "../../data/Enums";
-import IsOpenContext from "../../context/IsOpenContext";
-import { handleClearInput } from "../../helpers/helpers";
+import Button from "../../ui/Button";
+import { FormProps } from "../../../data/Interfaces";
+import { ButtonTypes } from "../../../data/Enums";
+import IsOpenContext from "../../../context/IsOpenContext";
+import { handleClearInput } from "../../../helpers/helpers";
 
 function Form({
     inputValue,

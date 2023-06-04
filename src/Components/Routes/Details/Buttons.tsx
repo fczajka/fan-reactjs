@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
-import { ADD_FOOD } from "../../store/slices/food";
-import { useAppDispatch } from "../../store/hooks/hooks";
+import { ADD_FOOD } from "../../../store/slices/food";
+import { useAppDispatch } from "../../../store/hooks/hooks";
 import { BsCalculator } from "react-icons/bs";
 import { RiArrowGoBackFill } from "react-icons/ri";
-import Button from "../../Components/ui/Button";
-import { ButtonsProps } from "../../data/Interfaces";
-import { ButtonTypes } from "../../data/Enums";
+import Button from "../../ui/Button";
+import { ButtonsProps } from "../../../data/Interfaces";
+import { ButtonTypes } from "../../../data/Enums";
 import { useContext } from "react";
-import IsOpenContext from "../../context/IsOpenContext";
+import IsOpenContext from "../../../context/IsOpenContext";
 
 function Buttons({
     foodInfo,
