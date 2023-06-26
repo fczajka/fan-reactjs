@@ -1,7 +1,7 @@
 import { FaRegTimesCircle } from "react-icons/fa";
 import { ButtonTypes } from "data/Enums";
 import Button from "Components/ui/Button";
-import { ModalProps } from "data/Interfaces";
+import { ModalProps } from "./interface";
 
 function Modal({ showModal, setShowModal }: ModalProps) {
     function closeModal() {

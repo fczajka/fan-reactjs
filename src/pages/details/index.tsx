@@ -11,9 +11,9 @@ import {
 } from "../../helpers/helpers";
 import Transition from "../../Components/ui/Transition";
 import { FoodInfo, FoodResponse } from "../../data/Interfaces";
-import DetailsTable from "../../Components/Routes/Details/DetailsTable";
-import GramsControls from "../../Components/Routes/Details/GramsControls";
-import Buttons from "../../Components/Routes/Details/Buttons";
+import DetailsTable from "./Details/DetailsTable";
+import GramsControls from "./Details/GramsControls";
+import Buttons from "./Details/Buttons";
 
 function Details() {
     const [showNotification, setShowNotification] = useState<boolean>(false);

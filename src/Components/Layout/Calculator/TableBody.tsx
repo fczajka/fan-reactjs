@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import { DELETE_FOOD } from "store/slices/food";
 import { useAppDispatch } from "store/hooks/hooks";
 import IsOpenContext from "context/IsOpenContext";
-import { TableBodyProps } from "data/Interfaces";
+import { TableBodyProps } from "./interface";
 
 function TableBody({ data }: TableBodyProps) {
     const [IsOpen] = useContext(IsOpenContext);

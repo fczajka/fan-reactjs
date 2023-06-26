@@ -1,4 +1,4 @@
-import { NotificationProps } from "data/Interfaces";
+import { NotificationProps } from "./interface";
 
 function Notification({ isVisible, text }: NotificationProps) {
     return (

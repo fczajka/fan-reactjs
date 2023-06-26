@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { FoodsResponse } from "../../data/Types";
 import Notification from "../../Components/ui/Notification";
-import useFoodList from "../../hooks/useFoodList";
+import useFoodList from "./hooks/useFoodList";
 import Transition from "../../Components/ui/Transition";
 import {
     handleCachedData,
@@ -10,8 +10,8 @@ import {
     handleSetFoods,
     handleShowNotification,
 } from "../../helpers/helpers";
-import Results from "../../Components/Routes/Home/Results";
-import Form from "../../Components/Routes/Home/Form";
+import Results from "./Home/Results";
+import Form from "./Home/Form";
 
 function Home() {
     const [inputValue, setInputValue] = useState<string>("");

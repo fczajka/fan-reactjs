@@ -1,9 +1,9 @@
 import { useContext, useState } from "react";
 import IsOpenContext from "context/IsOpenContext";
 import { ButtonTypes } from "data/Enums";
-import { GramsControlsProps } from "data/Interfaces";
 import { ChangableValues, ChangeValues } from "data/Types";
 import Button from "Components/ui/Button";
+import { GramsControlsProps } from "./interface";
 
 function GramsControls({ inputValue, setGrams }: GramsControlsProps) {
     const [IsOpen] = useContext(IsOpenContext);

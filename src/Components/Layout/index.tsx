@@ -1,6 +1,6 @@
-import WrapperCalculator from "./Calculator/WrapperCalculator";
+import WrapperCalculator from "./Calculator";
 import Header from "./Header/Header";
-import WrapperModal from "./Modal/WrapperModal";
+import WrapperModal from "./Modal";
 import { JSXChild } from "data/Interfaces";
 
 function Layout({ children }: JSXChild) {

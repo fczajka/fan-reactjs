@@ -4,10 +4,10 @@ import { BsCalculator } from "react-icons/bs";
 import { RiArrowGoBackFill } from "react-icons/ri";
 import { ButtonTypes } from "data/Enums";
 import Button from "Components/ui/Button";
-import { ButtonsProps } from "data/Interfaces";
 import { ADD_FOOD } from "store/slices/food";
 import IsOpenContext from "context/IsOpenContext";
 import { useAppDispatch } from "store/hooks/hooks";
+import { ButtonsProps } from "./interface";
 
 function Buttons({
     foodInfo,

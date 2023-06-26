@@ -1,10 +1,4 @@
-import { ButtonTypes } from "./Enums";
-import {
-    ButtonChildren,
-    FoodsResponse,
-    SetStateActionBoolean,
-    SetStateActionString,
-} from "./Types";
+import { FoodsResponse } from "./Types";
 
 export interface InitialFoodResponse {
     aggregations: {
@@ -108,67 +102,6 @@ export interface InitialState {
     foods: FoodInfo[];
 }
 
-export interface TableBodyProps {
-    data: InitialState;
-}
-
-export interface TableProps {
-    inputValue: number;
-    foodInfo: FoodInfo;
-}
-
-export interface NotificationProps {
-    isVisible: boolean;
-    text: string;
-}
-
-export interface FormProps {
-    inputValue: string;
-    setInputValue: React.Dispatch<React.SetStateAction<string>>;
-    setIsClicked: React.Dispatch<React.SetStateAction<boolean>>;
-    setFoods: React.Dispatch<React.SetStateAction<FoodsResponse>>;
-}
-
-export interface ModalProps {
-    showModal: boolean;
-    setShowModal: SetStateActionBoolean;
-}
-
-export interface GramsControlsProps {
-    inputValue: number;
-    setGrams: (inputValue: number) => void;
-}
-
-export interface ResultProps {
-    food: FoodResponse;
-    delay: string;
-}
-export interface ResultsProps {
-    foods: FoodsResponse;
-    counter: number;
-    isClicked: boolean;
-}
-
-export interface ButtonProps {
-    children: ButtonChildren;
-    callback: () => void;
-    aria: string;
-    type: ButtonTypes;
-    myStyle: string;
-    tabIndex: number;
-}
-
-export interface ButtonsProps {
-    foodInfo: FoodInfo;
-    setNotificationMessage: SetStateActionString;
-    setShowNotification: SetStateActionBoolean;
-    name: string;
-    showNotification: boolean;
-}
-
 export interface JSXChild {
     children: JSX.Element;
-}
-export interface JSXChildren {
-    children: JSX.Element[];
 }
