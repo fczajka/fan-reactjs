@@ -47,7 +47,7 @@ function GramsControls({ inputValue, setGrams }: GramsControlsProps) {
                             }}
                             aria={`Set value that changes grams to ${value}`}
                             type={ButtonTypes.submit}
-                            myStyle={`w-10 h-10 text-sm bg-primary-200 rounded-primary transition-all hover:bg-primary-300 hover:shadow-custom hover:-translate-y-0.5 focus:bg-primary-300 motion-reduce:transition-none sm:text-base lg:w-12 lg:h-12 lg:text-lg ${
+                            myStyle={`w-10 h-10 text-sm bg-primary-200 transition-all hover:bg-primary-300 hover:shadow-custom hover:-translate-y-0.5 focus:bg-primary-300 motion-reduce:transition-none sm:text-base lg:w-12 lg:h-12 lg:text-lg ${
                                 changeValue === value ? "bg-primary-300" : ""
                             }`}
                         >
