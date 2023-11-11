@@ -1,7 +1,8 @@
 import { ButtonTypes } from "data/Enums";
 import { ButtonChildren } from "data/Types";
+import { ButtonHTMLAttributes } from "react";
 
-export interface ButtonProps {
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     children: ButtonChildren;
     callback: () => void;
     aria: string;

@@ -5,7 +5,11 @@ export type FoodsResponse = FoodResponse[];
 
 export type Status = "unloaded" | "loading" | "loaded" | "error";
 
-export type ButtonChildren = (string | ReactElement)[] | string | JSX.Element;
+export type ButtonChildren =
+    | (string | ReactElement)[]
+    | string
+    | JSX.Element
+    | number;
 
 export type SetStateActionBoolean = (
     value: React.SetStateAction<boolean>
