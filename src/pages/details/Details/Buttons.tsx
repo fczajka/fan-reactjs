@@ -40,7 +40,7 @@ function Buttons({
             <Link
                 tabIndex={IsOpen ? -1 : 0}
                 to="/"
-                className="basis-4/12 p-primary text-sm flex items-center justify-center rounded-primary bg-secondary-200 transition-all hover:bg-secondary-300 hover:shadow-custom hover:-translate-y-0.5 focus:bg-secondary-300 sm:text-base"
+                className="basis-4/12 p-primary text-sm flex items-center justify-center rounded-full bg-secondary-200 transition-all hover:bg-secondary-300 hover:shadow-custom hover:-translate-y-0.5 focus:bg-secondary-300 sm:text-base"
             >
                 <span className="mx-1">Go back</span>
                 {<RiArrowGoBackFill />}
