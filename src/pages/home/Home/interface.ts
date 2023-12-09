@@ -17,3 +17,9 @@ export interface ResultsProps {
     counter: number;
     isClicked: boolean;
 }
+
+export interface LoadingCircleProps {
+    counter: number;
+    isClicked: boolean;
+    shouldReduceMotion: boolean | null;
+}

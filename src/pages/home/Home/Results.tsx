@@ -2,6 +2,7 @@ import { useReducedMotion } from "framer-motion";
 import Result from "./Result";
 import Loader from "./Loader";
 import { ResultsProps } from "./interface";
+import { displayLoadingCircle } from "./utils";
 
 function Results({ foods, counter, isClicked }: ResultsProps) {
     const shouldReduceMotion = useReducedMotion();
@@ -18,9 +19,10 @@ function Results({ foods, counter, isClicked }: ResultsProps) {
         "[animation-delay:1.0s]",
     ];
 
-    return counter !== 0 && isClicked && !shouldReduceMotion ? (
-        <Loader />
-    ) : (
+    if (displayLoadingCircle({ counter, isClicked, shouldReduceMotion }))
+        return <Loader />;
+
+    return (
         <ul className="w-full my-4 mb-20 lg:nb-0">
             {foods.map((food, index) => (
                 <Result key={food.fdcId} food={food} delay={delays[index]} />
