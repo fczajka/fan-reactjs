@@ -4,6 +4,13 @@ import { handleClearInput } from "helpers/helpers";
 import IsOpenContext from "context/IsOpenContext";
 import { ButtonTypes } from "data/Enums";
 import { FormProps } from "./interface";
+import {
+    checkText,
+    clearFormText,
+    clearText,
+    foodNameText,
+    searchFoodText,
+} from "./constants";
 
 function Form({
     inputValue,
@@ -29,7 +36,7 @@ function Form({
                 htmlFor="food"
                 className="flex flex-col text-lg font-secondary sm:text-xl lg:text-2xl"
             >
-                Food name:
+                {foodNameText}
                 <input
                     tabIndex={IsOpen ? -1 : 0}
                     className="bg-primary-200 font-primary rounded-primary p-primary mt-2 text-sm transition-all placeholder:text-primary-800 hover:bg-primary-300 hover:shadow-custom hover:-translate-y-0.5 focus:bg-primary-300 motion-reduce:transition-none sm:text-base lg:text-lg"
@@ -46,20 +53,20 @@ function Form({
                     callback={() => {
                         return;
                     }}
-                    aria="Search food"
+                    aria={searchFoodText}
                     type={ButtonTypes.submit}
                     myStyle="basis-7/12 text-sm p-primary bg-tertiary-200 hover:bg-tertiary-300 hover:-translate-y-0.5 focus:bg-tertiary-300 sm:text-base"
                 >
-                    Check
+                    {checkText}
                 </Button>
                 <Button
                     tabIndex={IsOpen ? -1 : 0}
                     callback={() => handleClearInput(setFoods, setInputValue)}
-                    aria="Clear form"
+                    aria={clearFormText}
                     type={ButtonTypes.reset}
                     myStyle="basis-4/12 text-sm p-primary bg-secondary-200 hover:bg-secondary-300 hover:-translate-y-0.5 focus:bg-secondary-300 sm:text-base"
                 >
-                    Clear
+                    {clearText}
                 </Button>
             </div>
         </form>

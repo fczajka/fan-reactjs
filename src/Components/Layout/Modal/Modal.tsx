@@ -2,6 +2,7 @@ import { FaRegTimesCircle } from "react-icons/fa";
 import { ButtonTypes } from "data/Enums";
 import Button from "Components/ui/Button";
 import { ModalProps } from "./interface";
+import { modalLink, modalLinkText, modalText } from "./constants";
 
 function Modal({ showModal, setShowModal }: ModalProps) {
     function closeModal() {
@@ -13,15 +14,14 @@ function Modal({ showModal, setShowModal }: ModalProps) {
         <div className="fixed w-full h-full flex justify-center items-center bg-neutral-900 bg-opacity-70 z-30">
             <div className="relative flex bg-secondary-50 px-8 py-4 rounded-primary max-w-xs lg:max-w-lg">
                 <p className="basis-5/6">
-                    Data provided by: U.S. Department of Agriculture,
-                    Agricultural Research Service. FoodData Central, 2019. Link:
+                    {modalText}
                     <a
                         className="ml-2 underline"
-                        href="https://fdc.nal.usda.gov/"
+                        href={modalLink}
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        fdc.nal.usda.gov
+                        {modalLinkText}
                     </a>
                 </p>
                 <Button

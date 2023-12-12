@@ -1,3 +1,4 @@
+import { amountText, nameText, unitText } from "./constants";
 import { TableProps } from "./interface";
 
 function DetailsTable({ inputValue, foodInfo }: TableProps) {
@@ -6,13 +7,13 @@ function DetailsTable({ inputValue, foodInfo }: TableProps) {
             <thead className="text-base bg-primary-200 sm:text-lg lg:text-xl">
                 <tr>
                     <th className="text-left pl-4 py-2 rounded-tl-primary">
-                        Name
+                        {nameText}
                     </th>
                     <th className="text-right px-4 py-2 sm:py-2">
-                        Amount per {inputValue}g
+                        {amountText(inputValue)}
                     </th>
                     <th className="text-right pr-4 py-2 rounded-tr-primary">
-                        Unit
+                        {unitText}
                     </th>
                 </tr>
             </thead>

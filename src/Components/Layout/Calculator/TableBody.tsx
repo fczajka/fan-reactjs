@@ -4,6 +4,7 @@ import { DELETE_FOOD } from "store/slices/food";
 import { useAppDispatch } from "store/hooks/hooks";
 import IsOpenContext from "context/IsOpenContext";
 import { TableBodyProps } from "./interface";
+import { deleteText } from "./constants";
 
 function TableBody({ data }: TableBodyProps) {
     const [IsOpen] = useContext(IsOpenContext);
@@ -38,7 +39,7 @@ function TableBody({ data }: TableBodyProps) {
                                         className="flex text-sm items-center py-2 justify-center basis-full transition-all hover:scale-110 hover:bg-tertiary-300 hover:shadow-custom focus:bg-tertiary-300 motion-reduce:transition-none lg:text-base"
                                         aria-label="Delete food from calculator"
                                     >
-                                        Delete {foodInfo.food[0].value}
+                                        {deleteText(foodInfo.food[0].value)}
                                         <TiDelete />
                                     </button>
                                 </td>

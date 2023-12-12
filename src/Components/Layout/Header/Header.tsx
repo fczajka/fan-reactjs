@@ -3,6 +3,7 @@ import { useContext, useState } from "react";
 import Button from "Components/ui/Button";
 import IsOpenContext from "context/IsOpenContext";
 import { ButtonTypes } from "data/Enums";
+import { appName } from "./constants";
 
 function Header() {
     const [IsOpen, SetIsOpen] = useContext(IsOpenContext);
@@ -11,7 +12,7 @@ function Header() {
     return (
         <nav className="fixed bottom-0 w-full h-16 flex justify-around items-center bg-secondary-50 shadow-custom z-10 lg:h-20 lg:shadow-none lg:justify-center lg:static">
             <h1 className="font-secondary text-lg sm:text-2xl lg:text-3xl">
-                FOOD AND NUTRIENTS
+                {appName}
             </h1>
             <Button
                 tabIndex={IsOpen ? -1 : 0}

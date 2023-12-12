@@ -3,27 +3,16 @@ import Result from "./Result";
 import Loader from "./Loader";
 import { ResultsProps } from "./interface";
 import { displayLoadingCircle } from "./utils";
+import { delays } from "./constants";
 
 function Results({ foods, counter, isClicked }: ResultsProps) {
     const shouldReduceMotion = useReducedMotion();
-    const delays: string[] = [
-        "[animation-delay:0.1s]",
-        "[animation-delay:0.2s]",
-        "[animation-delay:0.3s]",
-        "[animation-delay:0.4s]",
-        "[animation-delay:0.5s]",
-        "[animation-delay:0.6s]",
-        "[animation-delay:0.7s]",
-        "[animation-delay:0.8s]",
-        "[animation-delay:0.9s]",
-        "[animation-delay:1.0s]",
-    ];
 
     if (displayLoadingCircle({ counter, isClicked, shouldReduceMotion }))
         return <Loader />;
 
     return (
-        <ul className="w-full my-4 mb-20 lg:nb-0">
+        <ul className="w-full my-4 mb-20 lg:mb-0">
             {foods.map((food, index) => (
                 <Result key={food.fdcId} food={food} delay={delays[index]} />
             ))}
