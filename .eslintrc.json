@@ -3,21 +3,39 @@
         "eslint:recommended",
         "plugin:import/errors",
         "plugin:react/recommended",
+        "plugin:react/jsx-runtime",
         "plugin:jsx-a11y/recommended",
         "plugin:react-hooks/recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
         "prettier"
     ],
+    "ignorePatterns": [
+        ".eslintrc.json",
+        "package-lock.json",
+        "package.json",
+        "postcss.config.js",
+        "tailwind.config.js",
+        "**/public/*.js",
+        "vite.config.ts",
+        "tsconfig.json",
+        "tsconfig.node.json"
+    ],
+    "parser": "@typescript-eslint/parser",
     "rules": {
         "react/prop-types": 0,
-        "react/react-in-jsx-scope": 0
+        "react/react-in-jsx-scope": 0,
+        "react-refresh/only-export-components": [
+            "warn",
+            { "allowConstantExport": true }
+        ]
     },
     "plugins": [
         "react",
         "import",
         "jsx-a11y",
         "react-hooks",
+        "react-refresh",
         "@typescript-eslint"
     ],
     "parserOptions": {

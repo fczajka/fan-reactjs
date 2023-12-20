@@ -12,7 +12,7 @@ import "./index.css";
 
 const persistor = persistStore(store);
 
-function Index() {
+export function Index() {
     const IsOpen = useState(false);
     return (
         <React.StrictMode>
