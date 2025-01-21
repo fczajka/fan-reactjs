@@ -1,8 +1,8 @@
 import { TiDelete } from "react-icons/ti";
 import React, { useContext } from "react";
-import { DELETE_FOOD } from "store/slices/food";
-import { useAppDispatch } from "store/hooks/hooks";
-import IsOpenContext from "context/IsOpenContext";
+import { DELETE_FOOD } from "../../../store/slices/food";
+import { useAppDispatch } from "../../../store/hooks/hooks";
+import IsOpenContext from "../../../context/IsOpenContext";
 import { TableBodyProps } from "./interface";
 import { deleteText } from "./constants";
 

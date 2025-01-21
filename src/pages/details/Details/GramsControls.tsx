@@ -1,8 +1,8 @@
 import { useContext, useState } from "react";
-import IsOpenContext from "context/IsOpenContext";
-import { ButtonTypes } from "data/Enums";
-import { ChangeValues } from "data/Types";
-import Button from "Components/ui/Button";
+import IsOpenContext from "../../../context/IsOpenContext";
+import { ButtonTypes } from "../../../data/Enums";
+import { ChangeValues } from "../../../data/Types";
+import Button from "../../../Components/ui/Button";
 import { GramsControlsProps } from "./interface";
 import {
     changableValues,
@@ -43,7 +43,7 @@ function GramsControls({ inputValue, setGrams }: GramsControlsProps) {
                 {setValueToChangeGramsText}
             </h3>
             <ul className="flex justify-between items-center">
-                {changableValues.map((value) => (
+                {changableValues.map((value: ChangeValues) => (
                     <li key={value}>
                         <Button
                             tabIndex={IsOpen ? -1 : 0}

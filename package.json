@@ -2,26 +2,10 @@
     "name": "fan-reactjs",
     "version": "0.1.0",
     "private": true,
-    "dependencies": {
-        "@reduxjs/toolkit": "^1.8.6",
-        "@testing-library/jest-dom": "^5.16.5",
-        "@testing-library/react": "^13.4.0",
-        "@testing-library/user-event": "^13.5.0",
-        "framer-motion": "^8.1.3",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0",
-        "react-icons": "^4.4.0",
-        "react-redux": "^8.0.4",
-        "react-router-dom": "^6.4.2",
-        "react-scripts": "5.0.1",
-        "redux-persist": "^6.0.0",
-        "web-vitals": "^2.1.4"
-    },
+    "type": "module",
     "scripts": {
-        "start": "react-scripts start",
-        "build": "react-scripts build",
-        "test": "react-scripts test",
-        "eject": "react-scripts eject",
+        "dev": "vite",
+        "build": "tsc && vite build",
         "format": "prettier --write \"src/**/*.{js,jsx}\"",
         "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --quiet"
     },
@@ -43,22 +27,35 @@
             "last 1 safari version"
         ]
     },
+    "dependencies": {
+        "@reduxjs/toolkit": "^1.8.6",
+        "framer-motion": "^8.1.3",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-icons": "^4.4.0",
+        "react-redux": "^8.0.4",
+        "react-router-dom": "^6.4.2",
+        "redux-persist": "^6.0.0"
+    },
     "devDependencies": {
-        "@types/react": "^18.0.21",
-        "@types/react-dom": "^18.0.6",
-        "@typescript-eslint/eslint-plugin": "^5.40.0",
-        "@typescript-eslint/parser": "^5.40.0",
-        "autoprefixer": "^10.4.12",
-        "eslint": "^8.24.0",
+        "@types/react": "^18.2.45",
+        "@types/react-dom": "^18.2.18",
+        "@typescript-eslint/eslint-plugin": "^5.62.0",
+        "@typescript-eslint/parser": "^5.62.0",
+        "@vitejs/plugin-react-swc": "^3.7.2",
+        "autoprefixer": "^10.4.16",
+        "eslint": "^8.56.0",
         "eslint-config-prettier": "^8.5.0",
         "eslint-import-resolver-typescript": "^3.5.1",
         "eslint-plugin-import": "^2.26.0",
         "eslint-plugin-jsx-a11y": "^6.6.1",
         "eslint-plugin-react": "^7.31.8",
         "eslint-plugin-react-hooks": "^4.6.0",
-        "postcss": "^8.4.17",
-        "prettier": "^2.7.1",
-        "tailwindcss": "^3.1.8",
-        "typescript": "^4.8.4"
+        "eslint-plugin-react-refresh": "^0.4.5",
+        "postcss": "^8.4.32",
+        "prettier": "^2.8.8",
+        "tailwindcss": "^3.4.0",
+        "typescript": "^4.9.5",
+        "vite": "^5.4.13"
     }
 }

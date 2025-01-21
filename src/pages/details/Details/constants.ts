@@ -1,4 +1,4 @@
-import { ChangableValues } from "data/Types";
+import { ChangableValues } from "../../../data/Types";
 
 export const changableValues: ChangableValues = [1, 5, 10, 100];
 

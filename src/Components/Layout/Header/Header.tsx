@@ -1,8 +1,8 @@
 import { FaHamburger } from "react-icons/fa";
 import { useContext, useState } from "react";
-import Button from "Components/ui/Button";
-import IsOpenContext from "context/IsOpenContext";
-import { ButtonTypes } from "data/Enums";
+import Button from "../../../Components/ui/Button";
+import IsOpenContext from "../../../context/IsOpenContext";
+import { ButtonTypes } from "../../../data/Enums";
 import { appName } from "./constants";
 
 function Header() {

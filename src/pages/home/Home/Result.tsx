@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
-import IsOpenContext from "context/IsOpenContext";
+import IsOpenContext from "../../../context/IsOpenContext";
 import { ResultProps } from "./interface";
 
 function Result({ food, delay }: ResultProps) {
