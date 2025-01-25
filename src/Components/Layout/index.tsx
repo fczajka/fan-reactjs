@@ -1,7 +1,7 @@
+import { JSXChild } from '../../data/Interfaces';
 import WrapperCalculator from './Calculator';
 import Header from './Header/Header';
 import WrapperModal from './Modal';
-import { JSXChild } from 'data/Interfaces';
 
 function Layout({ children }: JSXChild) {
   return (
