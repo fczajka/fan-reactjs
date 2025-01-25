@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import { JSXChildren } from './interface';
+import type { JSXChildren } from './interface';
 import { animations, animationsWithReducedMotion } from './constants';
 
 function Transition({ children }: JSXChildren) {

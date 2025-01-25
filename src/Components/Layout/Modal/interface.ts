@@ -1,5 +1,5 @@
-import { ReactElement } from 'react';
-import { SetStateActionBoolean } from '../../../data/Types';
+import type { ReactElement } from 'react';
+import type { SetStateActionBoolean } from '../../../data/Types';
 
 export interface ReactElementChildren {
   children: ReactElement;

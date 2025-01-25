@@ -1,6 +1,6 @@
-import { ButtonHTMLAttributes } from 'react';
-import { ButtonTypes } from '../../data/Enums';
-import { ButtonChildren } from '../../data/Types';
+import type { ButtonHTMLAttributes } from 'react';
+import type { ButtonTypes } from '../../data/Enums';
+import type { ButtonChildren } from '../../data/Types';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ButtonChildren;

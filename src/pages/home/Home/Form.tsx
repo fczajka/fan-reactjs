@@ -3,7 +3,7 @@ import Button from '../../../Components/ui/Button';
 import { handleClearInput } from '../../../helpers/helpers';
 import IsOpenContext from '../../../context/IsOpenContext';
 import { ButtonTypes } from '../../../data/Enums';
-import { FormProps } from './interface';
+import type { FormProps } from './interface';
 import {
   checkText,
   clearFormText,

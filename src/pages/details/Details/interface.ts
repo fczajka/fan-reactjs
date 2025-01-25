@@ -1,5 +1,5 @@
-import { FoodInfo } from '../../../data/Interfaces';
-import {
+import type { FoodInfo } from '../../../data/Interfaces';
+import type {
   SetStateActionBoolean,
   SetStateActionString,
 } from '../../../data/Types';
@@ -14,6 +14,7 @@ export interface ButtonsProps {
 
 export interface GramsControlsProps {
   inputValue: number;
+  // eslint-disable-next-line no-unused-vars
   setGrams: (inputValue: number) => void;
 }
 

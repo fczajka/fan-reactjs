@@ -1,7 +1,7 @@
-import { MutableRef } from '../../../data/Types';
+import type { MutableRef } from '../../../data/Types';
 import { useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
-import { ReactElementChildren } from './interface';
+import type { ReactElementChildren } from './interface';
 
 function Logic({ children }: ReactElementChildren) {
   const elRef: MutableRef = useRef(null);
@@ -15,11 +15,12 @@ function Logic({ children }: ReactElementChildren) {
       return;
     }
     modalRoot.appendChild(elRef.current);
-    return () => {
+    const cleanup = () => {
       if (elRef.current) {
         modalRoot.removeChild(elRef.current);
       }
     };
+    cleanup();
   }, []);
 
   return createPortal(<>{children}</>, elRef.current);

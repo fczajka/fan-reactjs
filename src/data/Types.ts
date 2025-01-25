@@ -1,5 +1,10 @@
-import { MutableRefObject, ReactElement } from 'react';
-import { FoodResponse } from './Interfaces';
+import type {
+  Dispatch,
+  MutableRefObject,
+  ReactElement,
+  SetStateAction,
+} from 'react';
+import type { FoodResponse } from './Interfaces';
 
 export type FoodsResponse = FoodResponse[];
 
@@ -11,21 +16,15 @@ export type ButtonChildren =
   | JSX.Element
   | number;
 
-export type SetStateActionBoolean = (
-  value: React.SetStateAction<boolean>,
-) => void;
+export type SetStateActionBoolean = Dispatch<SetStateAction<boolean>>;
 
-export type SetStateActionString = (
-  value: React.SetStateAction<string>,
-) => void;
+export type SetStateActionString = Dispatch<SetStateAction<string>>;
 
-export type SetStateActionNumber = (
-  value: React.SetStateAction<number>,
-) => void;
+export type SetStateActionNumber = Dispatch<SetStateAction<number>>;
 
-export type SetStateActionFoodsResponse = (
-  value: React.SetStateAction<FoodsResponse>,
-) => void;
+export type SetStateActionFoodsResponse = Dispatch<
+  SetStateAction<FoodsResponse>
+>;
 
 export type MutableRef = MutableRefObject<HTMLDivElement | null>;
 

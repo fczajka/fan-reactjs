@@ -1,7 +1,7 @@
 import { useContext, useEffect, useRef } from 'react';
 import TableHead from './TableHead';
 import TableBody from './TableBody';
-import { InitialState } from '../../../data/Interfaces';
+import type { InitialState } from '../../../data/Interfaces';
 import { handleResize } from '../../../helpers/helpers';
 import IsOpenContext from '../../../context/IsOpenContext';
 import { useAppSelector } from '../../../store/hooks/hooks';

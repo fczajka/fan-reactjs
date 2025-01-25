@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { RootState } from '../../store/store';
+import type { RootState } from '../../store/store';
 import { useSelector } from 'react-redux';
 import Notification from '../../Components/ui/Notification';
 import {
@@ -10,7 +10,7 @@ import {
   handleValueUnder0,
 } from '../../helpers/helpers';
 import Transition from '../../Components/ui/Transition';
-import { FoodInfo, FoodResponse } from '../../data/Interfaces';
+import type { FoodInfo, FoodResponse } from '../../data/Interfaces';
 import DetailsTable from './Details/DetailsTable';
 import GramsControls from './Details/GramsControls';
 import Buttons from './Details/Buttons';

@@ -1,10 +1,10 @@
 import { useReducedMotion } from 'framer-motion';
 import Result from './Result';
 import Loader from './Loader';
-import { ResultsProps } from './interface';
+import type { ResultsProps } from './interface';
 import { displayLoadingCircle } from './utils';
 import { delays } from './constants';
-import { FoodResponse } from '../../../data/Interfaces';
+import type { FoodResponse } from '../../../data/Interfaces';
 
 function Results({ foods, counter, isClicked }: ResultsProps) {
   const shouldReduceMotion = useReducedMotion();

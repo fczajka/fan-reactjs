@@ -1,9 +1,9 @@
 import { useContext, useState } from 'react';
 import IsOpenContext from '../../../context/IsOpenContext';
 import { ButtonTypes } from '../../../data/Enums';
-import { ChangeValues } from '../../../data/Types';
+import type { ChangeValues } from '../../../data/Types';
 import Button from '../../../Components/ui/Button';
-import { GramsControlsProps } from './interface';
+import type { GramsControlsProps } from './interface';
 import {
   changableValues,
   decreaseGransText,

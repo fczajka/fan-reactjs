@@ -1,4 +1,4 @@
-import { ButtonProps } from './interface';
+import type { ButtonProps } from './interface';
 
 function Button({
   children,
@@ -13,7 +13,7 @@ function Button({
       className={`${myStyle} rounded-full transition-all hover:shadow-custom focus:shadow-custom motion-reduce:transition-none`}
       onClick={() => callback()}
       aria-label={aria}
-      type={type ? type : undefined}
+      type={type}
       tabIndex={tabIndex}
     >
       {children}

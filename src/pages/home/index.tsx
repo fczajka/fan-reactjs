@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import { FoodsResponse } from '../../data/Types';
+import type { FoodsResponse } from '../../data/Types';
 import Notification from '../../Components/ui/Notification';
 import useFoodList from './hooks/useFoodList';
 import Transition from '../../Components/ui/Transition';

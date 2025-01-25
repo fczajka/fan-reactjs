@@ -1,5 +1,5 @@
-import { RootState } from '../store/store';
-import {
+import type { RootState } from '../store/store';
+import type {
   FoodsResponse,
   SetStateActionBoolean,
   SetStateActionFoodsResponse,
@@ -7,8 +7,8 @@ import {
   APIDataFood,
   SetStateActionNumber,
 } from '../data/Types';
-import { FoodInfo, FoodResponse } from '../data/Interfaces';
-import { MutableRefObject } from 'react';
+import type { FoodInfo, FoodResponse } from '../data/Interfaces';
+import type { MutableRefObject } from 'react';
 
 export function foodInfoFactory(
   storeData: RootState,

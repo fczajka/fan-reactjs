@@ -7,7 +7,7 @@ import Button from '../../../Components/ui/Button';
 import { ADD_FOOD } from '../../../store/slices/food';
 import IsOpenContext from '../../../context/IsOpenContext';
 import { useAppDispatch } from '../../../store/hooks/hooks';
-import { ButtonsProps } from './interface';
+import type { ButtonsProps } from './interface';
 import { addToCalculatorText, goBackText } from './constants';
 
 function Buttons({

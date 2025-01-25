@@ -1,5 +1,5 @@
 import { amountText, nameText, unitText } from './constants';
-import { TableProps } from './interface';
+import type { TableProps } from './interface';
 
 function DetailsTable({ inputValue, foodInfo }: TableProps) {
   return (

@@ -1,4 +1,4 @@
-import { LoadingCircleProps } from './interface';
+import type { LoadingCircleProps } from './interface';
 
 export const displayLoadingCircle = ({
   counter,

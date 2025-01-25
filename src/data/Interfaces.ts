@@ -1,4 +1,4 @@
-import { FoodsResponse } from './Types';
+import type { FoodsResponse } from './Types';
 
 export interface InitialFoodResponse {
   aggregations: {

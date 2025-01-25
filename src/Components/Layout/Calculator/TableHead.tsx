@@ -1,4 +1,4 @@
-import { TableBodyProps } from './interface';
+import type { TableBodyProps } from './interface';
 
 function TableHead({ data }: TableBodyProps) {
   return (
