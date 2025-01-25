@@ -1,7 +1,8 @@
 import type {
   Dispatch,
-  MutableRefObject,
+  JSX,
   ReactElement,
+  RefObject,
   SetStateAction,
 } from 'react';
 import type { FoodResponse } from './Interfaces';
@@ -26,7 +27,7 @@ export type SetStateActionFoodsResponse = Dispatch<
   SetStateAction<FoodsResponse>
 >;
 
-export type MutableRef = MutableRefObject<HTMLDivElement | null>;
+export type MutableRef = RefObject<HTMLDivElement | null>;
 
 export type ChangeValues = 1 | 5 | 10 | 100;
 
