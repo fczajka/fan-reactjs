@@ -1,1 +1,1 @@
-export const appName = "FOOD AND NUTRIENTS";
+export const appName = 'FOOD AND NUTRIENTS';

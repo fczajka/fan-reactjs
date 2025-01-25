@@ -1,9 +1,9 @@
-import { LoadingCircleProps } from "./interface";
+import { LoadingCircleProps } from './interface';
 
 export const displayLoadingCircle = ({
-    counter,
-    isClicked,
-    shouldReduceMotion,
+  counter,
+  isClicked,
+  shouldReduceMotion,
 }: LoadingCircleProps) => {
-    return counter && isClicked && !shouldReduceMotion;
+  return counter && isClicked && !shouldReduceMotion;
 };
