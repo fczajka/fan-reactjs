@@ -1,4 +1,4 @@
-import { JSX } from 'react';
+import type { JSX } from 'react';
 import type { FoodsResponse } from './Types';
 
 export interface InitialFoodResponse {

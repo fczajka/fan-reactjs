@@ -4,7 +4,7 @@ import type { TableProps } from './interface';
 function DetailsTable({ inputValue, foodInfo }: TableProps) {
   return (
     <table className='w-full'>
-      <thead className='text-base bg-primary-200 sm:text-lg lg:text-xl'>
+      <thead className='text-base bg-sky-light sm:text-lg lg:text-xl'>
         <tr>
           <th className='text-left pl-4 py-2 rounded-tl-primary'>{nameText}</th>
           <th className='text-right px-4 py-2 sm:py-2'>
@@ -22,7 +22,7 @@ function DetailsTable({ inputValue, foodInfo }: TableProps) {
           ) : food.name === 'Grams' ? (
             ''
           ) : food.name === 'Fiber' ? (
-            <tr key={food.name} className='even:bg-primary-200'>
+            <tr key={food.name} className='even:bg-sky-light'>
               <td className='text-left pl-4 py-2 rounded-bl-primary'>
                 {food.name}
               </td>
@@ -34,7 +34,7 @@ function DetailsTable({ inputValue, foodInfo }: TableProps) {
               </td>
             </tr>
           ) : (
-            <tr key={food.name} className='even:bg-primary-200'>
+            <tr key={food.name} className='even:bg-sky-light'>
               <td className='text-left pl-4 py-2'>{food.name}</td>
               <td className='text-right px-4 py-2'>{food.value}</td>
               <td className='text-right pr-4 py-2'>{food.unit}</td>

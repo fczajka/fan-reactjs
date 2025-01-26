@@ -20,7 +20,7 @@ function WrapperCalculator() {
           callback={() => SetIsOpen(false)}
           aria='Close calculator'
           type={ButtonTypes.button}
-          myStyle='mt-8 mr-4 text-3xl text-secondary-100 rounded-full sm:mr-12 sm:text-4xl lg:mr-16'
+          myStyle='mt-8 mr-4 text-3xl text-sunrise-pale rounded-full sm:mr-12 sm:text-4xl lg:mr-16'
         >
           <FaRegTimesCircle />
         </Button>
