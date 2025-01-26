@@ -11,7 +11,7 @@ function WrapperCalculator() {
   return (
     <>
       <div
-        className={`fixed top-0 w-full h-screen text-right z-20 transition-all ease-out duration-700 delay-300 bg-neutral-900 opacity-70 motion-reduce:transition-none ${
+        className={`fixed top-0 w-full h-screen text-right z-20 transition-all ease-out duration-700 delay-300 bg-neutral-900/70 motion-reduce:transition-none ${
           IsOpen ? 'left-0' : '-left-full'
         }`}
       >

@@ -1,14 +1,119 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-:root {
-    --calc-height-mobile: calc(var(--vh, 1vh) * 100 - 196px);
-    --calc-height-desktop: calc(var(--vh, 1vh) * 100 - 228px);
+@utility bg-primary-100 {
+  background-color: #e0f2fe;
 }
 
-body {
-    margin: 0;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+@utility bg-primary-200 {
+  background-color: #bae6fd;
+}
+
+@utility bg-primary-300 {
+  background-color: #7dd3fc;
+}
+
+@utility text-primary-800 {
+  color: #075985;
+}
+
+@utility border-primary-200 {
+  border-color: #bae6fd;
+}
+
+@utility bg-secondary-50 {
+  background-color: #fffbeb;
+}
+
+@utility text-secondary-100 {
+  color: #fef3c7;
+}
+
+@utility bg-secondary-200 {
+  background-color: #fde68a;
+}
+
+@utility bg-secondary-300 {
+  background-color: #fcd34d;
+}
+
+@utility bg-tertiary-200 {
+  background-color: #f5d0fe;
+}
+
+@utility bg-tertiary-300 {
+  background-color: #f0abfc;
+}
+
+@utility rounded-primary {
+  border-radius: 16px;
+}
+
+@utility rounded-tl-primary {
+  border-top-left-radius: 16px;
+}
+
+@utility rounded-tr-primary {
+  border-top-right-radius: 16px;
+}
+
+@utility rounded-t-primary {
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+@utility rounded-bl-primary {
+  border-bottom-left-radius: 16px;
+}
+
+@utility rounded-br-primary {
+  border-bottom-right-radius: 16px;
+}
+
+@utility rounded-b-primary {
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+@utility p-primary {
+  padding: 0.5rem 1rem;
+}
+
+@utility font-primary {
+  font-family: 'roboto', 'sans-serif';
+}
+
+@utility font-secondary {
+  font-family: 'Bree Serif', 'serif';
+}
+
+@utility shadow-custom {
+  box-shadow: 0px 2px 6px 0px rgba(148, 163, 184, 1);
+}
+
+@keyframes fade-in {
+  0% {
+    transform: translate(0px, 10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0px, 0px);
+    opacity: 1;
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@utility animate-fade-in {
+  animation: 0.4s ease-in-out 1 both fade-in;
+}
+
+@utility animate-rotation {
+  animation: rotation 1s linear infinite;
 }

@@ -11,7 +11,7 @@ function Modal({ showModal, setShowModal }: ModalProps) {
   }
 
   return (
-    <div className='fixed w-full h-full flex justify-center items-center bg-neutral-900 bg-opacity-70 z-30'>
+    <div className='fixed w-full h-full flex justify-center items-center bg-neutral-900/70 z-30'>
       <div className='relative flex bg-secondary-50 px-8 py-4 rounded-primary max-w-xs lg:max-w-lg'>
         <p className='basis-5/6'>
           {modalText}

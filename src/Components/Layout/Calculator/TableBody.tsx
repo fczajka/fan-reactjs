@@ -36,7 +36,7 @@ function TableBody({ data }: TableBodyProps) {
                     onClick={() => {
                       dispatch(DELETE_FOOD(foodInfo));
                     }}
-                    className='flex text-sm items-center py-2 justify-center basis-full transition-all hover:scale-110 hover:bg-tertiary-300 hover:shadow-custom focus:bg-tertiary-300 motion-reduce:transition-none lg:text-base'
+                    className='flex text-sm items-center py-2 justify-center basis-full transition-all cursor-pointer hover:scale-110 hover:bg-tertiary-300 hover:shadow-custom focus:bg-tertiary-300 motion-reduce:transition-none lg:text-base'
                     aria-label='Delete food from calculator'
                   >
                     {deleteText(foodInfo.food[0].value)}
