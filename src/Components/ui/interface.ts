@@ -1,4 +1,4 @@
-import type { ButtonHTMLAttributes } from 'react';
+import type { ButtonHTMLAttributes, JSX } from 'react';
 import type { ButtonTypes } from '../../data/Enums';
 import type { ButtonChildren } from '../../data/Types';
 
