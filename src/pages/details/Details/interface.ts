@@ -1,8 +1,5 @@
-import type { FoodInfo } from '../../../data/Interfaces';
-import type {
-  SetStateActionBoolean,
-  SetStateActionString,
-} from '../../../data/Types';
+import type { FoodInfo } from '@interfaces';
+import type { SetStateActionBoolean, SetStateActionString } from '@types';
 
 export interface ButtonsProps {
   foodInfo: FoodInfo;

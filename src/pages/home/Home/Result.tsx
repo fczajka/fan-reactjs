@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import IsOpenContext from '../../../context/IsOpenContext';
 import type { ResultProps } from './interface';
+import IsOpenContext from '@IsOpen';
 
 function Result({ food, delay }: ResultProps) {
   const [IsOpen] = useContext(IsOpenContext);

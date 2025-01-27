@@ -1,7 +1,7 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
-import { addNutrients, subtractNutrients } from '../reducers/reducers';
-import { initialState } from '../initialState/initialState';
-import type { FoodInfo } from '../../data/Interfaces';
+import type { FoodInfo } from '@interfaces';
+import { initialState } from '@storeInitialState';
+import { addNutrients, subtractNutrients } from '@storeReducers';
 
 export const food = createSlice({
   name: 'Sum',

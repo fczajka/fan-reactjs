@@ -1,10 +1,10 @@
 import { useContext, useEffect, useRef } from 'react';
 import TableHead from './TableHead';
 import TableBody from './TableBody';
-import type { InitialState } from '../../../data/Interfaces';
-import { handleResize } from '../../../helpers/helpers';
-import IsOpenContext from '../../../context/IsOpenContext';
-import { useAppSelector } from '../../../store/hooks/hooks';
+import type { InitialState } from '@interfaces';
+import { handleResize } from '@helpers';
+import IsOpenContext from '@IsOpen';
+import { useAppSelector } from '@storeHooks';
 
 function Calculator() {
   const data: InitialState = useAppSelector((state) => state.sum);

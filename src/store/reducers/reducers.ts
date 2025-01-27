@@ -1,4 +1,4 @@
-import type { FoodInfo, InitialState } from '../../data/Interfaces';
+import type { FoodInfo, InitialState } from '@interfaces';
 
 export function addNutrients(state: InitialState, action: FoodInfo) {
   state.nutrients[0].value = action.food[0].value;

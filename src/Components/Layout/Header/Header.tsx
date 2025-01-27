@@ -1,9 +1,9 @@
 import { FaHamburger } from 'react-icons/fa';
 import { useContext, useState } from 'react';
-import Button from '../../../Components/ui/Button';
-import IsOpenContext from '../../../context/IsOpenContext';
-import { ButtonTypes } from '../../../data/Enums';
 import { appName } from './constants';
+import { ButtonTypes } from '@enums';
+import IsOpenContext from '@IsOpen';
+import { Button } from '@ui';
 
 function Header() {
   const [IsOpen, SetIsOpen] = useContext(IsOpenContext);

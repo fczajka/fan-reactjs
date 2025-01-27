@@ -4,7 +4,7 @@ import Loader from './Loader';
 import type { ResultsProps } from './interface';
 import { displayLoadingCircle } from './utils';
 import { delays } from './constants';
-import type { FoodResponse } from '../../../data/Interfaces';
+import type { FoodResponse } from '@interfaces';
 
 function Results({ foods, counter, isClicked }: ResultsProps) {
   const shouldReduceMotion = useReducedMotion();

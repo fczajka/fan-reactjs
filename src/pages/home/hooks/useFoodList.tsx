@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
-import type { FoodsResponse, Status } from '../../../data/Types';
-import { validateInput } from '../../../helpers/helpers';
-import type { InitialFoodResponse } from '../../../data/Interfaces';
+import type { FoodsResponse, Status } from '@types';
+import type { InitialFoodResponse } from '@interfaces';
 import { API_KEY, API_URL } from './constants';
+import { validateInput } from '@helpers';
 
 export default function useFoodList(food: string) {
   const [foodList, setFoodList] = useState<FoodsResponse>([]);

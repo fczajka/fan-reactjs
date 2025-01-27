@@ -1,4 +1,4 @@
-import type { InitialState } from '../../data/Interfaces';
+import type { InitialState } from '@interfaces';
 
 export const initialState: InitialState = {
   id: 0,

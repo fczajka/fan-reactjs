@@ -2,13 +2,13 @@ import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { BsCalculator } from 'react-icons/bs';
 import { RiArrowGoBackFill } from 'react-icons/ri';
-import { ButtonTypes } from '../../../data/Enums';
-import Button from '../../../Components/ui/Button';
-import { ADD_FOOD } from '../../../store/slices/food';
-import IsOpenContext from '../../../context/IsOpenContext';
-import { useAppDispatch } from '../../../store/hooks/hooks';
 import type { ButtonsProps } from './interface';
 import { addToCalculatorText, goBackText } from './constants';
+import { ButtonTypes } from '@enums';
+import IsOpenContext from '@IsOpen';
+import { Button } from '@ui';
+import { useAppDispatch } from '@storeHooks';
+import { ADD_FOOD } from '@storeSlices';
 
 function Buttons({
   foodInfo,

@@ -1,5 +1,5 @@
-import type { FoodResponse } from '../../../data/Interfaces';
-import type { FoodsResponse } from '../../../data/Types';
+import type { FoodResponse } from '@interfaces';
+import type { FoodsResponse } from '@types';
 
 export interface FormProps {
   inputValue: string;

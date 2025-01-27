@@ -1,8 +1,4 @@
 import { useCallback, useContext } from 'react';
-import Button from '../../../Components/ui/Button';
-import { handleClearInput } from '../../../helpers/helpers';
-import IsOpenContext from '../../../context/IsOpenContext';
-import { ButtonTypes } from '../../../data/Enums';
 import type { FormProps } from './interface';
 import {
   checkText,
@@ -11,6 +7,10 @@ import {
   foodNameText,
   searchFoodText,
 } from './constants';
+import { handleClearInput } from '@helpers';
+import { ButtonTypes } from '@enums';
+import IsOpenContext from '@IsOpen';
+import { Button } from '@ui';
 
 function Form({
   inputValue,
@@ -47,7 +47,7 @@ function Form({
           onChange={(e) => setInputValue(e.target.value)}
         />
       </label>
-      <div className='w-full flex justify-between mt-4'>
+      <div className='w-full flex justify-between mt-4 gap-4'>
         <Button
           tabIndex={IsOpen ? -1 : 0}
           callback={() => {
@@ -55,7 +55,7 @@ function Form({
           }}
           aria={searchFoodText}
           type={ButtonTypes.submit}
-          myStyle='basis-7/12 text-sm p-primary bg-lavender-light hover:bg-lavender-bright hover:-translate-y-0.5 focus:bg-lavender-bright sm:text-base'
+          myStyle='basis-8/12 text-sm p-primary bg-lavender-light hover:bg-lavender-bright hover:-translate-y-0.5 focus:bg-lavender-bright sm:text-base'
         >
           {checkText}
         </Button>

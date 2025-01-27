@@ -1,4 +1,4 @@
-import type { JSXChild } from '../../data/Interfaces';
+import type { JSXChild } from '@interfaces';
 import WrapperCalculator from './Calculator';
 import Header from './Header/Header';
 import WrapperModal from './Modal';

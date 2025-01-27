@@ -1,17 +1,16 @@
 import { useState, useEffect, useCallback } from 'react';
-import type { FoodsResponse } from '../../data/Types';
-import Notification from '../../Components/ui/Notification';
 import useFoodList from './hooks/useFoodList';
-import Transition from '../../Components/ui/Transition';
 import {
   handleCachedData,
   handleError,
   handleLoaded,
   handleSetFoods,
   handleShowNotification,
-} from '../../helpers/helpers';
+} from '@helpers';
 import Results from './Home/Results';
 import Form from './Home/Form';
+import { Transition, Notification } from '@ui';
+import type { FoodsResponse } from '@types';
 
 function Home() {
   const [inputValue, setInputValue] = useState<string>('');

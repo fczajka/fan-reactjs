@@ -1,4 +1,3 @@
-import type { RootState } from '../store/store';
 import type {
   FoodsResponse,
   SetStateActionBoolean,
@@ -6,9 +5,10 @@ import type {
   SetStateActionString,
   APIDataFood,
   SetStateActionNumber,
-} from '../data/Types';
-import type { FoodInfo, FoodResponse } from '../data/Interfaces';
-import type { MutableRefObject } from 'react';
+} from '@types';
+import type { FoodInfo, FoodResponse } from '@interfaces';
+import type { RefObject } from 'react';
+import type { RootState } from '@store';
 
 export function foodInfoFactory(
   storeData: RootState,
@@ -170,7 +170,7 @@ export function handleClearInput(
   localStorage.setItem('lastFoodList', '');
 }
 
-export function handleResize(vh: MutableRefObject<number>) {
+export function handleResize(vh: RefObject<number>) {
   function resize() {
     vh.current = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--vh', `${vh.current}px`);
