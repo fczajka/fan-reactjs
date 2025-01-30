@@ -49,3 +49,14 @@ export function subtractNutrients(state: InitialState, action: FoodInfo) {
     state.nutrients[7].value -= Number(action.food[7].value);
   }
 }
+
+export const resetValues = (state: InitialState) => {
+  state.nutrients[0].value = 0;
+  state.nutrients[1].value = 0;
+  state.nutrients[2].value = 0;
+  state.nutrients[3].value = 0;
+  state.nutrients[4].value = 0;
+  state.nutrients[5].value = 0;
+  state.nutrients[6].value = 0;
+  state.nutrients[7].value = 0;
+};

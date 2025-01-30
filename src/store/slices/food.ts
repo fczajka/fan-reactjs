@@ -1,7 +1,7 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 import type { FoodInfo } from '@interfaces';
 import { initialState } from '@storeInitialState';
-import { addNutrients, subtractNutrients } from '@storeReducers';
+import { addNutrients, resetValues, subtractNutrients } from '@storeReducers';
 
 export const food = createSlice({
   name: 'Sum',
@@ -19,8 +19,12 @@ export const food = createSlice({
         1,
       );
     },
+    DELETE_ALL_FOODS: (state) => {
+      resetValues(state);
+      state.foods = [];
+    },
   },
 });
 
-export const { ADD_FOOD, DELETE_FOOD } = food.actions;
+export const { ADD_FOOD, DELETE_FOOD, DELETE_ALL_FOODS } = food.actions;
 export default food.reducer;

@@ -7,7 +7,6 @@ import type {
   SetStateActionNumber,
 } from '@types';
 import type { FoodInfo, FoodResponse } from '@interfaces';
-import type { RefObject } from 'react';
 import type { RootState } from '@store';
 
 export function foodInfoFactory(
@@ -168,15 +167,4 @@ export function handleClearInput(
   setInputValue('');
   localStorage.setItem('lastFoodName', '');
   localStorage.setItem('lastFoodList', '');
-}
-
-export function handleResize(vh: RefObject<number>) {
-  function resize() {
-    vh.current = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh.current}px`);
-  }
-
-  window.addEventListener('resize', resize);
-  resize();
-  return () => window.removeEventListener('resize', resize);
 }
