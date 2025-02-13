@@ -10,14 +10,14 @@ import {
 import Results from './Home/Results';
 import Form from './Home/Form';
 import { Transition, Notification } from '@ui';
-import type { FoodsResponse } from '@types';
+import type { FoodResponse } from '@interfaces';
 
 function Home() {
   const [inputValue, setInputValue] = useState<string>('');
   const [errorMessage, setErrorMessage] = useState<string>('');
   const [showNotification, setShowNotification] = useState<boolean>(false);
   const [isClicked, setIsClicked] = useState<boolean>(false);
-  const [foods, setFoods] = useState<FoodsResponse>([]);
+  const [foods, setFoods] = useState<FoodResponse[]>([]);
   const [APIData] = useFoodList(inputValue);
 
   const handleAPIData = useCallback(() => {

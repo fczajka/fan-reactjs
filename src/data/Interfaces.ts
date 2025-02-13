@@ -1,5 +1,4 @@
 import type { JSX } from 'react';
-import type { FoodsResponse } from './Types';
 
 export interface InitialFoodResponse {
   aggregations: {
@@ -23,7 +22,7 @@ export interface InitialFoodResponse {
     requireAllWords: boolean;
     sortBy: string;
   };
-  foods: FoodsResponse;
+  foods: FoodResponse[];
   pageList: number[];
   totalHits: number;
   totalPages: number;

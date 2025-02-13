@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
-import type { FoodsResponse, Status } from '@types';
-import type { InitialFoodResponse } from '@interfaces';
+import type { Status } from '@types';
+import type { FoodResponse, InitialFoodResponse } from '@interfaces';
 import { API_KEY, API_URL } from './constants';
 import { validateInput } from '@helpers';
 
 export default function useFoodList(food: string) {
-  const [foodList, setFoodList] = useState<FoodsResponse>([]);
+  const [foodList, setFoodList] = useState<FoodResponse[]>([]);
   const [status, setStatus] = useState<Status>('unloaded');
   const [errorMessage, setErrorMessage] = useState('');
   const counter = useRef(0);
@@ -29,7 +29,7 @@ export default function useFoodList(food: string) {
       setStatus('loading');
       const foodFromStorageCleaned = JSON.parse(
         foodFromStorage,
-      ) as FoodsResponse;
+      ) as FoodResponse[];
       if (foodFromStorageCleaned.length === 0) {
         setFoodList([]);
         setStatus('error');

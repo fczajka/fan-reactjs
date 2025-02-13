@@ -1,9 +1,7 @@
 import type {
-  FoodsResponse,
   SetStateActionBoolean,
   SetStateActionFoodsResponse,
   SetStateActionString,
-  APIDataFood,
   SetStateActionNumber,
 } from '@types';
 import type { FoodInfo, FoodResponse } from '@interfaces';
@@ -64,7 +62,7 @@ export function validateInput(food: string) {
   return /^[A-Za-z\s]*$/.test(food);
 }
 
-export function isLengthZero(foods: FoodsResponse) {
+export function isLengthZero(foods: FoodResponse[]) {
   if (foods.length === 0) {
     return true;
   }
@@ -77,7 +75,7 @@ export function handleLastFood(
   setInputValue: SetStateActionString,
   setFoods: SetStateActionFoodsResponse,
 ) {
-  const lastFoodListCleaned = JSON.parse(lastFoodList) as FoodsResponse;
+  const lastFoodListCleaned = JSON.parse(lastFoodList) as FoodResponse[];
   if (lastFoodListCleaned.length === 0) {
     setInputValue(lastFoodName);
     return;
@@ -96,7 +94,7 @@ export function handleCachedData(
     handleLastFood(lastFoodName, lastFoodList, setInputValue, setFoods);
   }
 }
-export function handleSetFoods(inputValue: string, food: APIDataFood) {
+export function handleSetFoods(inputValue: string, food: FoodResponse[]) {
   localStorage.setItem('lastFoodName', inputValue);
   localStorage.setItem('lastFoodList', JSON.stringify(food));
 }
@@ -114,7 +112,7 @@ export function handleError(
 }
 
 export function handleLoaded(
-  food: APIDataFood,
+  food: FoodResponse[],
   setIsClicked: SetStateActionBoolean,
   setFoods: SetStateActionFoodsResponse,
 ) {

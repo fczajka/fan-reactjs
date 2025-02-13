@@ -16,3 +16,5 @@ export const searchFoodText = 'Search Food';
 export const clearFormText = 'Clear Form';
 export const clearText = 'Clear';
 export const checkText = 'Check';
+
+export const mainNutrientsIds: number[] = [0, 1, 2, 3, 8, 9];
