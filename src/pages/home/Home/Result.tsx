@@ -11,7 +11,7 @@ function Result({ food, delay, expandedId, setExpandedId }: ResultProps) {
 
   return (
     <li
-      className={`w-full my-0.5 animate-fade-in ${delay} rounded-md transition-all bg-sky-light hover:shadow-custom hover:-translate-y-0.5 focus:shadow-custom first:rounded-t-primary last:rounded-b-primary motion-reduce:animate-none motion-reduce:transition-none`}
+      className={`w-full my-0.5 animate-fade-in ${delay} rounded-md  bg-sky-light first:rounded-t-primary last:rounded-b-primary`}
     >
       <div className='p-4 rounded-[inherit] overflow-hidden'>
         <div className='flex justify-between items-center'>
