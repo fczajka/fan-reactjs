@@ -24,7 +24,7 @@ function GramsControls({ inputValue, setGrams }: GramsControlsProps) {
           callback={() => setGrams(inputValue - changeValue)}
           aria={decreaseGransText}
           type={ButtonTypes.submit}
-          myStyle='basis-12 h-10 bg-sky-light text-xl hover:bg-sky-bright hover:-translate-y-0.5 focus:bg-sky-bright motion-reduce:transition-none lg:w-12 lg:h-12 lg:text-2xl'
+          myStyle='basis-12 h-10 bg-sky-light text-xl hover:bg-sky-bright focus:bg-sky-bright lg:w-12 lg:h-12 lg:text-2xl'
         >
           -
         </Button>
@@ -34,7 +34,7 @@ function GramsControls({ inputValue, setGrams }: GramsControlsProps) {
           callback={() => setGrams(inputValue + changeValue)}
           aria={increaseGransText}
           type={ButtonTypes.submit}
-          myStyle='basis-12 h-10 bg-sky-light text-xl hover:bg-sky-bright hover:-translate-y-0.5 focus:bg-sky-bright motion-reduce:transition-none lg:w-12 lg:h-12 lg:text-2xl'
+          myStyle='basis-12 h-10 bg-sky-light text-xl hover:bg-sky-bright focus:bg-sky-bright lg:w-12 lg:h-12 lg:text-2xl'
         >
           +
         </Button>
@@ -52,8 +52,8 @@ function GramsControls({ inputValue, setGrams }: GramsControlsProps) {
               }}
               aria={`Set value that changes grams to ${value}`}
               type={ButtonTypes.submit}
-              myStyle={`w-10 h-10 text-sm bg-sky-light transition-all hover:bg-sky-bright hover:shadow-custom hover:-translate-y-0.5 focus:bg-sky-bright motion-reduce:transition-none sm:text-base lg:w-12 lg:h-12 lg:text-lg ${
-                changeValue === value ? 'bg-sky-bright' : ''
+              myStyle={`w-10 h-10 text-sm bg-sky-light hover:bg-sky-bright focus:bg-sky-bright sm:text-base lg:w-12 lg:h-12 lg:text-lg ${
+                changeValue === value && 'bg-sky-bright'
               }`}
             >
               {value}

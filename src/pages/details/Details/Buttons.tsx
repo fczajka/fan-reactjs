@@ -33,7 +33,7 @@ function Buttons({
         callback={addToCalculator}
         aria={`Add ${name} to calculator`}
         type={ButtonTypes.submit}
-        myStyle='basis-7/12 p-primary text-sm flex items-center justify-center bg-lavender-light hover:bg-lavender-bright hover:shadow-custom hover:-translate-y-0.5 focus:bg-lavender-bright sm:text-base'
+        myStyle='basis-7/12 p-primary text-sm flex items-center justify-center bg-lavender-light hover:bg-lavender-bright focus:bg-lavender-bright sm:text-base'
       >
         <span className='mx-1'>{addToCalculatorText}</span>
         <BsCalculator />
@@ -41,7 +41,7 @@ function Buttons({
       <Link
         tabIndex={IsOpen ? -1 : 0}
         to='/'
-        className='basis-4/12 p-primary text-sm flex items-center justify-center rounded-full bg-sunshine-light transition-all hover:bg-sunshine-bright hover:shadow-custom hover:-translate-y-0.5 focus:bg-sunshine-bright sm:text-base'
+        className='basis-4/12 p-primary text-sm flex items-center justify-center rounded-full bg-sunshine-light transition-all hover:bg-sunshine-bright focus:bg-sunshine-bright sm:text-base'
       >
         <span className='mx-1'>{goBackText}</span>
         {<RiArrowGoBackFill />}

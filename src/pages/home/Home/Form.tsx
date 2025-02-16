@@ -39,7 +39,7 @@ function Form({
         {foodNameText}
         <input
           tabIndex={IsOpen ? -1 : 0}
-          className='bg-sky-light font-primary rounded-primary p-primary mt-2 text-sm transition-all placeholder:text-dark-blue hover:bg-sky-bright hover:shadow-custom hover:-translate-y-0.5 focus:bg-sky-bright motion-reduce:transition-none sm:text-base lg:text-lg'
+          className='bg-sky-light font-primary rounded-primary p-primary mt-2 text-sm transition-all placeholder:text-dark-blue hover:bg-sky-bright focus:bg-sky-bright sm:text-base lg:text-lg'
           type='text'
           id='food'
           placeholder='Search'
@@ -55,7 +55,7 @@ function Form({
           }}
           aria={searchFoodText}
           type={ButtonTypes.submit}
-          myStyle='basis-8/12 text-sm p-primary bg-lavender-light hover:bg-lavender-bright hover:-translate-y-0.5 focus:bg-lavender-bright sm:text-base'
+          myStyle='basis-8/12 text-sm p-primary bg-lavender-light hover:bg-lavender-bright focus:bg-lavender-bright sm:text-base'
         >
           {checkText}
         </Button>
@@ -64,7 +64,7 @@ function Form({
           callback={() => handleClearInput(setFoods, setInputValue)}
           aria={clearFormText}
           type={ButtonTypes.reset}
-          myStyle='basis-4/12 text-sm p-primary bg-sunshine-light hover:bg-sunshine-bright hover:-translate-y-0.5 focus:bg-sunshine-bright sm:text-base'
+          myStyle='basis-4/12 text-sm p-primary bg-sunshine-light hover:bg-sunshine-bright focus:bg-sunshine-bright sm:text-base'
         >
           {clearText}
         </Button>

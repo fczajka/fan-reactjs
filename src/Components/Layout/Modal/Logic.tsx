@@ -11,16 +11,16 @@ function Logic({ children }: ReactElementChildren) {
 
   useEffect(() => {
     const modalRoot = document.getElementById('modal');
-    if (!modalRoot || !elRef.current) {
-      return;
-    }
+    if (!modalRoot || !elRef.current) return;
+
     modalRoot.appendChild(elRef.current);
-    const cleanup = () => {
+
+    // eslint-disable-next-line consistent-return
+    return () => {
       if (elRef.current) {
         modalRoot.removeChild(elRef.current);
       }
     };
-    cleanup();
   }, []);
 
   return createPortal(<>{children}</>, elRef.current);

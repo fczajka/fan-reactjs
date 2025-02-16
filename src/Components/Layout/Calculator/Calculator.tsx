@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useRef } from 'react';
 import TableHead from './TableHead';
 import TableBody from './TableBody';
 import type { InitialState } from '@interfaces';
@@ -9,14 +9,21 @@ import { Button } from '@ui';
 import { ButtonTypes } from '@enums';
 import { MdOutlineClose } from 'react-icons/md';
 import { DELETE_ALL_FOODS } from '@storeSlices';
+import { useCloseOutside } from './useCloseOutside';
 
 function Calculator({ SetIsOpen }: TableHeadProps) {
   const data: InitialState = useAppSelector((state) => state.sum);
   const [IsOpen] = useContext(IsOpenContext);
   const dispatch = useAppDispatch();
+  const ref = useRef<HTMLDivElement>(null);
+
+  useCloseOutside(ref, () => SetIsOpen(false));
 
   return (
-    <div className='relative w-11/12 h-full max-h-256 flex flex-col p-4 pb-14.5 rounded-3xl bg-sunrise-soft sm:w-120 md:w-144 lg:w-192'>
+    <div
+      ref={ref}
+      className='relative w-11/12 h-full max-h-256 flex flex-col p-4 pb-14.5 rounded-3xl bg-sunrise-soft sm:w-120 md:w-144 lg:w-192'
+    >
       <div className='flex justify-between items-center'>
         <h2 className='text-lg md:text-xl lg:text-2xl'>Summed Nutrients</h2>
         <Button

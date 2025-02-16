@@ -10,7 +10,7 @@ function Button({
 }: ButtonProps) {
   return (
     <button
-      className={`${myStyle} rounded-full cursor-pointer`}
+      className={`${myStyle} rounded-full cursor-pointer transition-all motion-reduce:transition-none`}
       onClick={() => callback()}
       aria-label={aria}
       type={type}

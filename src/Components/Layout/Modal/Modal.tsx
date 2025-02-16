@@ -3,16 +3,24 @@ import type { ModalProps } from './interface';
 import { modalLink, modalLinkText, modalText } from './constants';
 import { ButtonTypes } from '@enums';
 import { Button } from '@ui';
+import { useCloseOutside } from '../Calculator/useCloseOutside';
+import { useRef } from 'react';
 
 function Modal({ showModal, setShowModal }: ModalProps) {
+  const ref = useRef<HTMLDivElement>(null);
   function closeModal() {
     setShowModal(!showModal);
     localStorage.setItem('modal', 'true');
   }
 
+  useCloseOutside(ref, () => setShowModal(!showModal));
+
   return (
     <div className='fixed w-full h-full flex justify-center items-center bg-neutral-900/70 z-30'>
-      <div className='relative flex bg-sunrise-soft px-8 py-4 rounded-primary max-w-xs lg:max-w-lg'>
+      <div
+        ref={ref}
+        className='relative flex bg-sunrise-soft px-8 py-4 rounded-primary max-w-xs lg:max-w-lg'
+      >
         <p className='basis-5/6'>
           {modalText}
           <a

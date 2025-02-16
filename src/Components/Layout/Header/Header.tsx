@@ -19,7 +19,7 @@ function Header() {
         callback={() => SetIsOpen(!IsOpen)}
         aria='Open calculator'
         type={ButtonTypes.button}
-        myStyle='p-3 text-sm bg-lavender-light hover:bg-lavender-bright focus:bg-lavender-bright hover:-translate-y-0.5 sm:text-base lg:absolute lg:right-12 lg:p-primary lg:bg-sky-light lg:focus:bg-sky-bright lg:hover:bg-sky-bright'
+        myStyle='p-3 text-sm bg-lavender-light hover:bg-lavender-bright focus:bg-lavender-bright sm:text-base lg:absolute lg:right-12 lg:p-primary lg:bg-sky-light lg:focus:bg-sky-bright lg:hover:bg-sky-bright'
       >
         {windowWidth >= 1024 ? 'Open calculator' : <FaHamburger />}
       </Button>

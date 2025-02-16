@@ -11,9 +11,9 @@ function Result({ food, delay, expandedId, setExpandedId }: ResultProps) {
 
   return (
     <li
-      className={`w-full my-0.5 animate-fade-in ${delay} rounded-md  bg-sky-light first:rounded-t-primary last:rounded-b-primary`}
+      className={`w-full my-0.5 animate-fade-in ${delay} rounded-md bg-sky-light first:rounded-t-primary last:rounded-b-primary`}
     >
-      <div className='p-4 rounded-[inherit] overflow-hidden'>
+      <div className='p-2 rounded-[inherit] overflow-hidden lg:p-4'>
         <div className='flex justify-between items-center'>
           <h2 className='text-sm sm:text-base lg:text-lg'>
             {food.description}
@@ -28,7 +28,7 @@ function Result({ food, delay, expandedId, setExpandedId }: ResultProps) {
             type={ButtonTypes.button}
           >
             <MdOutlineChevronRight
-              className={`${expandedId === food.fdcId && 'transform rotate-90'} bg-sky-bright text-slate-900 text-2xl rounded-full`}
+              className={`${expandedId === food.fdcId && 'transform rotate-90'} transition-all bg-sky-bright text-slate-900 text-2xl rounded-full motion-reduce:transition-none`}
             />
           </Button>
         </div>
