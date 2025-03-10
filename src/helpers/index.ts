@@ -2,7 +2,6 @@ import type {
   SetStateActionBoolean,
   SetStateActionFoodsResponse,
   SetStateActionString,
-  SetStateActionNumber,
 } from '@types';
 import type { FoodInfo, FoodResponse } from '@interfaces';
 import type { RootState } from '@store';
@@ -102,11 +101,9 @@ export function handleSetFoods(inputValue: string, food: FoodResponse[]) {
 export function handleError(
   errorMessage: string,
   setErrorMessage: SetStateActionString,
-  setShowNotification: SetStateActionBoolean,
   setIsClicked: SetStateActionBoolean,
 ) {
   setErrorMessage(errorMessage);
-  setShowNotification(true);
   setIsClicked(false);
   return;
 }
@@ -118,29 +115,6 @@ export function handleLoaded(
 ) {
   setFoods(food);
   setIsClicked(false);
-}
-
-export function handleShowNotification(
-  setShowNotification: SetStateActionBoolean,
-  showNotification: boolean,
-) {
-  const timer = setTimeout(() => setShowNotification(!showNotification), 3000);
-  return () => clearTimeout(timer);
-}
-
-export function handleValueOver5000(
-  setInputValue: SetStateActionNumber,
-  setNotificationMessage: SetStateActionString,
-) {
-  setInputValue(5000);
-  setNotificationMessage('Cannot set grams over 5000');
-}
-export function handleValueUnder0(
-  setInputValue: SetStateActionNumber,
-  setNotificationMessage: SetStateActionString,
-) {
-  setInputValue(0);
-  setNotificationMessage('Cannot set grams below 0');
 }
 
 export function handleModal(

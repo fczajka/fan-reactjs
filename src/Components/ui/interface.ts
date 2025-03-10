@@ -11,11 +11,6 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   tabIndex: number;
 }
 
-export interface NotificationProps {
-  isVisible: boolean;
-  text: string;
-}
-
 export interface JSXChildren {
   children: JSX.Element[];
 }

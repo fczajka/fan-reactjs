@@ -1,12 +1,8 @@
 import type { FoodInfo } from '@interfaces';
-import type { SetStateActionBoolean, SetStateActionString } from '@types';
 
 export interface ButtonsProps {
   foodInfo: FoodInfo;
-  setNotificationMessage: SetStateActionString;
-  setShowNotification: SetStateActionBoolean;
   name: string;
-  showNotification: boolean;
 }
 
 export interface GramsControlsProps {

@@ -5,17 +5,15 @@ import {
   handleError,
   handleLoaded,
   handleSetFoods,
-  handleShowNotification,
 } from '@helpers';
 import Results from './Home/Results';
 import Form from './Home/Form';
-import { Transition, Notification } from '@ui';
+import { Transition } from '@ui';
 import type { FoodResponse } from '@interfaces';
 
 function Home() {
   const [inputValue, setInputValue] = useState<string>('');
-  const [errorMessage, setErrorMessage] = useState<string>('');
-  const [showNotification, setShowNotification] = useState<boolean>(false);
+  const [, setErrorMessage] = useState<string>('');
   const [isClicked, setIsClicked] = useState<boolean>(false);
   const [foods, setFoods] = useState<FoodResponse[]>([]);
   const [APIData] = useFoodList(inputValue);
@@ -23,12 +21,7 @@ function Home() {
   const handleAPIData = useCallback(() => {
     handleSetFoods(inputValue, APIData.food);
     if (APIData.status === 'error') {
-      handleError(
-        APIData.errorMessage,
-        setErrorMessage,
-        setShowNotification,
-        setIsClicked,
-      );
+      handleError(APIData.errorMessage, setErrorMessage, setIsClicked);
     }
     if (APIData.status === 'loaded') {
       handleLoaded(APIData.food, setIsClicked, setFoods);
@@ -45,12 +38,6 @@ function Home() {
   }, [handleAPIData, APIData.counter, isClicked]);
 
   useEffect(() => {
-    if (showNotification) {
-      handleShowNotification(setShowNotification, showNotification);
-    }
-  }, [showNotification]);
-
-  useEffect(() => {
     handleCachedData(setInputValue, setFoods);
   }, []);
 
@@ -63,7 +50,6 @@ function Home() {
         setFoods={setFoods}
       />
       <Results foods={foods} counter={APIData.counter} isClicked={isClicked} />
-      <Notification isVisible={showNotification} text={errorMessage} />
     </Transition>
   );
 }

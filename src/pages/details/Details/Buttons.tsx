@@ -10,20 +10,12 @@ import { Button } from '@ui';
 import { useAppDispatch } from '@storeHooks';
 import { ADD_FOOD } from '@storeSlices';
 
-function Buttons({
-  foodInfo,
-  setShowNotification,
-  setNotificationMessage,
-  name,
-  showNotification,
-}: ButtonsProps) {
+function Buttons({ foodInfo, name }: ButtonsProps) {
   const [IsOpen] = useContext(IsOpenContext);
   const dispatch = useAppDispatch();
 
   function addToCalculator() {
     dispatch(ADD_FOOD(foodInfo));
-    setNotificationMessage(`${name} has been added to the calculator`);
-    setShowNotification(!showNotification);
   }
 
   return (
