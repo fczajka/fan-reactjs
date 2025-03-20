@@ -24,9 +24,7 @@ function TableBody({ data }: TableBodyProps) {
                 <h3 className='text-sm lg:text-lg'>{nutrients.value}</h3>
                 <Button
                   tabIndex={IsOpen ? 0 : -1}
-                  callback={() => {
-                    dispatch(DELETE_FOOD(foodInfo));
-                  }}
+                  callback={() => dispatch(DELETE_FOOD(foodInfo))}
                   aria='Close calculator'
                   type={ButtonTypes.button}
                   myStyle='rounded-full'

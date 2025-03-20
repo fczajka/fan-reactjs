@@ -12,13 +12,14 @@ import type { FoodInfo } from '@interfaces';
 import { useAppDispatch } from '@storeHooks';
 import { mainNutrientsIds } from './constants';
 import { motion } from 'framer-motion';
+import { getNutrientDisplayName } from './utils';
 
 function ExpandableDetails({ food, expandedId }: ExpandableDetailsProps) {
   const [IsOpen] = useContext(IsOpenContext);
   const dispatch = useAppDispatch();
   const storeData = useSelector((state: RootState) => state);
 
-  const addToCalculator = () => {
+  const handleAddToCalculator = () => {
     const foodInfo: FoodInfo = foodInfoFactory(storeData, food, 100);
     dispatch(ADD_FOOD(foodInfo));
   };
@@ -38,13 +39,9 @@ function ExpandableDetails({ food, expandedId }: ExpandableDetailsProps) {
               key={nutrient.nutrientId}
               className='flex justify-between items-center'
             >
+              <span>{getNutrientDisplayName(nutrient.nutrientName)}</span>
               <span>
-                {nutrient.nutrientName === 'Carbohydrate, by difference'
-                  ? 'Total carbohydrates'
-                  : nutrient.nutrientName}
-              </span>
-              <span>
-                {`${nutrient.value} ${nutrient.unitName.toLowerCase()}`}
+                {nutrient.value} {nutrient.unitName.toLowerCase()}
               </span>
             </li>
           ))}
@@ -60,7 +57,7 @@ function ExpandableDetails({ food, expandedId }: ExpandableDetailsProps) {
         </Link>
         <Button
           myStyle='px-2 py-1 bg-sky-bright lg:px-4 lg:py-2'
-          callback={addToCalculator}
+          callback={handleAddToCalculator}
           aria={`Add ${food.description} to calculator`}
           type={ButtonTypes.button}
           tabIndex={IsOpen ? -1 : 0}

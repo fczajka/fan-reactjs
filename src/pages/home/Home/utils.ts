@@ -7,3 +7,9 @@ export const displayLoadingCircle = ({
 }: LoadingCircleProps) => {
   return counter && isClicked && !shouldReduceMotion;
 };
+
+export const getNutrientDisplayName = (nutrientName: string): string => {
+  return nutrientName === 'Carbohydrate, by difference'
+    ? 'Total carbohydrates'
+    : nutrientName;
+};

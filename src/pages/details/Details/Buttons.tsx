@@ -14,15 +14,11 @@ function Buttons({ foodInfo, name }: ButtonsProps) {
   const [IsOpen] = useContext(IsOpenContext);
   const dispatch = useAppDispatch();
 
-  function addToCalculator() {
-    dispatch(ADD_FOOD(foodInfo));
-  }
-
   return (
     <div className='flex justify-between mt-4'>
       <Button
         tabIndex={IsOpen ? -1 : 0}
-        callback={addToCalculator}
+        callback={() => dispatch(ADD_FOOD(foodInfo))}
         aria={`Add ${name} to calculator`}
         type={ButtonTypes.submit}
         myStyle='basis-7/12 p-primary text-sm flex items-center justify-center bg-lavender-light hover:bg-lavender-bright focus:bg-lavender-bright sm:text-base'

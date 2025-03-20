@@ -44,9 +44,7 @@ function Calculator({ SetIsOpen }: TableHeadProps) {
       <div className='absolute bottom-0 left-0 w-full p-2 rounded-b-primary border-t-slate-900 border-t-2'>
         <Button
           tabIndex={IsOpen ? 0 : -1}
-          callback={() => {
-            dispatch(DELETE_ALL_FOODS());
-          }}
+          callback={() => dispatch(DELETE_ALL_FOODS())}
           aria='Close calculator'
           type={ButtonTypes.button}
           myStyle='w-full text-xs text-slate-900 rounded-full bg-lavender-bright px-4 py-2 md:text-sm lg:text-base'
