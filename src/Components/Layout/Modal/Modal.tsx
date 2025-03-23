@@ -4,7 +4,7 @@ import { modalLink, modalLinkText, modalText } from './constants';
 import { ButtonTypes } from '@enums';
 import { Button } from '@ui';
 import { useRef } from 'react';
-import { useCloseOutside } from '../../../hooks/useCloseOutside';
+import { useCloseOutside } from '@useCloseOutside';
 
 function Modal({ showModal, setShowModal }: ModalProps) {
   const ref = useRef<HTMLDivElement>(null);

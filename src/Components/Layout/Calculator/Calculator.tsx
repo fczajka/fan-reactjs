@@ -8,7 +8,7 @@ import { Button } from '@ui';
 import { ButtonTypes } from '@enums';
 import { MdOutlineClose } from 'react-icons/md';
 import { DELETE_ALL_FOODS } from '@storeSlices';
-import { useCloseOutside } from '../../../hooks/useCloseOutside';
+import { useCloseOutside } from '@useCloseOutside';
 
 function Calculator({ IsOpen, SetIsOpen }: TableHeadProps) {
   const data: InitialState = useAppSelector((state) => state.sum);

@@ -20,6 +20,7 @@ export default defineConfig({
       '@store': '/src/store/store.ts',
       '@home': '/src/pages/home/index.tsx',
       '@details': '/src/pages/details/index.tsx',
+      '@useCloseOutside': '/src/hooks/useCloseOutside.tsx',
     },
   },
 });
