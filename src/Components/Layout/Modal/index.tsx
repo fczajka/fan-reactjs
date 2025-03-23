@@ -12,11 +12,13 @@ function WrapperModal() {
     handleModal(isModalClosed, setShowModal);
   }, [isModalClosed]);
 
-  return showModal ? (
-    <Logic>
-      <Modal showModal={showModal} setShowModal={setShowModal} />
-    </Logic>
-  ) : null;
+  return (
+    showModal && (
+      <Logic>
+        <Modal showModal={showModal} setShowModal={setShowModal} />
+      </Logic>
+    )
+  );
 }
 
 export default WrapperModal;

@@ -3,11 +3,12 @@ import type { ModalProps } from './interface';
 import { modalLink, modalLinkText, modalText } from './constants';
 import { ButtonTypes } from '@enums';
 import { Button } from '@ui';
-import { useCloseOutside } from '../Calculator/useCloseOutside';
 import { useRef } from 'react';
+import { useCloseOutside } from '../../../hooks/useCloseOutside';
 
 function Modal({ showModal, setShowModal }: ModalProps) {
   const ref = useRef<HTMLDivElement>(null);
+
   function closeModal() {
     setShowModal(!showModal);
     localStorage.setItem('modal', 'true');

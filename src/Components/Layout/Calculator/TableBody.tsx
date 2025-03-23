@@ -20,11 +20,16 @@ function TableBody({ data }: TableBodyProps) {
         >
           {foodInfo.food.map((nutrients) =>
             nutrients.name === 'Name' ? (
-              <div className='col-span-2 flex justify-between items-center gap-0.5 lg:gap-4'>
+              <div
+                key={nutrients.name}
+                className='col-span-2 flex justify-between items-center gap-0.5 lg:gap-4'
+              >
                 <h3 className='text-sm lg:text-lg'>{nutrients.value}</h3>
                 <Button
                   tabIndex={IsOpen ? 0 : -1}
-                  callback={() => dispatch(DELETE_FOOD(foodInfo))}
+                  callback={() => {
+                    dispatch(DELETE_FOOD(foodInfo));
+                  }}
                   aria='Close calculator'
                   type={ButtonTypes.button}
                   myStyle='rounded-full'
@@ -34,6 +39,7 @@ function TableBody({ data }: TableBodyProps) {
               </div>
             ) : (
               <div
+                key={nutrients.name}
                 className={`flex justify-between items-center text-xs ${nutrients.name === 'Grams' && 'col-span-2'} lg:text-base`}
               >
                 <div>{nutrients.name}</div>

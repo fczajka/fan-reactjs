@@ -5,6 +5,7 @@ export interface TableBodyProps {
 }
 
 export interface TableHeadProps {
+  IsOpen: boolean;
   // eslint-disable-next-line no-unused-vars
   SetIsOpen: (isOpen: boolean) => void;
 }

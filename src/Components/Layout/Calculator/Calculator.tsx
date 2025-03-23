@@ -1,23 +1,21 @@
-import { useContext, useRef } from 'react';
+import { useRef } from 'react';
 import TableHead from './TableHead';
 import TableBody from './TableBody';
 import type { InitialState } from '@interfaces';
-import IsOpenContext from '@IsOpen';
 import { useAppDispatch, useAppSelector } from '@storeHooks';
 import type { TableHeadProps } from './interface';
 import { Button } from '@ui';
 import { ButtonTypes } from '@enums';
 import { MdOutlineClose } from 'react-icons/md';
 import { DELETE_ALL_FOODS } from '@storeSlices';
-import { useCloseOutside } from './useCloseOutside';
+import { useCloseOutside } from '../../../hooks/useCloseOutside';
 
-function Calculator({ SetIsOpen }: TableHeadProps) {
+function Calculator({ IsOpen, SetIsOpen }: TableHeadProps) {
   const data: InitialState = useAppSelector((state) => state.sum);
-  const [IsOpen] = useContext(IsOpenContext);
   const dispatch = useAppDispatch();
   const ref = useRef<HTMLDivElement>(null);
 
-  useCloseOutside(ref, () => SetIsOpen(false));
+  useCloseOutside(ref, () => SetIsOpen(!IsOpen));
 
   return (
     <div
